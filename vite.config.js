@@ -10,9 +10,6 @@ const config = {
 	preview: {
 		port: 3001
 	},
-	// build: {
- //        target: [ 'es2020' ]
- //    },
 	plugins: [
 		sveltekit(),
 		glsl.default(),

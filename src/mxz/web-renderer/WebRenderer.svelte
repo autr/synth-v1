@@ -17,6 +17,16 @@
 	export let fullscreen = false
 	export let id
 
+
+
+	// ---
+	let style_ = ""
+	export { style_ as style }
+	let class_ = ""
+	export { class_ as class }
+	$: classes = ""
+	// ---
+
 	const w = browser ? window : {}
 	let localCanvas, recorder
 
@@ -158,8 +168,8 @@
 <svelte:window on:resize={ storeWindowSize } />
 
 <div 
-	class="renderer"
-	style="min-width:{width}px;max-width:{width}px">
+	class="renderer {class_}"
+	style="height: auto;min-width:{width}px;max-width:{width}px">
 	<div class="actions">
 		<button 
 			on:click={togglePopup}>

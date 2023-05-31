@@ -38,8 +38,26 @@
 
 </script>
 
-<aside class="flex column">
-	<div class="flex row wrap">
+<aside 
+	style="background: var(--blue5-0)"
+	class="flex column">
+	<div class="flex row fixed t0 l0 w100pc bb">
+		<FileSave />
+		<input 
+			type="number" 
+			class="br ptb0-5 plr1 minw0px"
+			bind:value={$_DIMENSIONS.width} />
+		<input 
+			type="number" 
+			class="br ptb0-5 plr1 minw0px"
+			bind:value={$_DIMENSIONS.height} />
+		<!-- <input 
+			type="number" 
+			class="br ptb0-5 plr1 minw0px"
+			bind:value={$_DIMENSIONS.fps} /> -->
+		<slot />
+	</div>
+	<div class="flex row fixed l0 b0 w100pc">
 		{#each Object.entries(total) as [title, objects]}
 			<!-- <div class="bb p0-5 flex row-center-center bold">{title}</div> -->
 			{#each Object.keys(objects) as name}
@@ -60,20 +78,4 @@
 			{/each}
 		{/each}
 	</div>
-	<div class="bt flex row cgrow">
-		<input 
-			type="number" 
-			class="br bb ptb0-5 plr1 minw0px"
-			bind:value={$_DIMENSIONS.width} />
-		<input 
-			type="number" 
-			class="br bb ptb0-5 plr1 minw0px"
-			bind:value={$_DIMENSIONS.height} />
-		<input 
-			type="number" 
-			class="br bb ptb0-5 plr1 minw0px"
-			bind:value={$_DIMENSIONS.fps} />
-	</div>
-
-	<FileSave />
 </aside>

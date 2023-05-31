@@ -78,25 +78,23 @@
 	onMount(loadLocally)
 
 	const actions = {
-		'LOCAL : Save': saveLocally,
-		'LOCAL : Load': loadLocally,
-		'LOCAL : Clear': clearLocally,
-		'PROJECT : Save': saveProject,
-		'PROJECT : Open': openProject,
-		'MIDI : Clear': clearAssignments,
-		'MIDI : Save': saveAssignments,
+		'L: Save': saveLocally,
+		'L: Load': loadLocally,
+		'L: Clear': clearLocally,
+		'P: Save': saveProject,
+		'P: Open': openProject,
+		'M: Clear': clearAssignments,
+		'M: Save': saveAssignments,
 	}
 </script>
 
-<div class="flex row wrap">
 
-	{#each Object.entries( actions ) as [name, action]}
+{#each Object.entries( actions ) as [name, action]}
 
-		<button
-			class="br plr1 bb grow f0 ptb0-5"
-			on:mousedown={action}>
-			{ name }
-		</button>
+	<button
+		class="br plr1  grow f0 ptb0-5"
+		on:mousedown={action}>
+		{ name }
+	</button>
 
-	{/each}
-</div>
+{/each}

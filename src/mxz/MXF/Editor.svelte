@@ -31,7 +31,7 @@
 </script>
 <div 
 	bind:this={w[id]}
-	class="flex row-flex-start-stretch  grow overflow-hidden rel w100pc">
+	class="flex row-flex-start-stretch ptb6 grow overflow-hidden rel w100pc">
 	<div 
 		style="overflow-x:auto"
 		class="flex row-flex-start-stretch grow minw100pc">

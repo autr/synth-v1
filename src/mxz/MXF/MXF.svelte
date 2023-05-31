@@ -44,18 +44,23 @@
 		<FFT />
 	</div> -->
 	<div id="editor" 
-		class="grow flex column-stretch-stretch overflow-hidden h100vh minh100vh ">
+		class="grow flex column overflow-hidden">
 
 		<Editor id="editor" />
 
 
 	</div>
-	<WebRenderer 
-		width={width} 
-		id="main" 
-		key="main" 
-		capture={true}>
-		<Menu />
+	<div class="flex column">
+		<Menu>
 
-	</WebRenderer>
+			<WebRenderer 
+				width={width} 
+				id="main" 
+				key="main" 
+				class="abs t100pc r0"
+				capture={true}>
+
+			</WebRenderer>
+		</Menu>
+	</div>
 </div>

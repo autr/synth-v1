@@ -36,7 +36,8 @@
 
 	onMount( async e => {
 		if (browser) {
-			$_CURRENT_VIEW = window.localStorage.getItem( '__CURRENT_VIEW' )
+			console.log($_CURRENT_VIEW, '?????')
+			// $_CURRENT_VIEW = window.localStorage.getItem( '__CURRENT_VIEW' )
 			SAY(`getting current view ${$_CURRENT_VIEW}`)
 			inited = true
 		}
@@ -145,7 +146,9 @@
 
 
 <div id="app" class="app mxz dark">
-	<nav class="flex bb">
+	<nav 
+		style="background: var(--blue5-0)"
+		class="flex bb fixed t0 l0 w100pc z-index44 none">
 		{#each Object.entries( views ) as [id,item]}
 			<button 
 				on:click={e => _CURRENT_VIEW.set(id)}
