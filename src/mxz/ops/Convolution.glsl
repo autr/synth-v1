@@ -3,148 +3,87 @@
 
 vec2 pos = POS_NORM;
 float amt = Amt;
+float Amount = Amt;
 
 if (TYPE == 0) { //int(TYPE) == 0) {
 
-	// BLUR
+
+	/*
+		LumaSharpen 1.4.1
+
+		original hlsl by Christian Cann Schuldt Jensen ~ CeeJay.dk
+		port to glsl by Anon
+
+		It blurs the original pixel with the surrounding pixels and then subtracts this blur to sharpen the image.
+		It does this in luma to avoid color artifacts and allows limiting the maximum sharpning to avoid or lessen halo artifacts.
+
+		This is similar to using Unsharp Mask in Photoshop.
+	*/
 
 
-	vec4 pix = vec4(0.0);
-	amt *= -0.2;
-	float adj = 0.5;
+	float sharp_strength = Amount;
+	float sharp_clamp = sharp_strength;
+	float offset_bias = Radius * 10.0;
+	// #define COEFLUMA vec3(0.2126, 0.7152, 0.0722)      // BT.709 & sRBG luma coefficient (Monitors and HD Television)
+	#define COEFLUMA vec3(0.299, 0.587, 0.114)       // BT.601 luma coefficient (SD Television)
+	// #define COEFLUMA vec3(1.0/3.0, 1.0/3.0, 1.0/3.0) // Equal weight coefficient
+
+	vec4 colorInput = IMG_NORM_PIXEL(TEXTURE, POS_NORM);
 	
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2(-7.0*amt, -7.0*amt))*0.0044299121055113265 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2(-6.0*amt, -6.0*amt))*0.00895781211794 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2(-5.0*amt, -5.0*amt))*0.0215963866053 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2(-4.0*amt, -4.0*amt))*0.0443683338718 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2(-3.0*amt, -3.0*amt))*0.0776744219933 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2(-2.0*amt, -2.0*amt))*0.115876621105 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2(-1.0*amt, -1.0*amt))*0.147308056121 * adj;
+	vec3 ori = colorInput.rgb;
+	vec3 sharp_strength_luma = (COEFLUMA * sharp_strength);
+	//   [ .25, .50, .25]     [ 1 , 2 , 1 ]
+	//   [ .50,   1, .50]  =  [ 2 , 4 , 2 ]
+	//   [ .25, .50, .25]     [ 1 , 2 , 1 ]
+
+	float px = 1.0/RENDERSIZE.x;
+	float py = 1.0/RENDERSIZE.y;
+	vec2 xy = gl_FragCoord.xy;
+
+	// ---------------------- ORIGINAL 
+
+	vec3 blur_ori = IMG_NORM_PIXEL(TEXTURE, POS_NORM.xy + vec2(px,-py) * 0.5 * offset_bias).rgb; // South East
+	blur_ori += IMG_NORM_PIXEL(TEXTURE, POS_NORM.xy + vec2(-px,-py) * 0.5 * offset_bias).rgb;  // South West
+	blur_ori += IMG_NORM_PIXEL(TEXTURE, POS_NORM.xy + vec2(px,py) * 0.5 * offset_bias).rgb; // North East
+	blur_ori += IMG_NORM_PIXEL(TEXTURE, POS_NORM.xy + vec2(-px,py) * 0.5 * offset_bias).rgb; // North West
+	blur_ori *= 0.25;
+	vec3 sharp = ori - blur_ori;
+	vec4 sharp_strength_luma_clamp = vec4(sharp_strength_luma * (0.5 / sharp_clamp),0.5);
+	float sharp_luma = clamp((dot(vec4(sharp,1.0), sharp_strength_luma_clamp)), 0.0,1.0 );
+	sharp_luma = (sharp_clamp * 2.0) * sharp_luma - sharp_clamp;
+	colorInput.rgb = colorInput.rgb + sharp_luma;
+
+	return clamp(colorInput, 0.0,1.0);
+
+	// --------------------- RGB ATTEMPT (WORKS-ISH)
+
+	for (int i = 0; i < 4; i++) {
+
+		float blur_ori = IMG_NORM_PIXEL(TEXTURE, POS_NORM.xy + vec2(px,-py) * 0.5 * offset_bias)[i]; // South East
+		blur_ori += IMG_NORM_PIXEL(TEXTURE, POS_NORM.xy + vec2(-px,-py) * 0.5 * offset_bias)[i];  // South West
+		blur_ori += IMG_NORM_PIXEL(TEXTURE, POS_NORM.xy + vec2(px,py) * 0.5 * offset_bias)[i]; // North East
+		blur_ori += IMG_NORM_PIXEL(TEXTURE, POS_NORM.xy + vec2(-px,py) * 0.5 * offset_bias)[i]; // North West
+
+		blur_ori *= 0.25;  // ( /= 4) Divide by the number of texture fetches
+
+		// -- Calculate the sharpening --
+		float sharp = ori[i] - blur_ori;  // Subtracting the blurred image from the original image
+
+		// -- Adjust strength of the sharpening and clamp it--
+		float sharp_strength_luma_clamp = sharp_strength_luma[i] * (0.5 / sharp_clamp); //Roll part of the clamp into the dot
+
+		float sharp_luma = clamp((sharp + sharp_strength_luma_clamp), 0.0,1.0 ); //Calculate the luma, adjust the strength, scale up and clamp
+		sharp_luma = (sharp_clamp * 2.0) * sharp_luma - sharp_clamp; //scale down
+
+
+		// -- Combining the values to get the final sharpened pixel	--
+
+		colorInput[i] = colorInput[i] + sharp_luma;    // Add the sharpening to the input color.
+	}
+
+	return clamp(colorInput, 0.0,1.0);
 	
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 7.0*amt,  7.0*amt))*0.0044299121055113265 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 6.0*amt,  6.0*amt))*0.00895781211794 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 5.0*amt,  5.0*amt))*0.0215963866053 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 4.0*amt,  4.0*amt))*0.0443683338718 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 3.0*amt,  3.0*amt))*0.0776744219933 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 2.0*amt,  2.0*amt))*0.115876621105 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 1.0*amt,  1.0*amt))*0.147308056121 * adj;
-	
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 7.0*amt,  -7.0*amt))*0.0044299121055113265 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 6.0*amt,  -6.0*amt))*0.00895781211794 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 5.0*amt,  -5.0*amt))*0.0215963866053 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 4.0*amt,  -4.0*amt))*0.0443683338718 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 3.0*amt,  -3.0*amt))*0.0776744219933 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 2.0*amt,  -2.0*amt))*0.115876621105 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( 1.0*amt,  -1.0*amt))*0.147308056121 * adj;
-
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( -7.0*amt,  7.0*amt))*0.0044299121055113265 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( -6.0*amt,  6.0*amt))*0.00895781211794 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( -5.0*amt,  5.0*amt))*0.0215963866053 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( -4.0*amt,  4.0*amt))*0.0443683338718 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( -3.0*amt,  3.0*amt))*0.0776744219933 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( -2.0*amt,  2.0*amt))*0.115876621105 * adj;
-	pix += IMG_NORM_PIXEL(TEXTURE, pos + vec2( -1.0*amt,  1.0*amt))*0.147308056121 * adj;
-
-	// pix += IMG_NORM_PIXEL(TEXTURE, pos ).rgb * 0.159576912161 * adj;
-
-	return pix * 1.2;
-
 } else if (TYPE == 1) {
-
-	// SIMPLE BLUR
-
-	vec2 off1 = vec2(1.3846153846) * amt;
-    vec2 off2 = vec2(3.2307692308) * amt;
-	vec4 color = IMG_NORM_PIXEL(TEXTURE, pos) * 0.2270270270;
-
-	color += IMG_NORM_PIXEL(TEXTURE, pos + off1) * 0.3162162162;
-	color += IMG_NORM_PIXEL(TEXTURE, pos - off1) * 0.3162162162;
-	color += IMG_NORM_PIXEL(TEXTURE, pos + off2) * 0.0702702703;
-	color += IMG_NORM_PIXEL(TEXTURE, pos - off2) * 0.0702702703;
-	
-	return color;
-
-} else if (TYPE == 2) {
-
-	// SHARPEN
-
-	amt *= 1.0;
-
-	float CV_0 = 0.0;
-	float CV_1 = -1.0*amt;
-	float CV_2 = 0.0;
-	float CV_3 = -1.0*amt;
-	float CV_4 = 1.0 + 4.0*amt;
-	float CV_5 = -1.0*amt;
-	float CV_6 = 0.0;
-	float CV_7 = -1.0*amt;
-	float CV_8 = 0.0;
-
-	vec4 c11 = IMG_NORM_PIXEL(TEXTURE, pos - amt); // top left
-	vec4 c12 = IMG_NORM_PIXEL(TEXTURE, vec2(pos.x, pos.y - amt)); // top center
-	vec4 c13 = IMG_NORM_PIXEL(TEXTURE, vec2(pos.x + amt, pos.y - amt)); // top right
-
-	vec4 c21 = IMG_NORM_PIXEL(TEXTURE, vec2(pos.x - amt, pos.y) ); // mid left
-	vec4 c22 = IMG_NORM_PIXEL(TEXTURE, pos); // mid center
-	vec4 c23 = IMG_NORM_PIXEL(TEXTURE, vec2(pos.x + amt, pos.y) ); // mid right
-
-	vec4 c31 = IMG_NORM_PIXEL(TEXTURE, vec2(pos.x - amt, pos.y + amt) ); // bottom left
-	vec4 c32 = IMG_NORM_PIXEL(TEXTURE, vec2(pos.x, pos.y + amt) ); // bottom center
-	vec4 c33 = IMG_NORM_PIXEL(TEXTURE, pos + amt ); // bottom right
-
-	return c11 * CV_0 + c12 * CV_1 + c22 * CV_2 + c21 * CV_3 + c22 * CV_4 + c23 * CV_5 + c31 * CV_6 + c32 * CV_7 + c33 * CV_8;
-
-} else if (TYPE == 3 ) {
-
-	// UNSHARP
-
-	vec2 pos = POS_NORM;
-	vec2 d = 1.0/RENDERSIZE;
-	
-	vec2 LC = clamp(vec2(pos.xy + vec2(-d.x , 0)),0.0,1.0);
-	vec2 RC = clamp(vec2(pos.xy + vec2(d.x , 0)),0.0,1.0);
-	vec2 TC = clamp(vec2(pos.xy + vec2(0,d.y)),0.0,1.0);
-	vec2 BC = clamp(vec2(pos.xy + vec2(0,-d.y)),0.0,1.0);
-
-	vec2 LC_A = clamp(vec2(pos.xy + vec2(-d.x , d.x)),0.0,1.0);
-	vec2 RC_A = clamp(vec2(pos.xy + vec2(d.x , d.x)),0.0,1.0);
-	vec2 LC_B = clamp(vec2(pos.xy + vec2(-d.x , -d.x)),0.0,1.0);
-	vec2 RC_B = clamp(vec2(pos.xy + vec2(d.x , -d.x)),0.0,1.0);
-
-	vec4 C = IMG_NORM_PIXEL(TEXTURE, pos);
-	vec4 CL = IMG_NORM_PIXEL(TEXTURE, LC);
-	vec4 CR = IMG_NORM_PIXEL(TEXTURE, RC);
-	vec4 CA = IMG_NORM_PIXEL(TEXTURE, TC);
-	vec4 CB = IMG_NORM_PIXEL(TEXTURE, BC);
-
-	vec4 CLA = IMG_NORM_PIXEL(TEXTURE, LC_A);
-	vec4 CRA = IMG_NORM_PIXEL(TEXTURE, RC_A);
-	vec4 CLB = IMG_NORM_PIXEL(TEXTURE, LC_B);
-	vec4 CRB = IMG_NORM_PIXEL(TEXTURE, RC_B);
-
-	return C + (amt * 10.) * (8.0*C - CL - CR - CA - CB - CLA - CRA - CLB - CRB);
-
-} else if (TYPE == 4 ) {
-
-
-	vec2 pos = POS_NORM;
-	vec2 step = (Radius * 10.0) / pos.xy;
-
-	vec3 texA = IMG_NORM_PIXEL( TEXTURE, pos.xy + vec2(-step.x, -step.y) * 1.5 ).rgb;
-	vec3 texB = IMG_NORM_PIXEL( TEXTURE, pos.xy + vec2( step.x, -step.y) * 1.5 ).rgb;
-	vec3 texC = IMG_NORM_PIXEL( TEXTURE, pos.xy + vec2(-step.x,  step.y) * 1.5 ).rgb;
-	vec3 texD = IMG_NORM_PIXEL( TEXTURE, pos.xy + vec2( step.x,  step.y) * 1.5 ).rgb;
-
-	vec3 around = 0.25 * (texA + texB + texC + texD);
-	vec3 center  = IMG_NORM_PIXEL( TEXTURE, pos.xy ).rgb;
-
-	float sharpness = Amt * 20.0;
-
-	vec3 col = center + (center - around) * sharpness;
-
-	return vec4( col, 1.0 );
-	
-} else if (TYPE == 5) {
 
 	// DITHER
 

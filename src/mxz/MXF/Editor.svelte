@@ -90,6 +90,7 @@
 			data-drag-colIdx={ 0 }
 			on:drop={onElDrop}
 			on:dragover={onElDragover} 
+			style="padding-right:50vw"
 			class="flex grow h100pc minw16em"/>
 	</div>
 

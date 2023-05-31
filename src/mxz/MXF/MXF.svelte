@@ -39,7 +39,7 @@
 
 <Keys {shortcuts} />
 
-<div class="flex row">
+<div class="flex row grow">
 	<!-- <div class="fixed b0 l0 pop border p1 flex column maxw16em">
 		<FFT />
 	</div> -->

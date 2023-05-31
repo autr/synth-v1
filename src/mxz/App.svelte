@@ -135,17 +135,22 @@
 
 <div 
 	id="drag-visualiser" 
+	class:none={!selectedList}
+	style="bottom:-100%"
 	class="pop w80px fixed b0 l0 bl bb br flex column-center-center z-index66">
-
 	{#each selectedList as id}
-		<div class="bt p0-5 bold grow w100pc h40px flex row-flex-start-center">{id.split(':')[0]}</div>
+		<div 
+			style="background: var(--blue5-0)"
+			class="bt p0-5 bold grow w100pc h40px flex row-flex-start-center">
+			{id.split(':')[0]}
+		</div>
 	{/each}
 </div>
 
 <Keys {shortcuts} />
 
 
-<div id="app" class="app mxz dark">
+<div id="app" class="app mxz dark flex row-stretch-stretch">
 	<nav 
 		style="background: var(--blue5-0)"
 		class="flex bb fixed t0 l0 w100pc z-index44 none">

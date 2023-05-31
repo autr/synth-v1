@@ -97,22 +97,6 @@ export let MEDIA_DEFAULTS = e => {
 		let defaults = [
 			{
 				type: MEDIA_TYPES.IMAGE,
-				path: 'mxz/crest/A.png'
-			},
-			{
-				type: MEDIA_TYPES.IMAGE,
-				path: 'mxz/crest/B.png'
-			},
-			{
-				type: MEDIA_TYPES.IMAGE,
-				path: 'mxz/crest/C.png'
-			},
-			{
-				type: MEDIA_TYPES.IMAGE,
-				path: 'mxz/crest/D.png'
-			},
-			{
-				type: MEDIA_TYPES.IMAGE,
 				path: 'mxz/testcards/transparent.png'
 			},
 			{
@@ -124,12 +108,8 @@ export let MEDIA_DEFAULTS = e => {
 				path: 'mxz/testcards/testcard.png'
 			},
 			{
-				type: MEDIA_TYPES.VIDEO,
-				path: 'mxz/testcards/scrase.m4v'
-			},
-			{
-				type: MEDIA_TYPES.VIDEO,
-				path: 'mxz/testcards/myr.mov'
+				type: MEDIA_TYPES.IMAGE,
+				path: 'mxz/testcards/grid.png'
 			},
 			{
 				type: MEDIA_TYPES.FEEDBACK

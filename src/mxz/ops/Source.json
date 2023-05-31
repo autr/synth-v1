@@ -8,6 +8,18 @@
                 "type": "image",
                 "path": "mxz/testcards/transparent.png"
             }
+        },
+        "Rows": {
+            "type": "long",
+            "default": 1
+        },
+        "Columns": {
+            "type": "long",
+            "default": 1
+        },
+        "Index": {
+            "type": "long",
+            "default": 0
         }
     }
 }

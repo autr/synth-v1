@@ -78,11 +78,11 @@
 	onMount(loadLocally)
 
 	const actions = {
-		'L: Save': saveLocally,
 		'L: Load': loadLocally,
+		'L: Save': saveLocally,
 		'L: Clear': clearLocally,
-		'P: Save': saveProject,
 		'P: Open': openProject,
+		'P: Save': saveProject,
 		'M: Clear': clearAssignments,
 		'M: Save': saveAssignments,
 	}

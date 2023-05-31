@@ -41,7 +41,10 @@
 <aside 
 	style="background: var(--blue5-0)"
 	class="flex column">
-	<div class="flex row fixed t0 l0 w100pc bb">
+	<div 
+
+		style="background: var(--blue5-0)"
+		class="flex row fixed t0 l0 w100pc bb z-index44">
 		<FileSave />
 		<input 
 			type="number" 
@@ -57,7 +60,9 @@
 			bind:value={$_DIMENSIONS.fps} /> -->
 		<slot />
 	</div>
-	<div class="flex row fixed l0 b0 w100pc">
+	<div 
+		style="background: var(--blue5-0)"
+		class="flex row fixed l0 b0 w100pc z-index99">
 		{#each Object.entries(total) as [title, objects]}
 			<!-- <div class="bb p0-5 flex row-center-center bold">{title}</div> -->
 			{#each Object.keys(objects) as name}

@@ -109,8 +109,6 @@
 	</div>
 
 
-
-
 	{#if component}
 		<svelte:component 
 			on:contextmenu={onContextMenu}
@@ -130,16 +128,24 @@
 			class="mb0 pop"
 			bind:value={ $_UNIFORMS[key] } />
 	{:else if def.type == 'long'}
-		<select
-			on:contextmenu={onContextMenu}
-			id={key}
-			class="w100pc text-center italic maxw1000pc overflow-hidden" 
-			type="text" 
-			bind:value={$_UNIFORMS[key]}>
-			{#each def.labels || [] as label, i}
-				<option name={label} value={i}>{label}</option>
-			{/each}
-		</select>
+
+		{#if !def.min || !def.labels}
+			<input 
+				class="input button"
+				bind:value={$_UNIFORMS[key]}
+				type="number" />
+		{:else}
+			<select
+				on:contextmenu={onContextMenu}
+				id={key}
+				class="w100pc text-center italic maxw1000pc overflow-hidden" 
+				type="text" 
+				bind:value={$_UNIFORMS[key]}>
+				{#each def.labels || [] as label, i}
+					<option name={label} value={i}>{label}</option>
+				{/each}
+			</select>
+		{/if}
 	{:else if def.type == 'string'}
 
 		<input 

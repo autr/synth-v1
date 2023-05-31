@@ -79,11 +79,17 @@ export default e => {
 
 						if (op.source) {
 
-							// MAKE_PASS - input source only
 
-							txt += `IMG_NORM_PIXEL(`
+							const idxKey = op.uuid + 'Index'
+							const rowKey = op.uuid + 'Rows'
+							const colKey = op.uuid + 'Columns'
+
+							const shrinkX = `(1. / float(${rowKey} ))`
+							const moveX = `(${shrinkX} * float(${idxKey}) )`
+
+							txt += `texture2D(`
 							txt += op.uuid + 'Src'
-							txt += `,POS_NORM)`
+							txt += `, (POS_NORM * vec2( ${shrinkX}, 1.0) + vec2(${moveX},0.0) ))`
 
 						} else {
 

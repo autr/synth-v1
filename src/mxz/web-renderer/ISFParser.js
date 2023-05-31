@@ -148,6 +148,7 @@ ISFParser.prototype.replaceSpecialFunctions = function replaceSpecialFunctions(s
     const results = innerMatch.split(',');
     const sampler = results[0].trim();
     const coord = results[1].trim();
+    return `texture2D(${sampler}, (${coord}))`;
     return `VVSAMPLER_2DBYNORM(${sampler}, _${sampler}_imgRect, _${sampler}_imgSize, _${sampler}_flip, ${coord})`;
   });
 
