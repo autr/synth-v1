@@ -44,7 +44,7 @@
 	<div 
 
 		style="background: var(--blue5-0)"
-		class="flex row fixed t0 l0 w100pc bb z-index99">
+		class="flex row-center-stretch fixed t0 l0 w100pc bb z-index99">
 		<FileSave />
 		<input 
 			type="number" 
@@ -82,5 +82,14 @@
 				</div>
 			{/each}
 		{/each}
+		<a 
+			href="https://liberatedinterfaces.tv"
+			class="bt"
+			style="padding:0;line-height:0em;">
+			<img 
+				style="background:none;height:2.2em;"
+				class="pt0-4 pb0-3 plr0-5 h2em"
+				src="/liberatedinterfaces.png" />
+		</a>
 	</div>
 </aside>

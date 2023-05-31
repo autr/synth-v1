@@ -155,7 +155,6 @@
 			recorder.stop()
 			recorder.dispose()
 		}
-		console.log(recorder)
 		window.recorder = recorder
 	}
 
@@ -304,7 +303,6 @@ function getTransformations( store ) {
 			return `${name}${char}( ${num||0}${ref?.[name]?.unit || ''} )`
 		}).join(' ')} `
 	}
-	console.log(transform, '???')
 	return transform
 }
 
