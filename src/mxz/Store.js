@@ -25,6 +25,16 @@ export const _DIMENSIONS = writable( {"width":720,"height":576} )
 /* _ASSIGNMENTS:  */
 export const _ASSIGNMENTS = writable( {} )
 
+/* _ASSIGNMENTS:  */
+const projectionDefault = {
+	rotate: [ 0, 0, 0 ],
+	skew: [ 0, 0 ],
+	scale: [ 1, 1 ],
+	translate: [ 0, 0 ]
+
+}
+export const _PROJECTION = writable( projectionDefault )
+
 /* _HIDDEN:  */
 export const _HIDDEN = writable( {} )
 
@@ -55,6 +65,7 @@ export const _popup_canvas = writable( null )
 /* _fullscreen: make canvas fullscreen */
 export const _fullscreen = writable( false )
 
+export const _show_projection = writable( false )
 
 
 const SAY = (m, e) => console.log(`[Store] ${m}`, e || '')
@@ -68,6 +79,7 @@ export function SetStoresFromText( text ) {
 		
 		_PREVIEW.set( stores?._PREVIEW || null )
 		_TITLES.set( stores?._TITLES || {} )
+		_PROJECTION.set( stores?._PROJECTION || projectionDefault )
 		_SOURCES.set( stores?._SOURCES || [] )
 		_SEQUENCE.set( stores?._SEQUENCE || [] )
 		_UNIFORMS.set( stores?._UNIFORMS || {} )
@@ -92,6 +104,7 @@ export function GetStoresAsText( space ) {
 	return JSON.stringify({
 		
 		_PREVIEW: get(_PREVIEW),
+		_PROJECTION: get(_PROJECTION),
 		_TITLES: get(_TITLES),
 		_SOURCES: get(_SOURCES),
 		_SEQUENCE: get(_SEQUENCE),
@@ -106,6 +119,7 @@ export const Stores = {
 	
 	_PREVIEW: _PREVIEW,
 	_TITLES: _TITLES,
+	_PROJECTION: _PROJECTION,
 	_SOURCES: _SOURCES,
 	_SEQUENCE: _SEQUENCE,
 	_UNIFORMS: _UNIFORMS,

@@ -76,12 +76,12 @@
 			command: [ 'Tab' ],
 			action: e  => {
 
-				const keys = Object.values(APP_VIEWS)
-				let idx = keys.indexOf($_CURRENT_VIEW)
-				idx += 1
-				if (idx >= keys.length - 1) idx = 0
-				$_CURRENT_VIEW = keys[idx]
-				e.preventDefault()
+				// const keys = Object.values(APP_VIEWS)
+				// let idx = keys.indexOf($_CURRENT_VIEW)
+				// idx += 1
+				// if (idx >= keys.length - 1) idx = 0
+				// $_CURRENT_VIEW = keys[idx]
+				// e.preventDefault()
 			}
 		},
 		{

@@ -44,7 +44,7 @@
 	<div 
 
 		style="background: var(--blue5-0)"
-		class="flex row fixed t0 l0 w100pc bb z-index44">
+		class="flex row fixed t0 l0 w100pc bb z-index99">
 		<FileSave />
 		<input 
 			type="number" 
@@ -62,7 +62,7 @@
 	</div>
 	<div 
 		style="background: var(--blue5-0)"
-		class="flex row fixed l0 b0 w100pc z-index99">
+		class="flex row fixed l0 b0 w100pc z-index98">
 		{#each Object.entries(total) as [title, objects]}
 			<!-- <div class="bb p0-5 flex row-center-center bold">{title}</div> -->
 			{#each Object.keys(objects) as name}

@@ -2,7 +2,10 @@
 	import { browser } from '$app/environment'
 	import ISFRenderer from './ISFRenderer.js'
 	import { onMount, onDestroy } from 'svelte'
-	import { _popup_canvas, _recompile, _fullscreen, _SOURCES, _DIMENSIONS, _UNIFORMS, _PREVIEW } from '$mxz/Store.js'
+	import { _popup_canvas, _recompile, _fullscreen, _SOURCES, _DIMENSIONS, _UNIFORMS, _PREVIEW, _PROJECTION } from '$mxz/Store.js'
+
+
+	import Slider from '$aui/_elements/Slider.svelte'
 	import { COMPILER_MODES } from '$mxz/Defs.js'
 	import { compile, ALL } from '$mxz/compiler'
 	import { VTX_DEFAULT } from '$mxz/compiler/Vertex.js'
@@ -119,10 +122,10 @@
 		requestAnimationFrame(animate)
 	}
 
-	onMount(e => {
+	let numeric
+	onMount(async e => {
 		storeWindowSize()
 		animate()
-
 	})
 
 	function captureImage() {
@@ -143,6 +146,7 @@
 	}
 	let EXPORTING = true
 	let RECORDING = false
+
 	function toggleVideoRecord() {
 		RECORDING = !RECORDING
 		if (RECORDING) {
@@ -163,14 +167,155 @@
 		innerWidth = w.innerWidth
 		innerHeight = w.innerHeight
 	}
+
+
+export let ctrlPoints = [
+  [0, 0],
+  [0, 0],
+  [0, 0],
+  [0, 0]
+]
+
+const defaultMatrix = [
+	[ 0, 0 ],
+	[ 0, 1 ],
+	[ 1, 0 ],
+	[ 1, 1 ]
+]
+
+let containerEl
+function getMatrix3d(ctrlPoints, dim, el, fs) {
+	if (!browser || !$_DIMENSIONS || !el) return {
+		from: [],
+		to: [],
+		matrix: []
+	}
+
+
+
+	const A = []; // 8x8
+	const B = []; // 8x1
+
+	let from = []
+	let to = []
+
+	const width = $_fullscreen ? window.innerWidth : el.offsetWidth
+	const height = $_fullscreen ? window.innerHeight : el.offsetHeight
+
+	for (let i = 0; i < ctrlPoints.length; i++) {
+		to.push([
+			(defaultMatrix[i][0] + ctrlPoints[i][0]) * width,
+			(defaultMatrix[i][1] + ctrlPoints[i][1]) * height
+		])
+		from.push([
+			(defaultMatrix[i][0]) * width,
+			(defaultMatrix[i][1]) * height
+		])
+	}
+
+	for (let i = 0; i < 4; i++) {
+		A.push([
+			from[i][0],
+			from[i][1],
+			1,
+			0,
+			0,
+			0,
+			-from[i][0] * to[i][0],
+			-from[i][1] * to[i][0]
+		]);
+
+		A.push([
+			0,
+			0,
+			0,
+			from[i][0],
+			from[i][1],
+			1,
+			-from[i][0] * to[i][1],
+			-from[i][1] * to[i][1]
+		]);
+
+		B.push(to[i][0]);
+		B.push(to[i][1]);
+	}
+
+	const h = window.numeric.solve(A, B)
+
+	const H = [
+		[h[0], h[1], 0, h[2]],
+		[h[3], h[4], 0, h[5]],
+		[0, 0, 1, 0],
+		[h[6], h[7], 0, 1]
+	]
+	
+
+	let k, matrix
+	matrix = []
+	for (let i = k = 0; k < 4; i = ++k) {
+		matrix.push((function() {
+			var l, matrix1
+			matrix1 = []
+			for (let j = l = 0; l < 4; j = ++l) {
+				matrix1.push(H[j][i].toFixed(20))
+			}
+			return matrix1
+		})());
+	}
+	const matrix3d = `matrix3d(${matrix.join(',')})`
+	return { from, to, matrix, matrix3d };
+}
+
+$: deform = getMatrix3d(ctrlPoints, $_DIMENSIONS, containerEl, $_fullscreen);
+
+
+const ref = {
+	translate: {
+		unit: '%',
+		min: -15,
+		max: 15
+	},
+	rotate: {
+		unit: 'deg',
+		min: -15,
+		max: 15
+	},
+	scale: {
+		unit: ' ',
+		min: 0.5,
+		max: 1
+	},
+	skew: {
+		unit: 'deg',
+		min: -15,
+		max: 15
+	}
+}
+
+function getTransformations( store ) {
+
+	let transform = ''
+	for (const [name,arr] of Object.entries($_PROJECTION)) {
+		let idx = 0
+		const ch = ['X','Y','Z']
+		transform += `${arr.map(num=>{
+			let char = ref?.[name]?.unit ? ch[idx] : ''
+			idx += 1
+			return `${name}${char}( ${num||0}${ref?.[name]?.unit || ''} )`
+		}).join(' ')} `
+	}
+	console.log(transform, '???')
+	return transform
+}
+
 </script>
 
 <svelte:window on:resize={ storeWindowSize } />
 
 <div 
-	class="renderer {class_}"
-	style="height: auto;min-width:{width}px;max-width:{width}px">
-	<div class="actions">
+	class="renderer bb {class_}"
+	style="height: auto;min-width:{width}px;max-width:{width}px;">
+	<div class="actions bb">
 		<button 
 			on:click={togglePopup}>
 			Popup
@@ -190,16 +335,66 @@
 		</button>
 		<span class="fps">{(1000/fps).toFixed(0)}</span>
 	</div>
+
 	<div 
-		style="padding-top:{(($_DIMENSIONS.height/$_DIMENSIONS.width))*100}%"
-		class:none={$_popup_canvas}
-		class="canvas-wrapper">
+		bind:this={containerEl}
+		class:fixed={$_fullscreen}
+		style="top:0px;left:0px;background:black;z-index: 999999999"
+		class="rel t0pc l0pc w100pc h100pc overflow-hidden">
+		<canvas
+			class="w100pc h100pc"
+			width={$_DIMENSIONS.width} 
+			height={$_DIMENSIONS.height}  />
+
 		<canvas 
 			{id}
-			style={canvasTransform}
+			class="w100pc h100pc fill"
+			style="transform:{getTransformations($_PROJECTION)}"
 			bind:this={localCanvas} 
 			width={$_DIMENSIONS.width} 
 			height={$_DIMENSIONS.height} />
+	</div>
+	<div class="flex column-stretch-flex-start bg bt p1" style="z-index:99999;">
+		<!-- <h4>From</h4>
+		<div>{deform?.from.map(arr=>arr.map(num=>num))}</div>
+		<h4>To</h4>
+		<div>{deform?.to.map(arr=>arr.map(num=>num))}</div>
+		<h4>Matrix</h4>
+		<div style="white-space:pre">{@html deform?.matrix.map(arr=>arr.map(num=>num).join(',')).join('\n')}</div> -->
+		<div class="flex wrap grow w100pc">
+			{#each ctrlPoints as value,key }
+				<div class="maxw50pc grow">
+					<!-- <label>{key}</label> -->
+					<Slider
+						bind:value={ctrlPoints[key][0]}
+						min={-1}
+						max={1}
+						step={0.001} />
+					<Slider
+						bind:value={ctrlPoints[key][1]}
+						min={-1}
+						max={1}
+						step={0.001} />
+				</div>
+			{/each}
+		</div>
+		<div class="flex wrap grow w100pc">
+			{#each Object.entries($_PROJECTION) as [key, arr]}
+
+				<div class="maxw50pc grow">
+					<div class="mb0-5">{key}</div>
+					{#each arr || [] as val, i}
+						<Slider
+							bind:value={$_PROJECTION[key][i]}
+							min={ref?.[key]?.min}
+							max={ref?.[key]?.max}
+							step={0.001} />
+
+					{/each}
+				</div>
+			{/each}
+
+		</div>
 	</div>
 	<slot />
 </div>
