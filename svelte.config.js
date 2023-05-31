@@ -12,7 +12,8 @@ export const CURRENT_ADAPTER = 'static'
 const adapters = {
 	static: _static({
 		fallback: '/index.html',
-		trailingSlash: 'always'
+		trailingSlash: 'always',
+		pages: 'build.synth.v1'
 	})
 }
 
@@ -32,8 +33,6 @@ export default (await ( async e => {
 		if (key[0]=='_') key = key.substring(1)
 		if (dir.isDirectory()) alias['$'+key] = 'src/'+dir.name
 	}
-
-	console.log(alias)
 
 	return {
 		kit: {
