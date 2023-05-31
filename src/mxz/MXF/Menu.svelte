@@ -1,0 +1,79 @@
+<script>
+	import { _dragging, _selected, _DIMENSIONS, _SOURCES } from '$mxz/Store.js'
+	import { DRAG_ACTIONS } from '$mxz/Defs.js'
+	import * as Ops from '$mxz/ops'
+	import FileSave from '$mxz/FileSave.svelte'
+	import { GenerateUuidWithName } from '$mxz/API.js'
+
+
+	function onTouchdown( name ) {
+		$_selected = [ GenerateUuidWithName(name) ]
+		$_dragging = true
+	}
+
+	function onTouchup( name ) {
+
+		$_selected = [-1,-1,-1,-1]
+		$_dragging = false
+	}
+
+	const total = {
+		ops: Ops
+	}
+
+	const icons = {
+		Capacitor: 'flash_on', // track_changes
+		Channel: 'view_week', // view_column
+		Convolution: 'grain', // blur_on
+		Deform: 'grid_on', // grid_3_x_3
+		Light: 'light_mode', // flare
+		Mask: 'star_half', // extension
+		Blend: 'join_full',
+		Shape: 'interests', // hexagon
+		Source: 'camera_alt', // videocam
+		Synth: 'waves',
+		Wobbulator: 'cast'
+	}
+
+
+</script>
+
+<aside class="flex column">
+	<div class="flex row wrap">
+		{#each Object.entries(total) as [title, objects]}
+			<!-- <div class="bb p0-5 flex row-center-center bold">{title}</div> -->
+			{#each Object.keys(objects) as name}
+				<div 
+					id={ 'menu_' + name.toLowerCase()}
+					data-drag-type={DRAG_ACTIONS.MOVE}
+					data-drag-unit={name}
+
+					on:mousedown={ e => onTouchdown(name)}
+					on:mouseup={ e => onTouchup(name)}
+
+					draggable={true}
+					class="plr0-5 grabbable br bt f3 flex row-center-center pop ptb0-5 grow">
+					<!-- {name} -->
+					<span class="f0"> {name}</span>
+					<!-- <span class="material-icons">{icons[name]}</span> -->
+				</div>
+			{/each}
+		{/each}
+	</div>
+	<div class="bt flex row cgrow">
+		<input 
+			type="number" 
+			class="br bb ptb0-5 plr1 minw0px"
+			bind:value={$_DIMENSIONS.width} />
+		<input 
+			type="number" 
+			class="br bb ptb0-5 plr1 minw0px"
+			bind:value={$_DIMENSIONS.height} />
+		<input 
+			type="number" 
+			class="br bb ptb0-5 plr1 minw0px"
+			bind:value={$_DIMENSIONS.fps} />
+	</div>
+
+	<FileSave />
+</aside>

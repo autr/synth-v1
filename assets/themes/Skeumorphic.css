@@ -1,0 +1,2757 @@
+/* sassis creates THEME-BASED shorthand: colors, borders, filled etc */
+.ui-background {
+  fill: transparent; }
+
+.ui-outline {
+  fill: white; }
+
+.handle-background {
+  fill: red; }
+
+.handle-outline {
+  fill: white; }
+
+.tick {
+  fill: yellow; }
+
+.icon {
+  fill: var(--c0); }
+
+.track-background {
+  fill: white; }
+
+.track {
+  fill: blue; }
+
+.slider .track {
+  background: linear-gradient(90deg, red, magenta, blue, aqua, lime, yellow, red); }
+
+.knob .track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: conic-gradient(red, magenta, blue, aqua, lime, yellow, red); }
+
+:root {
+  --c: hsla(187.05882352941177, 22.666666666666664%, 14.705882352941178%, 1);
+  --orange: hsla(70.66666666666666, 93.10344827586205%, 71.56862745098039%, 1);
+  --red: hsla(116, 93.10344827586205%, 71.56862745098039%, 1);
+  --pink: hsla(160.88888888888889, 93.10344827586205%, 71.56862745098039%, 1);
+  --purple: hsla(205.77777777777777, 93.10344827586205%, 71.56862745098039%, 1);
+  --blue: hsla(250.66666666666669, 93.10344827586205%, 71.56862745098039%, 1);
+  --teal: hsla(295.55555555555554, 93.10344827586205%, 71.56862745098039%, 1);
+  --green: hsla(340.8888888888889, 93.10344827586205%, 71.56862745098039%, 1);
+  --yellow: hsla(25.777777777777786, 93.10344827586205%, 71.56862745098039%, 1);
+  --bg: hsla(251.4285714285714, 48.837209302325654%, 91.5686274509804%, 1);
+  --c0-0: hsla(180, 33.33333333333333%, 0.5882352941176471%, 1);
+  --c0-1: hsla(1, 1%, 1.5686274509803921%, 1);
+  --c0-2: hsla(1, 1%, 2.7450980392156863%, 1);
+  --c0-3: hsla(1, 1%, 3.5294117647058822%, 1);
+  --c0-4: hsla(1, 1%, 4.705882352941177%, 1);
+  --c0-5: hsla(187.05882352941177, 22.666666666666664%, 14.705882352941178%, 1);
+  --c0-6: hsla(184, 18.518518518518515%, 15.88235294117647%, 1);
+  --c0-7: hsla(184.6153846153846, 14.606741573033712%, 17.45098039215686%, 1);
+  --c0-8: hsla(185.45454545454547, 11.578947368421055%, 18.627450980392158%, 1);
+  --c0-9: hsla(185.99999999999997, 9.803921568627452%, 20%, 1);
+  --orange1-0: hsla(40, 12%, 4.901960784313726%, 1);
+  --orange1-1: hsla(45, 8.333333333333332%, 9.411764705882353%, 1);
+  --orange1-2: hsla(60, 5.7142857142857135%, 13.725490196078432%, 1);
+  --orange1-3: hsla(47.99999999999997, 5.376344086021509%, 18.23529411764706%, 1);
+  --orange1-4: hsla(60, 4.347826086956519%, 22.54901960784314%, 1);
+  --orange1-5: hsla(70.66666666666666, 93.10344827586205%, 71.56862745098039%, 1);
+  --orange1-6: hsla(71.11111111111111, 93.10344827586202%, 77.25490196078431%, 1);
+  --orange1-7: hsla(72, 93.02325581395351%, 83.13725490196079%, 1);
+  --orange1-8: hsla(73.33333333333334, 96.4285714285714%, 89.01960784313725%, 1);
+  --orange1-9: hsla(78.46153846153848, 99.99999999999989%, 94.90196078431372%, 1);
+  --red2-0: hsla(80.00000000000001, 12%, 4.901960784313726%, 1);
+  --red2-1: hsla(90, 8.333333333333332%, 9.411764705882353%, 1);
+  --red2-2: hsla(90, 5.7142857142857135%, 13.725490196078432%, 1);
+  --red2-3: hsla(96.00000000000001, 5.376344086021509%, 18.23529411764706%, 1);
+  --red2-4: hsla(95.99999999999997, 4.347826086956519%, 22.54901960784314%, 1);
+  --red2-5: hsla(116, 93.10344827586205%, 71.56862745098039%, 1);
+  --red2-6: hsla(116.07476635514018, 93.04347826086952%, 77.45098039215685%, 1);
+  --red2-7: hsla(116.96202531645571, 92.94117647058826%, 83.33333333333334%, 1);
+  --red2-8: hsla(118.84615384615385, 96.29629629629626%, 89.41176470588235%, 1);
+  --red2-9: hsla(124.6153846153846, 99.99999999999989%, 94.90196078431372%, 1);
+  --pink3-0: hsla(140, 12%, 4.901960784313726%, 1);
+  --pink3-1: hsla(135, 8.333333333333332%, 9.411764705882353%, 1);
+  --pink3-2: hsla(150, 5.7142857142857135%, 13.725490196078432%, 1);
+  --pink3-3: hsla(144, 5.376344086021509%, 18.23529411764706%, 1);
+  --pink3-4: hsla(144.00000000000003, 4.347826086956519%, 22.54901960784314%, 1);
+  --pink3-5: hsla(160.88888888888889, 93.10344827586205%, 71.56862745098039%, 1);
+  --pink3-6: hsla(161.11111111111111, 93.10344827586202%, 77.25490196078431%, 1);
+  --pink3-7: hsla(162, 93.02325581395351%, 83.13725490196079%, 1);
+  --pink3-8: hsla(163.33333333333334, 96.4285714285714%, 89.01960784313725%, 1);
+  --pink3-9: hsla(168.46153846153845, 99.99999999999989%, 94.90196078431372%, 1);
+  --purple4-0: hsla(180, 12%, 4.901960784313726%, 1);
+  --purple4-1: hsla(195, 8.333333333333332%, 9.411764705882353%, 1);
+  --purple4-2: hsla(195.00000000000006, 5.7142857142857135%, 13.725490196078432%, 1);
+  --purple4-3: hsla(192.00000000000003, 5.376344086021509%, 18.23529411764706%, 1);
+  --purple4-4: hsla(191.99999999999994, 4.347826086956519%, 22.54901960784314%, 1);
+  --purple4-5: hsla(205.77777777777777, 93.10344827586205%, 71.56862745098039%, 1);
+  --purple4-6: hsla(206.11111111111111, 93.10344827586202%, 77.25490196078431%, 1);
+  --purple4-7: hsla(207, 93.02325581395351%, 83.13725490196079%, 1);
+  --purple4-8: hsla(208.88888888888889, 96.4285714285714%, 89.01960784313725%, 1);
+  --purple4-9: hsla(214.6153846153846, 99.99999999999989%, 94.90196078431372%, 1);
+  --blue5-0: hsla(220, 12%, 4.901960784313726%, 1);
+  --blue5-1: hsla(225, 8.333333333333332%, 9.411764705882353%, 1);
+  --blue5-2: hsla(225.00000000000006, 5.7142857142857135%, 13.725490196078432%, 1);
+  --blue5-3: hsla(240, 5.376344086021509%, 18.23529411764706%, 1);
+  --blue5-4: hsla(240, 4.347826086956519%, 22.54901960784314%, 1);
+  --blue5-5: hsla(250.66666666666669, 93.10344827586205%, 71.56862745098039%, 1);
+  --blue5-6: hsla(251.66666666666669, 93.10344827586202%, 77.25490196078431%, 1);
+  --blue5-7: hsla(252, 93.02325581395351%, 83.13725490196079%, 1);
+  --blue5-8: hsla(254.44444444444443, 96.4285714285714%, 89.01960784313725%, 1);
+  --blue5-9: hsla(260.7692307692308, 99.99999999999989%, 94.90196078431372%, 1);
+  --teal6-0: hsla(280, 12%, 4.901960784313726%, 1);
+  --teal6-1: hsla(270, 8.333333333333332%, 9.411764705882353%, 1);
+  --teal6-2: hsla(270, 5.7142857142857135%, 13.725490196078432%, 1);
+  --teal6-3: hsla(276.00000000000006, 5.376344086021509%, 18.23529411764706%, 1);
+  --teal6-4: hsla(276, 4.347826086956519%, 22.54901960784314%, 1);
+  --teal6-5: hsla(295.55555555555554, 93.10344827586205%, 71.56862745098039%, 1);
+  --teal6-6: hsla(296.1111111111111, 93.10344827586202%, 77.25490196078431%, 1);
+  --teal6-7: hsla(297.72151898734177, 90.80459770114936%, 82.94117647058823%, 1);
+  --teal6-8: hsla(298.8461538461538, 89.6551724137931%, 88.62745098039215%, 1);
+  --teal6-9: hsla(304.6153846153846, 99.99999999999989%, 94.90196078431372%, 1);
+  --green7-0: hsla(320, 12%, 4.901960784313726%, 1);
+  --green7-1: hsla(330, 8.333333333333332%, 9.411764705882353%, 1);
+  --green7-2: hsla(315.00000000000006, 5.7142857142857135%, 13.725490196078432%, 1);
+  --green7-3: hsla(324, 5.376344086021509%, 18.23529411764706%, 1);
+  --green7-4: hsla(324, 4.347826086956519%, 22.54901960784314%, 1);
+  --green7-5: hsla(340.8888888888889, 93.10344827586205%, 71.56862745098039%, 1);
+  --green7-6: hsla(341.1111111111111, 93.10344827586202%, 77.25490196078431%, 1);
+  --green7-7: hsla(342, 93.02325581395351%, 83.13725490196079%, 1);
+  --green7-8: hsla(343.3333333333333, 96.4285714285714%, 89.01960784313725%, 1);
+  --green7-9: hsla(348.4615384615385, 99.99999999999989%, 94.90196078431372%, 1);
+  --yellow8-0: hsla(20, 12%, 4.901960784313726%, 1);
+  --yellow8-1: hsla(1, 8.333333333333332%, 9.411764705882353%, 1);
+  --yellow8-2: hsla(1, 5.7142857142857135%, 13.725490196078432%, 1);
+  --yellow8-3: hsla(1, 5.376344086021509%, 18.23529411764706%, 1);
+  --yellow8-4: hsla(1, 4.347826086956519%, 22.54901960784314%, 1);
+  --yellow8-5: hsla(25.777777777777786, 93.10344827586205%, 71.56862745098039%, 1);
+  --yellow8-6: hsla(26.666666666666668, 93.10344827586202%, 77.25490196078431%, 1);
+  --yellow8-7: hsla(26.99999999999999, 93.02325581395351%, 83.13725490196079%, 1);
+  --yellow8-8: hsla(28.88888888888888, 96.4285714285714%, 89.01960784313725%, 1);
+  --yellow8-9: hsla(34.615384615384635, 99.99999999999989%, 94.90196078431372%, 1);
+  --bg9-0: hsla(230.99999999999997, 9.803921568627452%, 40%, 1);
+  --bg9-1: hsla(228.75, 8.24742268041237%, 38.03921568627451%, 1);
+  --bg9-2: hsla(230.00000000000003, 6.521739130434781%, 36.078431372549026%, 1);
+  --bg9-3: hsla(225.00000000000006, 4.597701149425287%, 34.11764705882353%, 1);
+  --bg9-4: hsla(225.00000000000006, 2.4390243902439024%, 32.15686274509804%, 1);
+  --bg9-5: hsla(251.4285714285714, 48.837209302325654%, 91.5686274509804%, 1);
+  --bg9-6: hsla(246.31578947368428, 51.351351351351425%, 92.74509803921569%, 1);
+  --bg9-7: hsla(247.05882352941174, 51.515151515151516%, 93.52941176470588%, 1);
+  --bg9-8: hsla(247.99999999999997, 51.72413793103448%, 94.31372549019608%, 1);
+  --bg9-9: hsla(249.2307692307692, 51.99999999999988%, 95.09803921568627%, 1); }
+
+.fill-0-0 {
+  fill: var(--c0-0); }
+
+.bg-0-0 {
+  background-color: var(--c0-0); }
+
+.stroke-0-0 {
+  stroke: var(--c0-0); }
+
+.outline-0-0 {
+  outline-color: var(--c0-0); }
+
+.color-0-0 {
+  color: var(--c0-0); }
+
+.border-0-0 {
+  border-color: var(--c0-0); }
+
+.all-0-0 {
+  fill: var(--c0-0);
+  background-color: var(--c0-0);
+  stroke: var(--c0-0);
+  outline-color: var(--c0-0);
+  color: var(--c0-0);
+  border-color: var(--c0-0); }
+
+.fill-0-1 {
+  fill: var(--c0-1); }
+
+.bg-0-1 {
+  background-color: var(--c0-1); }
+
+.stroke-0-1 {
+  stroke: var(--c0-1); }
+
+.outline-0-1 {
+  outline-color: var(--c0-1); }
+
+.color-0-1 {
+  color: var(--c0-1); }
+
+.border-0-1 {
+  border-color: var(--c0-1); }
+
+.all-0-1 {
+  fill: var(--c0-1);
+  background-color: var(--c0-1);
+  stroke: var(--c0-1);
+  outline-color: var(--c0-1);
+  color: var(--c0-1);
+  border-color: var(--c0-1); }
+
+.fill-0-2 {
+  fill: var(--c0-2); }
+
+.bg-0-2 {
+  background-color: var(--c0-2); }
+
+.stroke-0-2 {
+  stroke: var(--c0-2); }
+
+.outline-0-2 {
+  outline-color: var(--c0-2); }
+
+.color-0-2 {
+  color: var(--c0-2); }
+
+.border-0-2 {
+  border-color: var(--c0-2); }
+
+.all-0-2 {
+  fill: var(--c0-2);
+  background-color: var(--c0-2);
+  stroke: var(--c0-2);
+  outline-color: var(--c0-2);
+  color: var(--c0-2);
+  border-color: var(--c0-2); }
+
+.fill-0-3 {
+  fill: var(--c0-3); }
+
+.bg-0-3 {
+  background-color: var(--c0-3); }
+
+.stroke-0-3 {
+  stroke: var(--c0-3); }
+
+.outline-0-3 {
+  outline-color: var(--c0-3); }
+
+.color-0-3 {
+  color: var(--c0-3); }
+
+.border-0-3 {
+  border-color: var(--c0-3); }
+
+.all-0-3 {
+  fill: var(--c0-3);
+  background-color: var(--c0-3);
+  stroke: var(--c0-3);
+  outline-color: var(--c0-3);
+  color: var(--c0-3);
+  border-color: var(--c0-3); }
+
+.fill-0-4 {
+  fill: var(--c0-4); }
+
+.bg-0-4 {
+  background-color: var(--c0-4); }
+
+.stroke-0-4 {
+  stroke: var(--c0-4); }
+
+.outline-0-4 {
+  outline-color: var(--c0-4); }
+
+.color-0-4 {
+  color: var(--c0-4); }
+
+.border-0-4 {
+  border-color: var(--c0-4); }
+
+.all-0-4 {
+  fill: var(--c0-4);
+  background-color: var(--c0-4);
+  stroke: var(--c0-4);
+  outline-color: var(--c0-4);
+  color: var(--c0-4);
+  border-color: var(--c0-4); }
+
+.fill-0-5 {
+  fill: var(--c0-5); }
+
+.bg-0-5 {
+  background-color: var(--c0-5); }
+
+.stroke-0-5 {
+  stroke: var(--c0-5); }
+
+.outline-0-5 {
+  outline-color: var(--c0-5); }
+
+.color-0-5 {
+  color: var(--c0-5); }
+
+.border-0-5 {
+  border-color: var(--c0-5); }
+
+.all-0-5 {
+  fill: var(--c0-5);
+  background-color: var(--c0-5);
+  stroke: var(--c0-5);
+  outline-color: var(--c0-5);
+  color: var(--c0-5);
+  border-color: var(--c0-5); }
+
+.fill-0-6 {
+  fill: var(--c0-6); }
+
+.bg-0-6 {
+  background-color: var(--c0-6); }
+
+.stroke-0-6 {
+  stroke: var(--c0-6); }
+
+.outline-0-6 {
+  outline-color: var(--c0-6); }
+
+.color-0-6 {
+  color: var(--c0-6); }
+
+.border-0-6 {
+  border-color: var(--c0-6); }
+
+.all-0-6 {
+  fill: var(--c0-6);
+  background-color: var(--c0-6);
+  stroke: var(--c0-6);
+  outline-color: var(--c0-6);
+  color: var(--c0-6);
+  border-color: var(--c0-6); }
+
+.fill-0-7 {
+  fill: var(--c0-7); }
+
+.bg-0-7 {
+  background-color: var(--c0-7); }
+
+.stroke-0-7 {
+  stroke: var(--c0-7); }
+
+.outline-0-7 {
+  outline-color: var(--c0-7); }
+
+.color-0-7 {
+  color: var(--c0-7); }
+
+.border-0-7 {
+  border-color: var(--c0-7); }
+
+.all-0-7 {
+  fill: var(--c0-7);
+  background-color: var(--c0-7);
+  stroke: var(--c0-7);
+  outline-color: var(--c0-7);
+  color: var(--c0-7);
+  border-color: var(--c0-7); }
+
+.fill-0-8 {
+  fill: var(--c0-8); }
+
+.bg-0-8 {
+  background-color: var(--c0-8); }
+
+.stroke-0-8 {
+  stroke: var(--c0-8); }
+
+.outline-0-8 {
+  outline-color: var(--c0-8); }
+
+.color-0-8 {
+  color: var(--c0-8); }
+
+.border-0-8 {
+  border-color: var(--c0-8); }
+
+.all-0-8 {
+  fill: var(--c0-8);
+  background-color: var(--c0-8);
+  stroke: var(--c0-8);
+  outline-color: var(--c0-8);
+  color: var(--c0-8);
+  border-color: var(--c0-8); }
+
+.fill-0-9 {
+  fill: var(--c0-9); }
+
+.bg-0-9 {
+  background-color: var(--c0-9); }
+
+.stroke-0-9 {
+  stroke: var(--c0-9); }
+
+.outline-0-9 {
+  outline-color: var(--c0-9); }
+
+.color-0-9 {
+  color: var(--c0-9); }
+
+.border-0-9 {
+  border-color: var(--c0-9); }
+
+.all-0-9 {
+  fill: var(--c0-9);
+  background-color: var(--c0-9);
+  stroke: var(--c0-9);
+  outline-color: var(--c0-9);
+  color: var(--c0-9);
+  border-color: var(--c0-9); }
+
+.fill-1-0 {
+  fill: var(--orange1-0); }
+
+.bg-1-0 {
+  background-color: var(--orange1-0); }
+
+.stroke-1-0 {
+  stroke: var(--orange1-0); }
+
+.outline-1-0 {
+  outline-color: var(--orange1-0); }
+
+.color-1-0 {
+  color: var(--orange1-0); }
+
+.border-1-0 {
+  border-color: var(--orange1-0); }
+
+.all-1-0 {
+  fill: var(--orange1-0);
+  background-color: var(--orange1-0);
+  stroke: var(--orange1-0);
+  outline-color: var(--orange1-0);
+  color: var(--orange1-0);
+  border-color: var(--orange1-0); }
+
+.fill-1-1 {
+  fill: var(--orange1-1); }
+
+.bg-1-1 {
+  background-color: var(--orange1-1); }
+
+.stroke-1-1 {
+  stroke: var(--orange1-1); }
+
+.outline-1-1 {
+  outline-color: var(--orange1-1); }
+
+.color-1-1 {
+  color: var(--orange1-1); }
+
+.border-1-1 {
+  border-color: var(--orange1-1); }
+
+.all-1-1 {
+  fill: var(--orange1-1);
+  background-color: var(--orange1-1);
+  stroke: var(--orange1-1);
+  outline-color: var(--orange1-1);
+  color: var(--orange1-1);
+  border-color: var(--orange1-1); }
+
+.fill-1-2 {
+  fill: var(--orange1-2); }
+
+.bg-1-2 {
+  background-color: var(--orange1-2); }
+
+.stroke-1-2 {
+  stroke: var(--orange1-2); }
+
+.outline-1-2 {
+  outline-color: var(--orange1-2); }
+
+.color-1-2 {
+  color: var(--orange1-2); }
+
+.border-1-2 {
+  border-color: var(--orange1-2); }
+
+.all-1-2 {
+  fill: var(--orange1-2);
+  background-color: var(--orange1-2);
+  stroke: var(--orange1-2);
+  outline-color: var(--orange1-2);
+  color: var(--orange1-2);
+  border-color: var(--orange1-2); }
+
+.fill-1-3 {
+  fill: var(--orange1-3); }
+
+.bg-1-3 {
+  background-color: var(--orange1-3); }
+
+.stroke-1-3 {
+  stroke: var(--orange1-3); }
+
+.outline-1-3 {
+  outline-color: var(--orange1-3); }
+
+.color-1-3 {
+  color: var(--orange1-3); }
+
+.border-1-3 {
+  border-color: var(--orange1-3); }
+
+.all-1-3 {
+  fill: var(--orange1-3);
+  background-color: var(--orange1-3);
+  stroke: var(--orange1-3);
+  outline-color: var(--orange1-3);
+  color: var(--orange1-3);
+  border-color: var(--orange1-3); }
+
+.fill-1-4 {
+  fill: var(--orange1-4); }
+
+.bg-1-4 {
+  background-color: var(--orange1-4); }
+
+.stroke-1-4 {
+  stroke: var(--orange1-4); }
+
+.outline-1-4 {
+  outline-color: var(--orange1-4); }
+
+.color-1-4 {
+  color: var(--orange1-4); }
+
+.border-1-4 {
+  border-color: var(--orange1-4); }
+
+.all-1-4 {
+  fill: var(--orange1-4);
+  background-color: var(--orange1-4);
+  stroke: var(--orange1-4);
+  outline-color: var(--orange1-4);
+  color: var(--orange1-4);
+  border-color: var(--orange1-4); }
+
+.fill-1-5 {
+  fill: var(--orange1-5); }
+
+.bg-1-5 {
+  background-color: var(--orange1-5); }
+
+.stroke-1-5 {
+  stroke: var(--orange1-5); }
+
+.outline-1-5 {
+  outline-color: var(--orange1-5); }
+
+.color-1-5 {
+  color: var(--orange1-5); }
+
+.border-1-5 {
+  border-color: var(--orange1-5); }
+
+.all-1-5 {
+  fill: var(--orange1-5);
+  background-color: var(--orange1-5);
+  stroke: var(--orange1-5);
+  outline-color: var(--orange1-5);
+  color: var(--orange1-5);
+  border-color: var(--orange1-5); }
+
+.fill-1-6 {
+  fill: var(--orange1-6); }
+
+.bg-1-6 {
+  background-color: var(--orange1-6); }
+
+.stroke-1-6 {
+  stroke: var(--orange1-6); }
+
+.outline-1-6 {
+  outline-color: var(--orange1-6); }
+
+.color-1-6 {
+  color: var(--orange1-6); }
+
+.border-1-6 {
+  border-color: var(--orange1-6); }
+
+.all-1-6 {
+  fill: var(--orange1-6);
+  background-color: var(--orange1-6);
+  stroke: var(--orange1-6);
+  outline-color: var(--orange1-6);
+  color: var(--orange1-6);
+  border-color: var(--orange1-6); }
+
+.fill-1-7 {
+  fill: var(--orange1-7); }
+
+.bg-1-7 {
+  background-color: var(--orange1-7); }
+
+.stroke-1-7 {
+  stroke: var(--orange1-7); }
+
+.outline-1-7 {
+  outline-color: var(--orange1-7); }
+
+.color-1-7 {
+  color: var(--orange1-7); }
+
+.border-1-7 {
+  border-color: var(--orange1-7); }
+
+.all-1-7 {
+  fill: var(--orange1-7);
+  background-color: var(--orange1-7);
+  stroke: var(--orange1-7);
+  outline-color: var(--orange1-7);
+  color: var(--orange1-7);
+  border-color: var(--orange1-7); }
+
+.fill-1-8 {
+  fill: var(--orange1-8); }
+
+.bg-1-8 {
+  background-color: var(--orange1-8); }
+
+.stroke-1-8 {
+  stroke: var(--orange1-8); }
+
+.outline-1-8 {
+  outline-color: var(--orange1-8); }
+
+.color-1-8 {
+  color: var(--orange1-8); }
+
+.border-1-8 {
+  border-color: var(--orange1-8); }
+
+.all-1-8 {
+  fill: var(--orange1-8);
+  background-color: var(--orange1-8);
+  stroke: var(--orange1-8);
+  outline-color: var(--orange1-8);
+  color: var(--orange1-8);
+  border-color: var(--orange1-8); }
+
+.fill-1-9 {
+  fill: var(--orange1-9); }
+
+.bg-1-9 {
+  background-color: var(--orange1-9); }
+
+.stroke-1-9 {
+  stroke: var(--orange1-9); }
+
+.outline-1-9 {
+  outline-color: var(--orange1-9); }
+
+.color-1-9 {
+  color: var(--orange1-9); }
+
+.border-1-9 {
+  border-color: var(--orange1-9); }
+
+.all-1-9 {
+  fill: var(--orange1-9);
+  background-color: var(--orange1-9);
+  stroke: var(--orange1-9);
+  outline-color: var(--orange1-9);
+  color: var(--orange1-9);
+  border-color: var(--orange1-9); }
+
+.fill-2-0 {
+  fill: var(--red2-0); }
+
+.bg-2-0 {
+  background-color: var(--red2-0); }
+
+.stroke-2-0 {
+  stroke: var(--red2-0); }
+
+.outline-2-0 {
+  outline-color: var(--red2-0); }
+
+.color-2-0 {
+  color: var(--red2-0); }
+
+.border-2-0 {
+  border-color: var(--red2-0); }
+
+.all-2-0 {
+  fill: var(--red2-0);
+  background-color: var(--red2-0);
+  stroke: var(--red2-0);
+  outline-color: var(--red2-0);
+  color: var(--red2-0);
+  border-color: var(--red2-0); }
+
+.fill-2-1 {
+  fill: var(--red2-1); }
+
+.bg-2-1 {
+  background-color: var(--red2-1); }
+
+.stroke-2-1 {
+  stroke: var(--red2-1); }
+
+.outline-2-1 {
+  outline-color: var(--red2-1); }
+
+.color-2-1 {
+  color: var(--red2-1); }
+
+.border-2-1 {
+  border-color: var(--red2-1); }
+
+.all-2-1 {
+  fill: var(--red2-1);
+  background-color: var(--red2-1);
+  stroke: var(--red2-1);
+  outline-color: var(--red2-1);
+  color: var(--red2-1);
+  border-color: var(--red2-1); }
+
+.fill-2-2 {
+  fill: var(--red2-2); }
+
+.bg-2-2 {
+  background-color: var(--red2-2); }
+
+.stroke-2-2 {
+  stroke: var(--red2-2); }
+
+.outline-2-2 {
+  outline-color: var(--red2-2); }
+
+.color-2-2 {
+  color: var(--red2-2); }
+
+.border-2-2 {
+  border-color: var(--red2-2); }
+
+.all-2-2 {
+  fill: var(--red2-2);
+  background-color: var(--red2-2);
+  stroke: var(--red2-2);
+  outline-color: var(--red2-2);
+  color: var(--red2-2);
+  border-color: var(--red2-2); }
+
+.fill-2-3 {
+  fill: var(--red2-3); }
+
+.bg-2-3 {
+  background-color: var(--red2-3); }
+
+.stroke-2-3 {
+  stroke: var(--red2-3); }
+
+.outline-2-3 {
+  outline-color: var(--red2-3); }
+
+.color-2-3 {
+  color: var(--red2-3); }
+
+.border-2-3 {
+  border-color: var(--red2-3); }
+
+.all-2-3 {
+  fill: var(--red2-3);
+  background-color: var(--red2-3);
+  stroke: var(--red2-3);
+  outline-color: var(--red2-3);
+  color: var(--red2-3);
+  border-color: var(--red2-3); }
+
+.fill-2-4 {
+  fill: var(--red2-4); }
+
+.bg-2-4 {
+  background-color: var(--red2-4); }
+
+.stroke-2-4 {
+  stroke: var(--red2-4); }
+
+.outline-2-4 {
+  outline-color: var(--red2-4); }
+
+.color-2-4 {
+  color: var(--red2-4); }
+
+.border-2-4 {
+  border-color: var(--red2-4); }
+
+.all-2-4 {
+  fill: var(--red2-4);
+  background-color: var(--red2-4);
+  stroke: var(--red2-4);
+  outline-color: var(--red2-4);
+  color: var(--red2-4);
+  border-color: var(--red2-4); }
+
+.fill-2-5 {
+  fill: var(--red2-5); }
+
+.bg-2-5 {
+  background-color: var(--red2-5); }
+
+.stroke-2-5 {
+  stroke: var(--red2-5); }
+
+.outline-2-5 {
+  outline-color: var(--red2-5); }
+
+.color-2-5 {
+  color: var(--red2-5); }
+
+.border-2-5 {
+  border-color: var(--red2-5); }
+
+.all-2-5 {
+  fill: var(--red2-5);
+  background-color: var(--red2-5);
+  stroke: var(--red2-5);
+  outline-color: var(--red2-5);
+  color: var(--red2-5);
+  border-color: var(--red2-5); }
+
+.fill-2-6 {
+  fill: var(--red2-6); }
+
+.bg-2-6 {
+  background-color: var(--red2-6); }
+
+.stroke-2-6 {
+  stroke: var(--red2-6); }
+
+.outline-2-6 {
+  outline-color: var(--red2-6); }
+
+.color-2-6 {
+  color: var(--red2-6); }
+
+.border-2-6 {
+  border-color: var(--red2-6); }
+
+.all-2-6 {
+  fill: var(--red2-6);
+  background-color: var(--red2-6);
+  stroke: var(--red2-6);
+  outline-color: var(--red2-6);
+  color: var(--red2-6);
+  border-color: var(--red2-6); }
+
+.fill-2-7 {
+  fill: var(--red2-7); }
+
+.bg-2-7 {
+  background-color: var(--red2-7); }
+
+.stroke-2-7 {
+  stroke: var(--red2-7); }
+
+.outline-2-7 {
+  outline-color: var(--red2-7); }
+
+.color-2-7 {
+  color: var(--red2-7); }
+
+.border-2-7 {
+  border-color: var(--red2-7); }
+
+.all-2-7 {
+  fill: var(--red2-7);
+  background-color: var(--red2-7);
+  stroke: var(--red2-7);
+  outline-color: var(--red2-7);
+  color: var(--red2-7);
+  border-color: var(--red2-7); }
+
+.fill-2-8 {
+  fill: var(--red2-8); }
+
+.bg-2-8 {
+  background-color: var(--red2-8); }
+
+.stroke-2-8 {
+  stroke: var(--red2-8); }
+
+.outline-2-8 {
+  outline-color: var(--red2-8); }
+
+.color-2-8 {
+  color: var(--red2-8); }
+
+.border-2-8 {
+  border-color: var(--red2-8); }
+
+.all-2-8 {
+  fill: var(--red2-8);
+  background-color: var(--red2-8);
+  stroke: var(--red2-8);
+  outline-color: var(--red2-8);
+  color: var(--red2-8);
+  border-color: var(--red2-8); }
+
+.fill-2-9 {
+  fill: var(--red2-9); }
+
+.bg-2-9 {
+  background-color: var(--red2-9); }
+
+.stroke-2-9 {
+  stroke: var(--red2-9); }
+
+.outline-2-9 {
+  outline-color: var(--red2-9); }
+
+.color-2-9 {
+  color: var(--red2-9); }
+
+.border-2-9 {
+  border-color: var(--red2-9); }
+
+.all-2-9 {
+  fill: var(--red2-9);
+  background-color: var(--red2-9);
+  stroke: var(--red2-9);
+  outline-color: var(--red2-9);
+  color: var(--red2-9);
+  border-color: var(--red2-9); }
+
+.fill-3-0 {
+  fill: var(--pink3-0); }
+
+.bg-3-0 {
+  background-color: var(--pink3-0); }
+
+.stroke-3-0 {
+  stroke: var(--pink3-0); }
+
+.outline-3-0 {
+  outline-color: var(--pink3-0); }
+
+.color-3-0 {
+  color: var(--pink3-0); }
+
+.border-3-0 {
+  border-color: var(--pink3-0); }
+
+.all-3-0 {
+  fill: var(--pink3-0);
+  background-color: var(--pink3-0);
+  stroke: var(--pink3-0);
+  outline-color: var(--pink3-0);
+  color: var(--pink3-0);
+  border-color: var(--pink3-0); }
+
+.fill-3-1 {
+  fill: var(--pink3-1); }
+
+.bg-3-1 {
+  background-color: var(--pink3-1); }
+
+.stroke-3-1 {
+  stroke: var(--pink3-1); }
+
+.outline-3-1 {
+  outline-color: var(--pink3-1); }
+
+.color-3-1 {
+  color: var(--pink3-1); }
+
+.border-3-1 {
+  border-color: var(--pink3-1); }
+
+.all-3-1 {
+  fill: var(--pink3-1);
+  background-color: var(--pink3-1);
+  stroke: var(--pink3-1);
+  outline-color: var(--pink3-1);
+  color: var(--pink3-1);
+  border-color: var(--pink3-1); }
+
+.fill-3-2 {
+  fill: var(--pink3-2); }
+
+.bg-3-2 {
+  background-color: var(--pink3-2); }
+
+.stroke-3-2 {
+  stroke: var(--pink3-2); }
+
+.outline-3-2 {
+  outline-color: var(--pink3-2); }
+
+.color-3-2 {
+  color: var(--pink3-2); }
+
+.border-3-2 {
+  border-color: var(--pink3-2); }
+
+.all-3-2 {
+  fill: var(--pink3-2);
+  background-color: var(--pink3-2);
+  stroke: var(--pink3-2);
+  outline-color: var(--pink3-2);
+  color: var(--pink3-2);
+  border-color: var(--pink3-2); }
+
+.fill-3-3 {
+  fill: var(--pink3-3); }
+
+.bg-3-3 {
+  background-color: var(--pink3-3); }
+
+.stroke-3-3 {
+  stroke: var(--pink3-3); }
+
+.outline-3-3 {
+  outline-color: var(--pink3-3); }
+
+.color-3-3 {
+  color: var(--pink3-3); }
+
+.border-3-3 {
+  border-color: var(--pink3-3); }
+
+.all-3-3 {
+  fill: var(--pink3-3);
+  background-color: var(--pink3-3);
+  stroke: var(--pink3-3);
+  outline-color: var(--pink3-3);
+  color: var(--pink3-3);
+  border-color: var(--pink3-3); }
+
+.fill-3-4 {
+  fill: var(--pink3-4); }
+
+.bg-3-4 {
+  background-color: var(--pink3-4); }
+
+.stroke-3-4 {
+  stroke: var(--pink3-4); }
+
+.outline-3-4 {
+  outline-color: var(--pink3-4); }
+
+.color-3-4 {
+  color: var(--pink3-4); }
+
+.border-3-4 {
+  border-color: var(--pink3-4); }
+
+.all-3-4 {
+  fill: var(--pink3-4);
+  background-color: var(--pink3-4);
+  stroke: var(--pink3-4);
+  outline-color: var(--pink3-4);
+  color: var(--pink3-4);
+  border-color: var(--pink3-4); }
+
+.fill-3-5 {
+  fill: var(--pink3-5); }
+
+.bg-3-5 {
+  background-color: var(--pink3-5); }
+
+.stroke-3-5 {
+  stroke: var(--pink3-5); }
+
+.outline-3-5 {
+  outline-color: var(--pink3-5); }
+
+.color-3-5 {
+  color: var(--pink3-5); }
+
+.border-3-5 {
+  border-color: var(--pink3-5); }
+
+.all-3-5 {
+  fill: var(--pink3-5);
+  background-color: var(--pink3-5);
+  stroke: var(--pink3-5);
+  outline-color: var(--pink3-5);
+  color: var(--pink3-5);
+  border-color: var(--pink3-5); }
+
+.fill-3-6 {
+  fill: var(--pink3-6); }
+
+.bg-3-6 {
+  background-color: var(--pink3-6); }
+
+.stroke-3-6 {
+  stroke: var(--pink3-6); }
+
+.outline-3-6 {
+  outline-color: var(--pink3-6); }
+
+.color-3-6 {
+  color: var(--pink3-6); }
+
+.border-3-6 {
+  border-color: var(--pink3-6); }
+
+.all-3-6 {
+  fill: var(--pink3-6);
+  background-color: var(--pink3-6);
+  stroke: var(--pink3-6);
+  outline-color: var(--pink3-6);
+  color: var(--pink3-6);
+  border-color: var(--pink3-6); }
+
+.fill-3-7 {
+  fill: var(--pink3-7); }
+
+.bg-3-7 {
+  background-color: var(--pink3-7); }
+
+.stroke-3-7 {
+  stroke: var(--pink3-7); }
+
+.outline-3-7 {
+  outline-color: var(--pink3-7); }
+
+.color-3-7 {
+  color: var(--pink3-7); }
+
+.border-3-7 {
+  border-color: var(--pink3-7); }
+
+.all-3-7 {
+  fill: var(--pink3-7);
+  background-color: var(--pink3-7);
+  stroke: var(--pink3-7);
+  outline-color: var(--pink3-7);
+  color: var(--pink3-7);
+  border-color: var(--pink3-7); }
+
+.fill-3-8 {
+  fill: var(--pink3-8); }
+
+.bg-3-8 {
+  background-color: var(--pink3-8); }
+
+.stroke-3-8 {
+  stroke: var(--pink3-8); }
+
+.outline-3-8 {
+  outline-color: var(--pink3-8); }
+
+.color-3-8 {
+  color: var(--pink3-8); }
+
+.border-3-8 {
+  border-color: var(--pink3-8); }
+
+.all-3-8 {
+  fill: var(--pink3-8);
+  background-color: var(--pink3-8);
+  stroke: var(--pink3-8);
+  outline-color: var(--pink3-8);
+  color: var(--pink3-8);
+  border-color: var(--pink3-8); }
+
+.fill-3-9 {
+  fill: var(--pink3-9); }
+
+.bg-3-9 {
+  background-color: var(--pink3-9); }
+
+.stroke-3-9 {
+  stroke: var(--pink3-9); }
+
+.outline-3-9 {
+  outline-color: var(--pink3-9); }
+
+.color-3-9 {
+  color: var(--pink3-9); }
+
+.border-3-9 {
+  border-color: var(--pink3-9); }
+
+.all-3-9 {
+  fill: var(--pink3-9);
+  background-color: var(--pink3-9);
+  stroke: var(--pink3-9);
+  outline-color: var(--pink3-9);
+  color: var(--pink3-9);
+  border-color: var(--pink3-9); }
+
+.fill-4-0 {
+  fill: var(--purple4-0); }
+
+.bg-4-0 {
+  background-color: var(--purple4-0); }
+
+.stroke-4-0 {
+  stroke: var(--purple4-0); }
+
+.outline-4-0 {
+  outline-color: var(--purple4-0); }
+
+.color-4-0 {
+  color: var(--purple4-0); }
+
+.border-4-0 {
+  border-color: var(--purple4-0); }
+
+.all-4-0 {
+  fill: var(--purple4-0);
+  background-color: var(--purple4-0);
+  stroke: var(--purple4-0);
+  outline-color: var(--purple4-0);
+  color: var(--purple4-0);
+  border-color: var(--purple4-0); }
+
+.fill-4-1 {
+  fill: var(--purple4-1); }
+
+.bg-4-1 {
+  background-color: var(--purple4-1); }
+
+.stroke-4-1 {
+  stroke: var(--purple4-1); }
+
+.outline-4-1 {
+  outline-color: var(--purple4-1); }
+
+.color-4-1 {
+  color: var(--purple4-1); }
+
+.border-4-1 {
+  border-color: var(--purple4-1); }
+
+.all-4-1 {
+  fill: var(--purple4-1);
+  background-color: var(--purple4-1);
+  stroke: var(--purple4-1);
+  outline-color: var(--purple4-1);
+  color: var(--purple4-1);
+  border-color: var(--purple4-1); }
+
+.fill-4-2 {
+  fill: var(--purple4-2); }
+
+.bg-4-2 {
+  background-color: var(--purple4-2); }
+
+.stroke-4-2 {
+  stroke: var(--purple4-2); }
+
+.outline-4-2 {
+  outline-color: var(--purple4-2); }
+
+.color-4-2 {
+  color: var(--purple4-2); }
+
+.border-4-2 {
+  border-color: var(--purple4-2); }
+
+.all-4-2 {
+  fill: var(--purple4-2);
+  background-color: var(--purple4-2);
+  stroke: var(--purple4-2);
+  outline-color: var(--purple4-2);
+  color: var(--purple4-2);
+  border-color: var(--purple4-2); }
+
+.fill-4-3 {
+  fill: var(--purple4-3); }
+
+.bg-4-3 {
+  background-color: var(--purple4-3); }
+
+.stroke-4-3 {
+  stroke: var(--purple4-3); }
+
+.outline-4-3 {
+  outline-color: var(--purple4-3); }
+
+.color-4-3 {
+  color: var(--purple4-3); }
+
+.border-4-3 {
+  border-color: var(--purple4-3); }
+
+.all-4-3 {
+  fill: var(--purple4-3);
+  background-color: var(--purple4-3);
+  stroke: var(--purple4-3);
+  outline-color: var(--purple4-3);
+  color: var(--purple4-3);
+  border-color: var(--purple4-3); }
+
+.fill-4-4 {
+  fill: var(--purple4-4); }
+
+.bg-4-4 {
+  background-color: var(--purple4-4); }
+
+.stroke-4-4 {
+  stroke: var(--purple4-4); }
+
+.outline-4-4 {
+  outline-color: var(--purple4-4); }
+
+.color-4-4 {
+  color: var(--purple4-4); }
+
+.border-4-4 {
+  border-color: var(--purple4-4); }
+
+.all-4-4 {
+  fill: var(--purple4-4);
+  background-color: var(--purple4-4);
+  stroke: var(--purple4-4);
+  outline-color: var(--purple4-4);
+  color: var(--purple4-4);
+  border-color: var(--purple4-4); }
+
+.fill-4-5 {
+  fill: var(--purple4-5); }
+
+.bg-4-5 {
+  background-color: var(--purple4-5); }
+
+.stroke-4-5 {
+  stroke: var(--purple4-5); }
+
+.outline-4-5 {
+  outline-color: var(--purple4-5); }
+
+.color-4-5 {
+  color: var(--purple4-5); }
+
+.border-4-5 {
+  border-color: var(--purple4-5); }
+
+.all-4-5 {
+  fill: var(--purple4-5);
+  background-color: var(--purple4-5);
+  stroke: var(--purple4-5);
+  outline-color: var(--purple4-5);
+  color: var(--purple4-5);
+  border-color: var(--purple4-5); }
+
+.fill-4-6 {
+  fill: var(--purple4-6); }
+
+.bg-4-6 {
+  background-color: var(--purple4-6); }
+
+.stroke-4-6 {
+  stroke: var(--purple4-6); }
+
+.outline-4-6 {
+  outline-color: var(--purple4-6); }
+
+.color-4-6 {
+  color: var(--purple4-6); }
+
+.border-4-6 {
+  border-color: var(--purple4-6); }
+
+.all-4-6 {
+  fill: var(--purple4-6);
+  background-color: var(--purple4-6);
+  stroke: var(--purple4-6);
+  outline-color: var(--purple4-6);
+  color: var(--purple4-6);
+  border-color: var(--purple4-6); }
+
+.fill-4-7 {
+  fill: var(--purple4-7); }
+
+.bg-4-7 {
+  background-color: var(--purple4-7); }
+
+.stroke-4-7 {
+  stroke: var(--purple4-7); }
+
+.outline-4-7 {
+  outline-color: var(--purple4-7); }
+
+.color-4-7 {
+  color: var(--purple4-7); }
+
+.border-4-7 {
+  border-color: var(--purple4-7); }
+
+.all-4-7 {
+  fill: var(--purple4-7);
+  background-color: var(--purple4-7);
+  stroke: var(--purple4-7);
+  outline-color: var(--purple4-7);
+  color: var(--purple4-7);
+  border-color: var(--purple4-7); }
+
+.fill-4-8 {
+  fill: var(--purple4-8); }
+
+.bg-4-8 {
+  background-color: var(--purple4-8); }
+
+.stroke-4-8 {
+  stroke: var(--purple4-8); }
+
+.outline-4-8 {
+  outline-color: var(--purple4-8); }
+
+.color-4-8 {
+  color: var(--purple4-8); }
+
+.border-4-8 {
+  border-color: var(--purple4-8); }
+
+.all-4-8 {
+  fill: var(--purple4-8);
+  background-color: var(--purple4-8);
+  stroke: var(--purple4-8);
+  outline-color: var(--purple4-8);
+  color: var(--purple4-8);
+  border-color: var(--purple4-8); }
+
+.fill-4-9 {
+  fill: var(--purple4-9); }
+
+.bg-4-9 {
+  background-color: var(--purple4-9); }
+
+.stroke-4-9 {
+  stroke: var(--purple4-9); }
+
+.outline-4-9 {
+  outline-color: var(--purple4-9); }
+
+.color-4-9 {
+  color: var(--purple4-9); }
+
+.border-4-9 {
+  border-color: var(--purple4-9); }
+
+.all-4-9 {
+  fill: var(--purple4-9);
+  background-color: var(--purple4-9);
+  stroke: var(--purple4-9);
+  outline-color: var(--purple4-9);
+  color: var(--purple4-9);
+  border-color: var(--purple4-9); }
+
+.fill-5-0 {
+  fill: var(--blue5-0); }
+
+.bg-5-0 {
+  background-color: var(--blue5-0); }
+
+.stroke-5-0 {
+  stroke: var(--blue5-0); }
+
+.outline-5-0 {
+  outline-color: var(--blue5-0); }
+
+.color-5-0 {
+  color: var(--blue5-0); }
+
+.border-5-0 {
+  border-color: var(--blue5-0); }
+
+.all-5-0 {
+  fill: var(--blue5-0);
+  background-color: var(--blue5-0);
+  stroke: var(--blue5-0);
+  outline-color: var(--blue5-0);
+  color: var(--blue5-0);
+  border-color: var(--blue5-0); }
+
+.fill-5-1 {
+  fill: var(--blue5-1); }
+
+.bg-5-1 {
+  background-color: var(--blue5-1); }
+
+.stroke-5-1 {
+  stroke: var(--blue5-1); }
+
+.outline-5-1 {
+  outline-color: var(--blue5-1); }
+
+.color-5-1 {
+  color: var(--blue5-1); }
+
+.border-5-1 {
+  border-color: var(--blue5-1); }
+
+.all-5-1 {
+  fill: var(--blue5-1);
+  background-color: var(--blue5-1);
+  stroke: var(--blue5-1);
+  outline-color: var(--blue5-1);
+  color: var(--blue5-1);
+  border-color: var(--blue5-1); }
+
+.fill-5-2 {
+  fill: var(--blue5-2); }
+
+.bg-5-2 {
+  background-color: var(--blue5-2); }
+
+.stroke-5-2 {
+  stroke: var(--blue5-2); }
+
+.outline-5-2 {
+  outline-color: var(--blue5-2); }
+
+.color-5-2 {
+  color: var(--blue5-2); }
+
+.border-5-2 {
+  border-color: var(--blue5-2); }
+
+.all-5-2 {
+  fill: var(--blue5-2);
+  background-color: var(--blue5-2);
+  stroke: var(--blue5-2);
+  outline-color: var(--blue5-2);
+  color: var(--blue5-2);
+  border-color: var(--blue5-2); }
+
+.fill-5-3 {
+  fill: var(--blue5-3); }
+
+.bg-5-3 {
+  background-color: var(--blue5-3); }
+
+.stroke-5-3 {
+  stroke: var(--blue5-3); }
+
+.outline-5-3 {
+  outline-color: var(--blue5-3); }
+
+.color-5-3 {
+  color: var(--blue5-3); }
+
+.border-5-3 {
+  border-color: var(--blue5-3); }
+
+.all-5-3 {
+  fill: var(--blue5-3);
+  background-color: var(--blue5-3);
+  stroke: var(--blue5-3);
+  outline-color: var(--blue5-3);
+  color: var(--blue5-3);
+  border-color: var(--blue5-3); }
+
+.fill-5-4 {
+  fill: var(--blue5-4); }
+
+.bg-5-4 {
+  background-color: var(--blue5-4); }
+
+.stroke-5-4 {
+  stroke: var(--blue5-4); }
+
+.outline-5-4 {
+  outline-color: var(--blue5-4); }
+
+.color-5-4 {
+  color: var(--blue5-4); }
+
+.border-5-4 {
+  border-color: var(--blue5-4); }
+
+.all-5-4 {
+  fill: var(--blue5-4);
+  background-color: var(--blue5-4);
+  stroke: var(--blue5-4);
+  outline-color: var(--blue5-4);
+  color: var(--blue5-4);
+  border-color: var(--blue5-4); }
+
+.fill-5-5 {
+  fill: var(--blue5-5); }
+
+.bg-5-5 {
+  background-color: var(--blue5-5); }
+
+.stroke-5-5 {
+  stroke: var(--blue5-5); }
+
+.outline-5-5 {
+  outline-color: var(--blue5-5); }
+
+.color-5-5 {
+  color: var(--blue5-5); }
+
+.border-5-5 {
+  border-color: var(--blue5-5); }
+
+.all-5-5 {
+  fill: var(--blue5-5);
+  background-color: var(--blue5-5);
+  stroke: var(--blue5-5);
+  outline-color: var(--blue5-5);
+  color: var(--blue5-5);
+  border-color: var(--blue5-5); }
+
+.fill-5-6 {
+  fill: var(--blue5-6); }
+
+.bg-5-6 {
+  background-color: var(--blue5-6); }
+
+.stroke-5-6 {
+  stroke: var(--blue5-6); }
+
+.outline-5-6 {
+  outline-color: var(--blue5-6); }
+
+.color-5-6 {
+  color: var(--blue5-6); }
+
+.border-5-6 {
+  border-color: var(--blue5-6); }
+
+.all-5-6 {
+  fill: var(--blue5-6);
+  background-color: var(--blue5-6);
+  stroke: var(--blue5-6);
+  outline-color: var(--blue5-6);
+  color: var(--blue5-6);
+  border-color: var(--blue5-6); }
+
+.fill-5-7 {
+  fill: var(--blue5-7); }
+
+.bg-5-7 {
+  background-color: var(--blue5-7); }
+
+.stroke-5-7 {
+  stroke: var(--blue5-7); }
+
+.outline-5-7 {
+  outline-color: var(--blue5-7); }
+
+.color-5-7 {
+  color: var(--blue5-7); }
+
+.border-5-7 {
+  border-color: var(--blue5-7); }
+
+.all-5-7 {
+  fill: var(--blue5-7);
+  background-color: var(--blue5-7);
+  stroke: var(--blue5-7);
+  outline-color: var(--blue5-7);
+  color: var(--blue5-7);
+  border-color: var(--blue5-7); }
+
+.fill-5-8 {
+  fill: var(--blue5-8); }
+
+.bg-5-8 {
+  background-color: var(--blue5-8); }
+
+.stroke-5-8 {
+  stroke: var(--blue5-8); }
+
+.outline-5-8 {
+  outline-color: var(--blue5-8); }
+
+.color-5-8 {
+  color: var(--blue5-8); }
+
+.border-5-8 {
+  border-color: var(--blue5-8); }
+
+.all-5-8 {
+  fill: var(--blue5-8);
+  background-color: var(--blue5-8);
+  stroke: var(--blue5-8);
+  outline-color: var(--blue5-8);
+  color: var(--blue5-8);
+  border-color: var(--blue5-8); }
+
+.fill-5-9 {
+  fill: var(--blue5-9); }
+
+.bg-5-9 {
+  background-color: var(--blue5-9); }
+
+.stroke-5-9 {
+  stroke: var(--blue5-9); }
+
+.outline-5-9 {
+  outline-color: var(--blue5-9); }
+
+.color-5-9 {
+  color: var(--blue5-9); }
+
+.border-5-9 {
+  border-color: var(--blue5-9); }
+
+.all-5-9 {
+  fill: var(--blue5-9);
+  background-color: var(--blue5-9);
+  stroke: var(--blue5-9);
+  outline-color: var(--blue5-9);
+  color: var(--blue5-9);
+  border-color: var(--blue5-9); }
+
+.fill-6-0 {
+  fill: var(--teal6-0); }
+
+.bg-6-0 {
+  background-color: var(--teal6-0); }
+
+.stroke-6-0 {
+  stroke: var(--teal6-0); }
+
+.outline-6-0 {
+  outline-color: var(--teal6-0); }
+
+.color-6-0 {
+  color: var(--teal6-0); }
+
+.border-6-0 {
+  border-color: var(--teal6-0); }
+
+.all-6-0 {
+  fill: var(--teal6-0);
+  background-color: var(--teal6-0);
+  stroke: var(--teal6-0);
+  outline-color: var(--teal6-0);
+  color: var(--teal6-0);
+  border-color: var(--teal6-0); }
+
+.fill-6-1 {
+  fill: var(--teal6-1); }
+
+.bg-6-1 {
+  background-color: var(--teal6-1); }
+
+.stroke-6-1 {
+  stroke: var(--teal6-1); }
+
+.outline-6-1 {
+  outline-color: var(--teal6-1); }
+
+.color-6-1 {
+  color: var(--teal6-1); }
+
+.border-6-1 {
+  border-color: var(--teal6-1); }
+
+.all-6-1 {
+  fill: var(--teal6-1);
+  background-color: var(--teal6-1);
+  stroke: var(--teal6-1);
+  outline-color: var(--teal6-1);
+  color: var(--teal6-1);
+  border-color: var(--teal6-1); }
+
+.fill-6-2 {
+  fill: var(--teal6-2); }
+
+.bg-6-2 {
+  background-color: var(--teal6-2); }
+
+.stroke-6-2 {
+  stroke: var(--teal6-2); }
+
+.outline-6-2 {
+  outline-color: var(--teal6-2); }
+
+.color-6-2 {
+  color: var(--teal6-2); }
+
+.border-6-2 {
+  border-color: var(--teal6-2); }
+
+.all-6-2 {
+  fill: var(--teal6-2);
+  background-color: var(--teal6-2);
+  stroke: var(--teal6-2);
+  outline-color: var(--teal6-2);
+  color: var(--teal6-2);
+  border-color: var(--teal6-2); }
+
+.fill-6-3 {
+  fill: var(--teal6-3); }
+
+.bg-6-3 {
+  background-color: var(--teal6-3); }
+
+.stroke-6-3 {
+  stroke: var(--teal6-3); }
+
+.outline-6-3 {
+  outline-color: var(--teal6-3); }
+
+.color-6-3 {
+  color: var(--teal6-3); }
+
+.border-6-3 {
+  border-color: var(--teal6-3); }
+
+.all-6-3 {
+  fill: var(--teal6-3);
+  background-color: var(--teal6-3);
+  stroke: var(--teal6-3);
+  outline-color: var(--teal6-3);
+  color: var(--teal6-3);
+  border-color: var(--teal6-3); }
+
+.fill-6-4 {
+  fill: var(--teal6-4); }
+
+.bg-6-4 {
+  background-color: var(--teal6-4); }
+
+.stroke-6-4 {
+  stroke: var(--teal6-4); }
+
+.outline-6-4 {
+  outline-color: var(--teal6-4); }
+
+.color-6-4 {
+  color: var(--teal6-4); }
+
+.border-6-4 {
+  border-color: var(--teal6-4); }
+
+.all-6-4 {
+  fill: var(--teal6-4);
+  background-color: var(--teal6-4);
+  stroke: var(--teal6-4);
+  outline-color: var(--teal6-4);
+  color: var(--teal6-4);
+  border-color: var(--teal6-4); }
+
+.fill-6-5 {
+  fill: var(--teal6-5); }
+
+.bg-6-5 {
+  background-color: var(--teal6-5); }
+
+.stroke-6-5 {
+  stroke: var(--teal6-5); }
+
+.outline-6-5 {
+  outline-color: var(--teal6-5); }
+
+.color-6-5 {
+  color: var(--teal6-5); }
+
+.border-6-5 {
+  border-color: var(--teal6-5); }
+
+.all-6-5 {
+  fill: var(--teal6-5);
+  background-color: var(--teal6-5);
+  stroke: var(--teal6-5);
+  outline-color: var(--teal6-5);
+  color: var(--teal6-5);
+  border-color: var(--teal6-5); }
+
+.fill-6-6 {
+  fill: var(--teal6-6); }
+
+.bg-6-6 {
+  background-color: var(--teal6-6); }
+
+.stroke-6-6 {
+  stroke: var(--teal6-6); }
+
+.outline-6-6 {
+  outline-color: var(--teal6-6); }
+
+.color-6-6 {
+  color: var(--teal6-6); }
+
+.border-6-6 {
+  border-color: var(--teal6-6); }
+
+.all-6-6 {
+  fill: var(--teal6-6);
+  background-color: var(--teal6-6);
+  stroke: var(--teal6-6);
+  outline-color: var(--teal6-6);
+  color: var(--teal6-6);
+  border-color: var(--teal6-6); }
+
+.fill-6-7 {
+  fill: var(--teal6-7); }
+
+.bg-6-7 {
+  background-color: var(--teal6-7); }
+
+.stroke-6-7 {
+  stroke: var(--teal6-7); }
+
+.outline-6-7 {
+  outline-color: var(--teal6-7); }
+
+.color-6-7 {
+  color: var(--teal6-7); }
+
+.border-6-7 {
+  border-color: var(--teal6-7); }
+
+.all-6-7 {
+  fill: var(--teal6-7);
+  background-color: var(--teal6-7);
+  stroke: var(--teal6-7);
+  outline-color: var(--teal6-7);
+  color: var(--teal6-7);
+  border-color: var(--teal6-7); }
+
+.fill-6-8 {
+  fill: var(--teal6-8); }
+
+.bg-6-8 {
+  background-color: var(--teal6-8); }
+
+.stroke-6-8 {
+  stroke: var(--teal6-8); }
+
+.outline-6-8 {
+  outline-color: var(--teal6-8); }
+
+.color-6-8 {
+  color: var(--teal6-8); }
+
+.border-6-8 {
+  border-color: var(--teal6-8); }
+
+.all-6-8 {
+  fill: var(--teal6-8);
+  background-color: var(--teal6-8);
+  stroke: var(--teal6-8);
+  outline-color: var(--teal6-8);
+  color: var(--teal6-8);
+  border-color: var(--teal6-8); }
+
+.fill-6-9 {
+  fill: var(--teal6-9); }
+
+.bg-6-9 {
+  background-color: var(--teal6-9); }
+
+.stroke-6-9 {
+  stroke: var(--teal6-9); }
+
+.outline-6-9 {
+  outline-color: var(--teal6-9); }
+
+.color-6-9 {
+  color: var(--teal6-9); }
+
+.border-6-9 {
+  border-color: var(--teal6-9); }
+
+.all-6-9 {
+  fill: var(--teal6-9);
+  background-color: var(--teal6-9);
+  stroke: var(--teal6-9);
+  outline-color: var(--teal6-9);
+  color: var(--teal6-9);
+  border-color: var(--teal6-9); }
+
+.fill-7-0 {
+  fill: var(--green7-0); }
+
+.bg-7-0 {
+  background-color: var(--green7-0); }
+
+.stroke-7-0 {
+  stroke: var(--green7-0); }
+
+.outline-7-0 {
+  outline-color: var(--green7-0); }
+
+.color-7-0 {
+  color: var(--green7-0); }
+
+.border-7-0 {
+  border-color: var(--green7-0); }
+
+.all-7-0 {
+  fill: var(--green7-0);
+  background-color: var(--green7-0);
+  stroke: var(--green7-0);
+  outline-color: var(--green7-0);
+  color: var(--green7-0);
+  border-color: var(--green7-0); }
+
+.fill-7-1 {
+  fill: var(--green7-1); }
+
+.bg-7-1 {
+  background-color: var(--green7-1); }
+
+.stroke-7-1 {
+  stroke: var(--green7-1); }
+
+.outline-7-1 {
+  outline-color: var(--green7-1); }
+
+.color-7-1 {
+  color: var(--green7-1); }
+
+.border-7-1 {
+  border-color: var(--green7-1); }
+
+.all-7-1 {
+  fill: var(--green7-1);
+  background-color: var(--green7-1);
+  stroke: var(--green7-1);
+  outline-color: var(--green7-1);
+  color: var(--green7-1);
+  border-color: var(--green7-1); }
+
+.fill-7-2 {
+  fill: var(--green7-2); }
+
+.bg-7-2 {
+  background-color: var(--green7-2); }
+
+.stroke-7-2 {
+  stroke: var(--green7-2); }
+
+.outline-7-2 {
+  outline-color: var(--green7-2); }
+
+.color-7-2 {
+  color: var(--green7-2); }
+
+.border-7-2 {
+  border-color: var(--green7-2); }
+
+.all-7-2 {
+  fill: var(--green7-2);
+  background-color: var(--green7-2);
+  stroke: var(--green7-2);
+  outline-color: var(--green7-2);
+  color: var(--green7-2);
+  border-color: var(--green7-2); }
+
+.fill-7-3 {
+  fill: var(--green7-3); }
+
+.bg-7-3 {
+  background-color: var(--green7-3); }
+
+.stroke-7-3 {
+  stroke: var(--green7-3); }
+
+.outline-7-3 {
+  outline-color: var(--green7-3); }
+
+.color-7-3 {
+  color: var(--green7-3); }
+
+.border-7-3 {
+  border-color: var(--green7-3); }
+
+.all-7-3 {
+  fill: var(--green7-3);
+  background-color: var(--green7-3);
+  stroke: var(--green7-3);
+  outline-color: var(--green7-3);
+  color: var(--green7-3);
+  border-color: var(--green7-3); }
+
+.fill-7-4 {
+  fill: var(--green7-4); }
+
+.bg-7-4 {
+  background-color: var(--green7-4); }
+
+.stroke-7-4 {
+  stroke: var(--green7-4); }
+
+.outline-7-4 {
+  outline-color: var(--green7-4); }
+
+.color-7-4 {
+  color: var(--green7-4); }
+
+.border-7-4 {
+  border-color: var(--green7-4); }
+
+.all-7-4 {
+  fill: var(--green7-4);
+  background-color: var(--green7-4);
+  stroke: var(--green7-4);
+  outline-color: var(--green7-4);
+  color: var(--green7-4);
+  border-color: var(--green7-4); }
+
+.fill-7-5 {
+  fill: var(--green7-5); }
+
+.bg-7-5 {
+  background-color: var(--green7-5); }
+
+.stroke-7-5 {
+  stroke: var(--green7-5); }
+
+.outline-7-5 {
+  outline-color: var(--green7-5); }
+
+.color-7-5 {
+  color: var(--green7-5); }
+
+.border-7-5 {
+  border-color: var(--green7-5); }
+
+.all-7-5 {
+  fill: var(--green7-5);
+  background-color: var(--green7-5);
+  stroke: var(--green7-5);
+  outline-color: var(--green7-5);
+  color: var(--green7-5);
+  border-color: var(--green7-5); }
+
+.fill-7-6 {
+  fill: var(--green7-6); }
+
+.bg-7-6 {
+  background-color: var(--green7-6); }
+
+.stroke-7-6 {
+  stroke: var(--green7-6); }
+
+.outline-7-6 {
+  outline-color: var(--green7-6); }
+
+.color-7-6 {
+  color: var(--green7-6); }
+
+.border-7-6 {
+  border-color: var(--green7-6); }
+
+.all-7-6 {
+  fill: var(--green7-6);
+  background-color: var(--green7-6);
+  stroke: var(--green7-6);
+  outline-color: var(--green7-6);
+  color: var(--green7-6);
+  border-color: var(--green7-6); }
+
+.fill-7-7 {
+  fill: var(--green7-7); }
+
+.bg-7-7 {
+  background-color: var(--green7-7); }
+
+.stroke-7-7 {
+  stroke: var(--green7-7); }
+
+.outline-7-7 {
+  outline-color: var(--green7-7); }
+
+.color-7-7 {
+  color: var(--green7-7); }
+
+.border-7-7 {
+  border-color: var(--green7-7); }
+
+.all-7-7 {
+  fill: var(--green7-7);
+  background-color: var(--green7-7);
+  stroke: var(--green7-7);
+  outline-color: var(--green7-7);
+  color: var(--green7-7);
+  border-color: var(--green7-7); }
+
+.fill-7-8 {
+  fill: var(--green7-8); }
+
+.bg-7-8 {
+  background-color: var(--green7-8); }
+
+.stroke-7-8 {
+  stroke: var(--green7-8); }
+
+.outline-7-8 {
+  outline-color: var(--green7-8); }
+
+.color-7-8 {
+  color: var(--green7-8); }
+
+.border-7-8 {
+  border-color: var(--green7-8); }
+
+.all-7-8 {
+  fill: var(--green7-8);
+  background-color: var(--green7-8);
+  stroke: var(--green7-8);
+  outline-color: var(--green7-8);
+  color: var(--green7-8);
+  border-color: var(--green7-8); }
+
+.fill-7-9 {
+  fill: var(--green7-9); }
+
+.bg-7-9 {
+  background-color: var(--green7-9); }
+
+.stroke-7-9 {
+  stroke: var(--green7-9); }
+
+.outline-7-9 {
+  outline-color: var(--green7-9); }
+
+.color-7-9 {
+  color: var(--green7-9); }
+
+.border-7-9 {
+  border-color: var(--green7-9); }
+
+.all-7-9 {
+  fill: var(--green7-9);
+  background-color: var(--green7-9);
+  stroke: var(--green7-9);
+  outline-color: var(--green7-9);
+  color: var(--green7-9);
+  border-color: var(--green7-9); }
+
+.fill-8-0 {
+  fill: var(--yellow8-0); }
+
+.bg-8-0 {
+  background-color: var(--yellow8-0); }
+
+.stroke-8-0 {
+  stroke: var(--yellow8-0); }
+
+.outline-8-0 {
+  outline-color: var(--yellow8-0); }
+
+.color-8-0 {
+  color: var(--yellow8-0); }
+
+.border-8-0 {
+  border-color: var(--yellow8-0); }
+
+.all-8-0 {
+  fill: var(--yellow8-0);
+  background-color: var(--yellow8-0);
+  stroke: var(--yellow8-0);
+  outline-color: var(--yellow8-0);
+  color: var(--yellow8-0);
+  border-color: var(--yellow8-0); }
+
+.fill-8-1 {
+  fill: var(--yellow8-1); }
+
+.bg-8-1 {
+  background-color: var(--yellow8-1); }
+
+.stroke-8-1 {
+  stroke: var(--yellow8-1); }
+
+.outline-8-1 {
+  outline-color: var(--yellow8-1); }
+
+.color-8-1 {
+  color: var(--yellow8-1); }
+
+.border-8-1 {
+  border-color: var(--yellow8-1); }
+
+.all-8-1 {
+  fill: var(--yellow8-1);
+  background-color: var(--yellow8-1);
+  stroke: var(--yellow8-1);
+  outline-color: var(--yellow8-1);
+  color: var(--yellow8-1);
+  border-color: var(--yellow8-1); }
+
+.fill-8-2 {
+  fill: var(--yellow8-2); }
+
+.bg-8-2 {
+  background-color: var(--yellow8-2); }
+
+.stroke-8-2 {
+  stroke: var(--yellow8-2); }
+
+.outline-8-2 {
+  outline-color: var(--yellow8-2); }
+
+.color-8-2 {
+  color: var(--yellow8-2); }
+
+.border-8-2 {
+  border-color: var(--yellow8-2); }
+
+.all-8-2 {
+  fill: var(--yellow8-2);
+  background-color: var(--yellow8-2);
+  stroke: var(--yellow8-2);
+  outline-color: var(--yellow8-2);
+  color: var(--yellow8-2);
+  border-color: var(--yellow8-2); }
+
+.fill-8-3 {
+  fill: var(--yellow8-3); }
+
+.bg-8-3 {
+  background-color: var(--yellow8-3); }
+
+.stroke-8-3 {
+  stroke: var(--yellow8-3); }
+
+.outline-8-3 {
+  outline-color: var(--yellow8-3); }
+
+.color-8-3 {
+  color: var(--yellow8-3); }
+
+.border-8-3 {
+  border-color: var(--yellow8-3); }
+
+.all-8-3 {
+  fill: var(--yellow8-3);
+  background-color: var(--yellow8-3);
+  stroke: var(--yellow8-3);
+  outline-color: var(--yellow8-3);
+  color: var(--yellow8-3);
+  border-color: var(--yellow8-3); }
+
+.fill-8-4 {
+  fill: var(--yellow8-4); }
+
+.bg-8-4 {
+  background-color: var(--yellow8-4); }
+
+.stroke-8-4 {
+  stroke: var(--yellow8-4); }
+
+.outline-8-4 {
+  outline-color: var(--yellow8-4); }
+
+.color-8-4 {
+  color: var(--yellow8-4); }
+
+.border-8-4 {
+  border-color: var(--yellow8-4); }
+
+.all-8-4 {
+  fill: var(--yellow8-4);
+  background-color: var(--yellow8-4);
+  stroke: var(--yellow8-4);
+  outline-color: var(--yellow8-4);
+  color: var(--yellow8-4);
+  border-color: var(--yellow8-4); }
+
+.fill-8-5 {
+  fill: var(--yellow8-5); }
+
+.bg-8-5 {
+  background-color: var(--yellow8-5); }
+
+.stroke-8-5 {
+  stroke: var(--yellow8-5); }
+
+.outline-8-5 {
+  outline-color: var(--yellow8-5); }
+
+.color-8-5 {
+  color: var(--yellow8-5); }
+
+.border-8-5 {
+  border-color: var(--yellow8-5); }
+
+.all-8-5 {
+  fill: var(--yellow8-5);
+  background-color: var(--yellow8-5);
+  stroke: var(--yellow8-5);
+  outline-color: var(--yellow8-5);
+  color: var(--yellow8-5);
+  border-color: var(--yellow8-5); }
+
+.fill-8-6 {
+  fill: var(--yellow8-6); }
+
+.bg-8-6 {
+  background-color: var(--yellow8-6); }
+
+.stroke-8-6 {
+  stroke: var(--yellow8-6); }
+
+.outline-8-6 {
+  outline-color: var(--yellow8-6); }
+
+.color-8-6 {
+  color: var(--yellow8-6); }
+
+.border-8-6 {
+  border-color: var(--yellow8-6); }
+
+.all-8-6 {
+  fill: var(--yellow8-6);
+  background-color: var(--yellow8-6);
+  stroke: var(--yellow8-6);
+  outline-color: var(--yellow8-6);
+  color: var(--yellow8-6);
+  border-color: var(--yellow8-6); }
+
+.fill-8-7 {
+  fill: var(--yellow8-7); }
+
+.bg-8-7 {
+  background-color: var(--yellow8-7); }
+
+.stroke-8-7 {
+  stroke: var(--yellow8-7); }
+
+.outline-8-7 {
+  outline-color: var(--yellow8-7); }
+
+.color-8-7 {
+  color: var(--yellow8-7); }
+
+.border-8-7 {
+  border-color: var(--yellow8-7); }
+
+.all-8-7 {
+  fill: var(--yellow8-7);
+  background-color: var(--yellow8-7);
+  stroke: var(--yellow8-7);
+  outline-color: var(--yellow8-7);
+  color: var(--yellow8-7);
+  border-color: var(--yellow8-7); }
+
+.fill-8-8 {
+  fill: var(--yellow8-8); }
+
+.bg-8-8 {
+  background-color: var(--yellow8-8); }
+
+.stroke-8-8 {
+  stroke: var(--yellow8-8); }
+
+.outline-8-8 {
+  outline-color: var(--yellow8-8); }
+
+.color-8-8 {
+  color: var(--yellow8-8); }
+
+.border-8-8 {
+  border-color: var(--yellow8-8); }
+
+.all-8-8 {
+  fill: var(--yellow8-8);
+  background-color: var(--yellow8-8);
+  stroke: var(--yellow8-8);
+  outline-color: var(--yellow8-8);
+  color: var(--yellow8-8);
+  border-color: var(--yellow8-8); }
+
+.fill-8-9 {
+  fill: var(--yellow8-9); }
+
+.bg-8-9 {
+  background-color: var(--yellow8-9); }
+
+.stroke-8-9 {
+  stroke: var(--yellow8-9); }
+
+.outline-8-9 {
+  outline-color: var(--yellow8-9); }
+
+.color-8-9 {
+  color: var(--yellow8-9); }
+
+.border-8-9 {
+  border-color: var(--yellow8-9); }
+
+.all-8-9 {
+  fill: var(--yellow8-9);
+  background-color: var(--yellow8-9);
+  stroke: var(--yellow8-9);
+  outline-color: var(--yellow8-9);
+  color: var(--yellow8-9);
+  border-color: var(--yellow8-9); }
+
+.fill-9-0 {
+  fill: var(--bg9-0); }
+
+.bg-9-0 {
+  background-color: var(--bg9-0); }
+
+.stroke-9-0 {
+  stroke: var(--bg9-0); }
+
+.outline-9-0 {
+  outline-color: var(--bg9-0); }
+
+.color-9-0 {
+  color: var(--bg9-0); }
+
+.border-9-0 {
+  border-color: var(--bg9-0); }
+
+.all-9-0 {
+  fill: var(--bg9-0);
+  background-color: var(--bg9-0);
+  stroke: var(--bg9-0);
+  outline-color: var(--bg9-0);
+  color: var(--bg9-0);
+  border-color: var(--bg9-0); }
+
+.fill-9-1 {
+  fill: var(--bg9-1); }
+
+.bg-9-1 {
+  background-color: var(--bg9-1); }
+
+.stroke-9-1 {
+  stroke: var(--bg9-1); }
+
+.outline-9-1 {
+  outline-color: var(--bg9-1); }
+
+.color-9-1 {
+  color: var(--bg9-1); }
+
+.border-9-1 {
+  border-color: var(--bg9-1); }
+
+.all-9-1 {
+  fill: var(--bg9-1);
+  background-color: var(--bg9-1);
+  stroke: var(--bg9-1);
+  outline-color: var(--bg9-1);
+  color: var(--bg9-1);
+  border-color: var(--bg9-1); }
+
+.fill-9-2 {
+  fill: var(--bg9-2); }
+
+.bg-9-2 {
+  background-color: var(--bg9-2); }
+
+.stroke-9-2 {
+  stroke: var(--bg9-2); }
+
+.outline-9-2 {
+  outline-color: var(--bg9-2); }
+
+.color-9-2 {
+  color: var(--bg9-2); }
+
+.border-9-2 {
+  border-color: var(--bg9-2); }
+
+.all-9-2 {
+  fill: var(--bg9-2);
+  background-color: var(--bg9-2);
+  stroke: var(--bg9-2);
+  outline-color: var(--bg9-2);
+  color: var(--bg9-2);
+  border-color: var(--bg9-2); }
+
+.fill-9-3 {
+  fill: var(--bg9-3); }
+
+.bg-9-3 {
+  background-color: var(--bg9-3); }
+
+.stroke-9-3 {
+  stroke: var(--bg9-3); }
+
+.outline-9-3 {
+  outline-color: var(--bg9-3); }
+
+.color-9-3 {
+  color: var(--bg9-3); }
+
+.border-9-3 {
+  border-color: var(--bg9-3); }
+
+.all-9-3 {
+  fill: var(--bg9-3);
+  background-color: var(--bg9-3);
+  stroke: var(--bg9-3);
+  outline-color: var(--bg9-3);
+  color: var(--bg9-3);
+  border-color: var(--bg9-3); }
+
+.fill-9-4 {
+  fill: var(--bg9-4); }
+
+.bg-9-4 {
+  background-color: var(--bg9-4); }
+
+.stroke-9-4 {
+  stroke: var(--bg9-4); }
+
+.outline-9-4 {
+  outline-color: var(--bg9-4); }
+
+.color-9-4 {
+  color: var(--bg9-4); }
+
+.border-9-4 {
+  border-color: var(--bg9-4); }
+
+.all-9-4 {
+  fill: var(--bg9-4);
+  background-color: var(--bg9-4);
+  stroke: var(--bg9-4);
+  outline-color: var(--bg9-4);
+  color: var(--bg9-4);
+  border-color: var(--bg9-4); }
+
+.fill-9-5 {
+  fill: var(--bg9-5); }
+
+.bg-9-5 {
+  background-color: var(--bg9-5); }
+
+.stroke-9-5 {
+  stroke: var(--bg9-5); }
+
+.outline-9-5 {
+  outline-color: var(--bg9-5); }
+
+.color-9-5 {
+  color: var(--bg9-5); }
+
+.border-9-5 {
+  border-color: var(--bg9-5); }
+
+.all-9-5 {
+  fill: var(--bg9-5);
+  background-color: var(--bg9-5);
+  stroke: var(--bg9-5);
+  outline-color: var(--bg9-5);
+  color: var(--bg9-5);
+  border-color: var(--bg9-5); }
+
+.fill-9-6 {
+  fill: var(--bg9-6); }
+
+.bg-9-6 {
+  background-color: var(--bg9-6); }
+
+.stroke-9-6 {
+  stroke: var(--bg9-6); }
+
+.outline-9-6 {
+  outline-color: var(--bg9-6); }
+
+.color-9-6 {
+  color: var(--bg9-6); }
+
+.border-9-6 {
+  border-color: var(--bg9-6); }
+
+.all-9-6 {
+  fill: var(--bg9-6);
+  background-color: var(--bg9-6);
+  stroke: var(--bg9-6);
+  outline-color: var(--bg9-6);
+  color: var(--bg9-6);
+  border-color: var(--bg9-6); }
+
+.fill-9-7 {
+  fill: var(--bg9-7); }
+
+.bg-9-7 {
+  background-color: var(--bg9-7); }
+
+.stroke-9-7 {
+  stroke: var(--bg9-7); }
+
+.outline-9-7 {
+  outline-color: var(--bg9-7); }
+
+.color-9-7 {
+  color: var(--bg9-7); }
+
+.border-9-7 {
+  border-color: var(--bg9-7); }
+
+.all-9-7 {
+  fill: var(--bg9-7);
+  background-color: var(--bg9-7);
+  stroke: var(--bg9-7);
+  outline-color: var(--bg9-7);
+  color: var(--bg9-7);
+  border-color: var(--bg9-7); }
+
+.fill-9-8 {
+  fill: var(--bg9-8); }
+
+.bg-9-8 {
+  background-color: var(--bg9-8); }
+
+.stroke-9-8 {
+  stroke: var(--bg9-8); }
+
+.outline-9-8 {
+  outline-color: var(--bg9-8); }
+
+.color-9-8 {
+  color: var(--bg9-8); }
+
+.border-9-8 {
+  border-color: var(--bg9-8); }
+
+.all-9-8 {
+  fill: var(--bg9-8);
+  background-color: var(--bg9-8);
+  stroke: var(--bg9-8);
+  outline-color: var(--bg9-8);
+  color: var(--bg9-8);
+  border-color: var(--bg9-8); }
+
+.fill-9-9 {
+  fill: var(--bg9-9); }
+
+.bg-9-9 {
+  background-color: var(--bg9-9); }
+
+.stroke-9-9 {
+  stroke: var(--bg9-9); }
+
+.outline-9-9 {
+  outline-color: var(--bg9-9); }
+
+.color-9-9 {
+  color: var(--bg9-9); }
+
+.border-9-9 {
+  border-color: var(--bg9-9); }
+
+.all-9-9 {
+  fill: var(--bg9-9);
+  background-color: var(--bg9-9);
+  stroke: var(--bg9-9);
+  outline-color: var(--bg9-9);
+  color: var(--bg9-9);
+  border-color: var(--bg9-9); }
+
+.skeumorphic {
+  background-color: var(--bg9-7);
+  color: var(--bg9-5); }
+  .skeumorphic .side, .skeumorphic .workspace, .skeumorphic .properties, .skeumorphic .theming {
+    box-shadow: 0.5em 0.5em 1em var(--c9-7), -0.5em -0.5em 1em var(--c9-9);
+    background: linear-gradient(145deg, var(--c9-9), var(--c9-7));
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em; }

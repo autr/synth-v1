@@ -1,0 +1,76 @@
+{
+    "INPUTS":
+    {
+        "Mode":
+        {
+            "type": "long",
+            "default": 0,
+            "labels": [
+                "Basic",
+                "Advanced"
+            ],
+            "gui": "MultiClick"
+        },
+        "Background":
+        {
+            "type": "long",
+            "min": -1,
+            "default": -1,
+            "gui": "OpSelect"
+        },
+        "Foreground":
+        {
+            "type": "long",
+            "min": -1,
+            "default": -1,
+            "gui": "OpSelect",
+            "link": "Mode:1"
+        },
+        "Mask":
+        {
+            "type": "long",
+            "min": -1,
+            "default": -1,
+            "gui": "OpSelect",
+            "link": "Mode:1"
+        },
+        "LightMode":
+        {
+            "type": "long",
+            "default": 0,
+            "labels": [
+                "Lightness",
+                "Brightness",
+                "RGB"
+            ],
+            "gui": "MultiClick",
+            "link": "Mode:1"
+        },
+        "Invert":
+        {
+            "type": "bool",
+            "default": false
+        },
+        "Threshold":
+        {
+            "type": "point2D",
+            "default": [0,1],
+            "min": [0,0],
+            "max": [1,1]
+        },
+        "Smooth":
+        {
+            "type": "point2D",
+            "default": [0,0],
+            "min": [0,0],
+            "max": [1,1]
+        },
+        "SatInfluence":
+        {
+            "type": "float",
+            "default": 0,
+            "min": -1,
+            "max": 1
+        }
+    }
+}

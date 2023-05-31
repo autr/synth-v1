@@ -1,0 +1,302 @@
+/* sassis creates THEME-BASED shorthand: colors, borders, filled etc */
+.gitpanel {
+  border-color: var(--c6);
+  font-family: var(--font-monospace); }
+  .gitpanel * {
+    border-color: var(--c6); }
+  .gitpanel input, .gitpanel textarea, .gitpanel button, .gitpanel select {
+    font-family: var(--font-monospace); }
+  .gitpanel .nav {
+    width: 18em;
+    max-width: 18em;
+    min-width: 18em;
+    height: 100vh;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    display: flex; }
+  .gitpanel .main {
+    overflow: auto;
+    height: 100%; }
+  .gitpanel input, .gitpanel textarea, .gitpanel select, .gitpanel .select {
+    width: 100%; }
+  .gitpanel .menu ul {
+    border-width: var(--border);
+    border-style: solid;
+    border-radius: 0.25em;
+    background-color: var(--bg4); }
+    .gitpanel .menu ul li span {
+      margin: 0.25em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      padding-top: 0em;
+      padding-bottom: 0em;
+      padding-right: 2em; }
+    .gitpanel .menu ul li.expand span, .gitpanel .menu ul li.item span {
+      border-radius: 0.25em; }
+    .gitpanel .menu ul li.expand:hover > span, .gitpanel .menu ul li.item:hover > span {
+      background-color: var(--color);
+      color: var(--bg) !important; }
+    .gitpanel .menu ul li.spacer span {
+      border-bottom-width: var(--border);
+      border-bottom-style: solid;
+      color: var(--color-fade) !important; }
+  .gitpanel .menu-cover {
+    z-index: 98;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed; }
+  .gitpanel .menu {
+    position: fixed;
+    z-index: 99; }
+    .gitpanel .menu ul {
+      position: absolute;
+      top: 0;
+      left: 100%; }
+      .gitpanel .menu ul.reverse {
+        left: auto;
+        right: 100%; }
+      .gitpanel .menu ul li {
+        display: block;
+        position: relative;
+        white-space: nowrap; }
+        .gitpanel .menu ul li span {
+          display: block; }
+      .gitpanel .menu ul li.expand span, .gitpanel .menu ul li.item span {
+        cursor: default;
+        border-top-width: var(--border);
+        border-top-style: solid; }
+        .gitpanel .menu ul li.expand span:first-child, .gitpanel .menu ul li.item span:first-child {
+          border: none; }
+      .gitpanel .menu ul li.expand > ul {
+        transform: translate(99999px, 999999px); }
+      .gitpanel .menu ul li.expand:hover > ul {
+        transform: none; }
+      .gitpanel .menu ul li.expand em {
+        position: absolute;
+        right: 0.75em;
+        top: 1em;
+        transform: rotateZ(-90deg); }
+  .gitpanel .header {
+    border-bottom-width: var(--border);
+    border-bottom-style: solid;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 66;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    background-color: var(--bg4);
+    height: 4em; }
+    .gitpanel .header > * {
+      flex-grow: 0;
+      flex-basis: 0; }
+    .gitpanel .header .scans, .gitpanel .header .search {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: row;
+      flex-grow: 1; }
+      .gitpanel .header .scans .scan, .gitpanel .header .search .scan {
+        cursor: pointer;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        background-color: var(--bg4);
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+        border-radius: 0.25em; }
+    .gitpanel .header .navigation {
+      display: flex; }
+      .gitpanel .header .navigation .link {
+        display: flex;
+        padding-right: 1.5em;
+        padding-left: 1em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        cursor: default;
+        color: var(--color-fade);
+        text-transform: uppercase; }
+        .gitpanel .header .navigation .link span {
+          margin-left: 0.5em; }
+        .gitpanel .header .navigation .link.active {
+          background-color: var(--bg);
+          color: var(--color); }
+    .gitpanel .header .search {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: row;
+      font-size: var(--f2);
+      line-height: var(--line-height); }
+      .gitpanel .header .search input, .gitpanel .header .search textarea, .gitpanel .header .search button, .gitpanel .header .search select {
+        font-size: var(--f2);
+        line-height: var(--line-height); }
+      .gitpanel .header .search input {
+        max-width: 24em;
+        font-size: var(--f1);
+        line-height: var(--line-height);
+        margin-left: 0.5em;
+        flex-grow: 1;
+        border-radius: 0.25em;
+        border-color: transparent;
+        background-color: var(--bg2);
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em; }
+        .gitpanel .header .search input input, .gitpanel .header .search input textarea, .gitpanel .header .search input button, .gitpanel .header .search input select {
+          font-size: var(--f1);
+          line-height: var(--line-height); }
+  .gitpanel .library {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-direction: row;
+    flex-grow: 1;
+    overflow: hidden;
+    width: 100%;
+    position: relative; }
+    .gitpanel .library .library-scroll {
+      display: flex;
+      justify-content: stretch;
+      align-items: stretch;
+      flex-direction: row;
+      overflow: auto;
+      flex-grow: 1;
+      position: relative; }
+      .gitpanel .library .library-scroll .refresh {
+        font-size: var(--f2);
+        line-height: var(--line-height); }
+        .gitpanel .library .library-scroll .refresh input, .gitpanel .library .library-scroll .refresh textarea, .gitpanel .library .library-scroll .refresh button, .gitpanel .library .library-scroll .refresh select {
+          font-size: var(--f2);
+          line-height: var(--line-height); }
+      .gitpanel .library .library-scroll .scroller-track {
+        position: fixed;
+        left: 0;
+        height: calc(100vh - 4em);
+        z-index: 33;
+        border-right-width: var(--border);
+        border-right-style: solid;
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        flex-direction: column;
+        width: 3em;
+        overflow: hidden; }
+        .gitpanel .library .library-scroll .scroller-track header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          border-bottom-width: var(--border);
+          border-bottom-style: solid;
+          cursor: pointer;
+          position: relative; }
+        .gitpanel .library .library-scroll .scroller-track .scroller {
+          padding: 0.5em;
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
+          background-color: var(--bg); }
+          .gitpanel .library .library-scroll .scroller-track .scroller .handle {
+            background-color: rgba(255, 255, 255, 0.05); }
+          .gitpanel .library .library-scroll .scroller-track .scroller.active .handle {
+            background-color: rgba(255, 255, 255, 0.1); }
+          .gitpanel .library .library-scroll .scroller-track .scroller .repo {
+            background-color: var(--color-fadest);
+            max-height: 1px;
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+            flex-direction: row; }
+    .gitpanel .library .table-wrapper {
+      flex-grow: 1; }
+      .gitpanel .library .table-wrapper .table .thead .td {
+        top: 0px;
+        position: sticky;
+        z-index: 11;
+        color: var(--color); }
+        .gitpanel .library .table-wrapper .table .thead .td:first-child {
+          z-index: 33 !important;
+          padding-left: 3em; }
+      .gitpanel .library .table-wrapper .table .td {
+        border-bottom-width: var(--border);
+        border-bottom-style: solid;
+        border-right-width: var(--border);
+        border-right-style: solid;
+        cursor: default;
+        color: var(--color-fade);
+        background-color: var(--bg3); }
+        .gitpanel .library .table-wrapper .table .td .star {
+          padding: 0em;
+          display: flex;
+          margin-left: 3em; }
+          .gitpanel .library .table-wrapper .table .td .star .action {
+            font-size: var(--f2);
+            line-height: var(--line-height);
+            padding: 0.75em;
+            flex-grow: 0;
+            height: auto;
+            align-self: flex-start; }
+            .gitpanel .library .table-wrapper .table .td .star .action input, .gitpanel .library .table-wrapper .table .td .star .action textarea, .gitpanel .library .table-wrapper .table .td .star .action button, .gitpanel .library .table-wrapper .table .td .star .action select {
+              font-size: var(--f2);
+              line-height: var(--line-height); }
+        .gitpanel .library .table-wrapper .table .td .star + .inner {
+          border-left-width: var(--border);
+          border-left-style: solid; }
+        .gitpanel .library .table-wrapper .table .td .drag {
+          cursor: col-resize;
+          display: flex;
+          z-index: 1;
+          opacity: 0;
+          height: 100%;
+          position: absolute;
+          right: -0.5em;
+          top: 0;
+          background-color: white;
+          width: 1em; }
+        .gitpanel .library .table-wrapper .table .td:first-child {
+          position: sticky;
+          left: 0px;
+          z-index: 8; }
+        .gitpanel .library .table-wrapper .table .td.hidden {
+          display: none; }
+        .gitpanel .library .table-wrapper .table .td .inner.selected, .gitpanel .library .table-wrapper .table .td .star.selected {
+          background-color: var(--bg5); }
+        .gitpanel .library .table-wrapper .table .td .inner {
+          padding-left: 1em;
+          padding-right: 1em;
+          padding-top: 1em;
+          padding-bottom: 1em; }
+          .gitpanel .library .table-wrapper .table .td .inner i {
+            margin-right: 0.5em; }
+          .gitpanel .library .table-wrapper .table .td .inner a span {
+            border-bottom-width: var(--border);
+            border-bottom-style: solid; }
+          .gitpanel .library .table-wrapper .table .td .inner.none {
+            display: none; }
+          .gitpanel .library .table-wrapper .table .td .inner .tag {
+            user-select: none;
+            white-space: nowrap;
+            align-self: baseline;
+            background-color: var(--bg4);
+            color: var(--blue);
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            border-radius: 0.25em;
+            font-size: var(--f1);
+            line-height: var(--line-height); }
+            .gitpanel .library .table-wrapper .table .td .inner .tag input, .gitpanel .library .table-wrapper .table .td .inner .tag textarea, .gitpanel .library .table-wrapper .table .td .inner .tag button, .gitpanel .library .table-wrapper .table .td .inner .tag select {
+              font-size: var(--f1);
+              line-height: var(--line-height); }

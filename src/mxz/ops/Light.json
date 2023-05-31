@@ -1,0 +1,130 @@
+{
+    "INPUTS":
+    {
+        "Mini":
+        {
+            "type": "bool",
+            "default": false
+        },
+        "Invert":
+        {
+            "type": "bool",
+            "default": false
+        },
+        "LightMode":
+        {
+            "type": "long",
+            "default": 0,
+            "labels": [
+                "Lightness",
+                "Exposure",
+                "Brightness"
+            ],
+            "gui": "MultiClick"
+        },
+        "Low":
+        {
+            "type": "float",
+            "default": 0,
+            "min": 0,
+            "max": 1
+        },
+        "Light":
+        {
+            "type": "float",
+            "default": 0,
+            "min": -1,
+            "max": 1
+        },
+        "High":
+        {
+            "type": "float",
+            "default": 1,
+            "min": 0,
+            "max": 1
+        },
+        "Saturation":
+        {
+            "type": "float",
+            "default": 0,
+            "min": -1,
+            "max": 1
+        },
+        "Shift":
+        {
+            "type": "float",
+            "default": 0,
+            "min": -0.5,
+            "max": 0.5,
+            "position": -1,
+            "smooth": 0,
+            "degrees": 359
+        },
+        "ColorMode":
+        {
+            "type": "long",
+            "default": 0,
+            "labels": [
+                "Basic",
+                "Tint",
+                "Colorise",
+                "Tweak"
+            ],
+            "gui": "MultiClick"
+        },
+        "TintAmount":
+        {
+            "type": "float",
+            "default": 0,
+            "min": 0,
+            "max": 1,
+            "link": "ColorMode:1"
+        },
+        "TintHue":
+        {
+            "type": "float",
+            "default": 0,
+            "min": -180,
+            "max": 180,
+            "degrees": 359,
+            "link": "ColorMode:1"
+        },
+        "Levels":
+        {
+            "type": "float",
+            "default": 0,
+            "min": 0,
+            "max": 10,
+            "link": "ColorMode:2"
+        },
+        "Spacing":
+        {
+            "type": "float",
+            "default": 0.5,
+            "min": 0,
+            "max": 1,
+            "link": "ColorMode:2"
+        },
+        "Smooth":
+        {
+            "type": "float",
+            "default": 0,
+            "min": 0,
+            "max": 1,
+            "link": "ColorMode:2"
+        },
+        "Flip":
+        {
+            "type": "bool",
+            "default": false
+        },
+        "Vibrance":
+        {
+            "type": "float",
+            "default": 0,
+            "min": 0,
+            "max": 1,
+            "link": "ColorMode:3"
+        }
+    }
+}

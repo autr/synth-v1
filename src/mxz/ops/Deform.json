@@ -1,0 +1,59 @@
+{
+    "PASS": true,
+    "INPUTS": {
+        "Mini": {
+            "type": "bool",
+            "default": true
+        },
+        "Src": {
+            "type": "long",
+            "min": -1,
+            "default": -1,
+            "gui": "OpSelect"
+        },
+        "SrcAmount": {
+            "type": "float",
+            "min": 0,
+            "max": 1,
+            "default": 0
+        },
+        "Invert": {
+            "type": "bool",
+            "default": false
+        },
+        "Offset": {
+            "type": "float",
+            "default": 0,
+            "min": -1,
+            "max": 1
+        },
+        "XY": {
+            "type": "point2D",
+            "default": [0,0],
+            "min": [-1,-1],
+            "max": [1,1]
+        },
+        "Zoom": {
+            "type": "point2D",
+            "default": [0,0],
+            "min": [-1,-1],
+            "max": [1,1]
+        },
+        "Rotate": {
+            "type": "bool",
+            "default": false
+        },
+        "Degree": {
+            "type": "float",
+            "default": 0,
+            "min": -1,
+            "max": 1
+        },
+        "Origin": {
+            "type": "point2D",
+            "default": [0.5,0.5],
+            "min": [0,0],
+            "max": [1,1]
+        }
+    }
+}

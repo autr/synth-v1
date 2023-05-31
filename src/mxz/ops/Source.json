@@ -1,0 +1,13 @@
+{
+    "INPUTS":
+    {
+        "Src": {
+            "type": "image",
+            "gui": "ExtSource",
+            "default": {
+                "type": "image",
+                "path": "mxz/testcards/transparent.png"
+            }
+        }
+    }
+}

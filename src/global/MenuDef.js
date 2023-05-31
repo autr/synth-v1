@@ -1,0 +1,6 @@
+
+export let MENU_TYPES = {
+	EXPAND: 'EXPAND',
+	ITEM: 'ITEM',
+	SPACER: 'SPACER',
+}

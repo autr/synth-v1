@@ -1,0 +1,46 @@
+{
+    "PASS": true,
+    "INPUTS": {
+        "Frequency": {
+            "type": "point2D",
+            "default": [0,0],
+            "min": [-1,-1],
+            "max": [1,1]
+        },
+        "Speed": {
+            "type": "float",
+            "default": 0,
+            "min": -10,
+            "max": 10
+        },
+        "Angle": {
+            "type": "float",
+            "default": 0,
+            "min": 0,
+            "max": 360
+        },
+        "Amount": {
+            "type": "float",
+            "default": 0.5,
+            "min": 0,
+            "max": 1
+        },
+        "Mode":
+        {
+            "type": "long",
+            "default": 0,
+            "labels": [
+                "Scanline",
+                "Origin"
+            ],
+            "gui": "MultiClick"
+        },
+        "Origin": {
+            "type": "point2D",
+            "default": [0,0],
+            "min": [0,0],
+            "max": [1,1],
+            "link": "Mode:1"
+        }
+    }
+}

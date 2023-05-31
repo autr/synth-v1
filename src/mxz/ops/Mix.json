@@ -1,0 +1,20 @@
+{
+    "INPUTS":
+    {
+        "Mode": {
+            "type": "long",
+            "default": 0,
+            "labels": [
+                "Anchor",
+                "Output",
+                "Teleport"
+            ],
+            "gui": "MultiClick"
+        },
+        "Src":
+        {
+            "gui": "OpSelect",
+            "link": "Mode:2"
+        }
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "PASS": true,
+    "INPUTS": {
+        "type": {
+            "type": "long",
+            "default": 2,
+            "values": [0,1,2],
+            "labels": ["DIGITAL", "ANALOG", "ADDITIVE"]
+        },
+        "direction": {
+            "type": "long",
+            "default": 0,
+            "values": [0,1,2,3],
+            "labels": ["X", "Y","XY", "XYREV"]
+        },
+        "resistance": {
+            "type": "float",
+            "default": 10.0,
+            "min": 1.0,
+            "max": 100.0
+        },
+        "power": {
+            "type": "float",
+            "default": 1.0,
+            "min": 1.0,
+            "max": 4.0
+        },
+        "discharge": {
+            "type": "point2D",
+            "default": [0.2,0.0],
+            "min": [0.0,-1.0],
+            "max":  [1.0,1.0]
+        },
+        "center": {
+            "type": "point2D",
+            "default": [0.0,0.0],
+            "min": [0.0,0.0],
+            "max":  [1.0,1.0]
+        },
+        "blend": {
+            "type": "float",
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0
+        },
+        "hue": {
+            "type": "float",
+            "default": 0.0,
+            "min": 0.0,
+            "max": 1.0
+        },
+        "saturation": {
+            "type": "float",
+            "default": 0.0,
+            "min": 0.0,
+            "max": 1.0
+        },
+        "lightness": {
+            "type": "float",
+            "default": 1.0,
+            "min": 0.0,
+            "max": 2.0
+        }
+    }
+}
