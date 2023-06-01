@@ -8,8 +8,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  overscroll-behavior-x: none;
+} 
+body {
+  overscroll-behavior-x: none;
+}
 :root {
-  --font-size: 15.5px;
+  --font-size: 16px;
   /* queries */
   --container: $container;
   --media-sm: $media-sm;
@@ -396,7 +402,8 @@
   --margin: 0.5em;
   --padding: 0.5em;
   --thickness: 2em;
-  --font-size: 10px; }
+/*  --font-size: 10px; */
+}
 
 .mxz {
   align-items: stretch;
@@ -59221,7 +59228,7 @@ select, button, input, textarea, * {
   --margin: 0.5em;
   --padding: 0.5em;
   --thickness: 2em;
-  --font-size: 1.1vw;
+/*  --font-size: 1.4vw;*/
   --font: monospace; }
 
 html, body {

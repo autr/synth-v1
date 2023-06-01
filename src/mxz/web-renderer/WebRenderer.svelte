@@ -144,6 +144,9 @@
 			EXPORTING = false
 		})
 	}
+
+	if (browser) window.captureImage = captureImage
+
 	let EXPORTING = true
 	let RECORDING = false
 
@@ -352,7 +355,8 @@ function getTransformations( store ) {
 			width={$_DIMENSIONS.width} 
 			height={$_DIMENSIONS.height} />
 	</div>
-	<div class="flex column-stretch-flex-start bg bt p1" style="z-index:99999;">
+	<div class="flex column-stretch-flex-start bg bt p1" 
+	style="background: var(--blue5-0);z-index:99999;">
 		<!-- <h4>From</h4>
 		<div>{deform?.from.map(arr=>arr.map(num=>num))}</div>
 		<h4>To</h4>

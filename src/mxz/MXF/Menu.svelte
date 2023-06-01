@@ -87,8 +87,8 @@
 			class="bt"
 			style="padding:0;line-height:0em;">
 			<img 
-				style="background:none;height:2.2em;"
-				class="pt0-4 pb0-3 plr0-5 h2em"
+				style="background:none;height:2.4em;"
+				class="pt0-4 pb0-3 plr0-5"
 				src="/liberatedinterfaces.png" />
 		</a>
 	</div>

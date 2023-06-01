@@ -129,7 +129,7 @@
 			bind:value={ $_UNIFORMS[key] } />
 	{:else if def.type == 'long'}
 
-		{#if !def.min || !def.labels}
+		{#if !def.max && !def.labels}
 			<input 
 				class="input button"
 				bind:value={$_UNIFORMS[key]}

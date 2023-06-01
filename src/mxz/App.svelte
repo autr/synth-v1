@@ -8,7 +8,7 @@
 	import { onMount } from 'svelte'
 
 	import Keys from '$global/Keys.svelte'
-	import { LOCAL_CMD_KEY, SHIFT_KEY, ESC_KEY } from '$global/Keys.js'
+	import { LOCAL_CMD_KEY, SHIFT_KEY, ESC_KEY, CTRL_KEY } from '$global/Keys.js'
 
 
 	import { APP_VIEWS, COMPILER_MODES, DRAG_ACTIONS } from './Defs.js'
@@ -33,13 +33,83 @@
 	})($_selected)
 
 	let inited = false 
+	let keysEl
 
 	onMount( async e => {
 		if (browser) {
-			console.log($_CURRENT_VIEW, '?????')
 			// $_CURRENT_VIEW = window.localStorage.getItem( '__CURRENT_VIEW' )
 			SAY(`getting current view ${$_CURRENT_VIEW}`)
 			inited = true
+
+			keysEl.addBindings([
+
+				{
+					command: [ 'Tab' ],
+					action: e  => {
+
+						// const keys = Object.values(APP_VIEWS)
+						// let idx = keys.indexOf($_CURRENT_VIEW)
+						// idx += 1
+						// if (idx >= keys.length - 1) idx = 0
+						// $_CURRENT_VIEW = keys[idx]
+						// e.preventDefault()
+					}
+				},
+				{
+					command: [ LOCAL_CMD_KEY, 'f' ],
+					action: e  => {
+
+						$_fullscreen = !$_fullscreen
+						e.preventDefault()
+					}
+				},
+				{
+					command: [ LOCAL_CMD_KEY, 'd' ],
+					action: e  => {
+						console.log('CAPTURING IMAGE')
+						window.captureImage()
+						e.preventDefault()
+						e.stopPropagation()
+					}
+				},
+				{
+					command: [ ESC_KEY ],
+					action: e  => {
+
+						if ($_fullscreen) $_fullscreen = false
+						e.preventDefault()
+					}
+				},
+				...Object.values(APP_VIEWS).map( (view,idx) => {
+					return {
+						command: [LOCAL_CMD_KEY, (idx + 1)+'' ],
+						action: e => {
+							$_CURRENT_VIEW = Object.values(APP_VIEWS)[idx]
+							e.preventDefault()
+						}
+					}
+				}),
+				{
+					command: ['Backspace'],
+					action: e => {
+
+
+						if ($_selected) {
+
+							SAY('🚩 deleting', $_selected)
+
+							if ($_selected?.[0]?.[0] != null && $_selected?.[0]?.[1] != null ) {
+								MakeSequenceAdjustment( DRAG_ACTIONS.BIN, $_selected?.[0]?.[0], $_selected?.[0]?.[1] )
+								ClearUpUniforms()
+
+								window.requestAnimationFrame( e => {
+									_recompile.set( COMPILER_MODES.COMPILE )
+								})
+							}
+						}
+					}
+				}
+			])
 		}
 	})
 
@@ -70,66 +140,6 @@
 		}
 	}
 
-	const shortcuts = [
-
-		{
-			command: [ 'Tab' ],
-			action: e  => {
-
-				// const keys = Object.values(APP_VIEWS)
-				// let idx = keys.indexOf($_CURRENT_VIEW)
-				// idx += 1
-				// if (idx >= keys.length - 1) idx = 0
-				// $_CURRENT_VIEW = keys[idx]
-				// e.preventDefault()
-			}
-		},
-		{
-			command: [ LOCAL_CMD_KEY, 'f' ],
-			action: e  => {
-
-				$_fullscreen = !$_fullscreen
-				e.preventDefault()
-			}
-		},
-		{
-			command: [ ESC_KEY ],
-			action: e  => {
-
-				if ($_fullscreen) $_fullscreen = false
-				e.preventDefault()
-			}
-		},
-		...Object.values(APP_VIEWS).map( (view,idx) => {
-			return {
-				command: [LOCAL_CMD_KEY, (idx + 1)+'' ],
-				action: e => {
-					$_CURRENT_VIEW = Object.values(APP_VIEWS)[idx]
-					e.preventDefault()
-				}
-			}
-		}),
-		{
-			command: ['Backspace'],
-			action: e => {
-
-
-				if ($_selected) {
-
-					SAY('🚩 deleting', $_selected)
-
-					if ($_selected?.[0]?.[0] != null && $_selected?.[0]?.[1] != null ) {
-						MakeSequenceAdjustment( DRAG_ACTIONS.BIN, $_selected?.[0]?.[0], $_selected?.[0]?.[1] )
-						ClearUpUniforms()
-
-						window.requestAnimationFrame( e => {
-							_recompile.set( COMPILER_MODES.COMPILE )
-						})
-					}
-				}
-			}
-		}
-	]
 
 </script>
 
@@ -147,7 +157,7 @@
 	{/each}
 </div>
 
-<Keys {shortcuts} />
+<Keys bind:this={keysEl} />
 
 
 <div id="app" class="app mxz dark flex row-stretch-stretch">
