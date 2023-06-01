@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="AUTR" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="/numeric.min.js"></script>
+		<link rel='stylesheet' href='/App.css'>
+		<meta http-equiv="content-security-policy" content="">
+		<link rel="modulepreload" href="../_app/immutable/start-e525224a.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-aa6bc0ce.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-f5a154de.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-33cbabcd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-892500ad.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-dbe59a2c.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-26ff232f.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-d33eaf18.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/aui/_layout.svelte-0f5f8294.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Defs-459fb066.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/API-64f1f2c3.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/aui/_type_/_layout.svelte-fda78a0c.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Toggle-3ca16f02.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Rect-d7cdf2d5.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores-0dffbfb9.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/aui/_type_/_page.svelte-dda3d4fc.js">
+	</head>
+	<body>
+		
+
+
+<main class="app aui dark autr"><div class="wrapper"><aside class="side"><a href="/aui" class="logo"><svg viewBox="-30 -30 860 1060" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com"><path d="M0 600c0-124.54 56.916-235.786 146.155-309.149C215.213 234.082 303.625 200 400 200" style="stroke:#000;fill-rule:evenodd;fill:none;stroke-linecap:round;stroke-width:30px" bx:origin="0.487 0.513"></path><path d="M0 600V0m0 0h500" style="stroke:#000;fill:none;stroke-linecap:round;stroke-width:30px"></path><path d="M100.001 200H400" style="fill:#d8d8d8;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:30px" bx:origin="-0.333333 -0.605664"></path><path d="M600 550c0 27.614-22.386 50-50 50s-50-22.386-50-50M700 550c0 27.614-22.386 50-50 50s-50-22.386-50-50" style="stroke:#000;fill:none;stroke-linecap:round;stroke-width:30px"></path><path d="M500 550V0M600 550V253.892M700 548.319V335.218" style="stroke:#000;fill:none;stroke-linecap:round;stroke-width:30px" bx:origin="-0.65 0.5"></path><path d="M800 600c0 220.915-179.087 400-400 400S0 820.915 0 600" style="stroke:#000;fill:none;stroke-linecap:round;stroke-width:30px"></path><path d="M400.001 900c-93.405 0-176.84-42.687-231.861-109.616C125.562 738.59 100.001 672.28 100.001 600" style="stroke:#000;fill-rule:evenodd;fill:none;stroke-linecap:round;stroke-width:30px"></path></svg>
+				<span>AUI</span></a>
+			<nav class="nav"><a class="link" href="/aui/color">Color
+					</a><a class="link" href="/aui/slider">Slider
+					</a><a class="link" href="/aui/knob">Knob
+					</a><a class="link" href="/aui/waveform">Waveform
+					</a><a class="link" href="/aui/selector">Selector
+					</a><a class="link" href="/aui/joystick">Joystick
+					</a><a class="link" href="/aui/numbox">Numbox
+					</a><a class="link" href="/aui/icon">Icon
+					</a><a class="link" href="/aui/toggle">Toggle
+					</a><a class="link" href="/aui/textbox">Textbox
+					</a></nav></aside>
+		<span class="vertical v-graphic"></span>
+		<div class="area">
+	
+	<div class="workspace"></div>
+
+	
+	<span class="vertical v-graphic"></span>
+
+
+	
+	<aside class="properties"></aside>
+
+	
+	<span class="vertical v-graphic"></span>
+
+	
+	<div class="theming grow overflow-auto"><div class="colors flex column-stretch-stretch"><div class="colormatrix flex row grow"><div class="matrixwrap flex column grow rel"><canvas width="1" height="1" class="w100pc"></canvas>
+			<div class="matrix fill flex column"><div class="matrixrow flex row grow rel w100pc"><span class="pr0-1 w1em text-center">0</span>
+						<a href="undefined?x=0&y=0" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(230.99999999999997, 9.803921568627452%, 40%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								<span class="abs text-center t100pc radius2em">0
+									</span>
+							</a><a href="undefined?x=1&y=0" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(228.75, 8.24742268041237%, 38.03921568627451%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								<span class="abs text-center t100pc radius2em">1
+									</span>
+							</a><a href="undefined?x=2&y=0" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(230.00000000000003, 6.521739130434781%, 36.078431372549026%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								<span class="abs text-center t100pc radius2em">2
+									</span>
+							</a><a href="undefined?x=3&y=0" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(225.00000000000006, 4.597701149425287%, 34.11764705882353%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								<span class="abs text-center t100pc radius2em">3
+									</span>
+							</a><a href="undefined?x=4&y=0" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(225.00000000000006, 2.4390243902439024%, 32.15686274509804%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								<span class="abs text-center t100pc radius2em">4
+									</span>
+							</a><a href="undefined?x=5&y=0" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(251.4285714285714, 48.837209302325654%, 91.5686274509804%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								<span class="abs text-center t100pc radius2em">5
+									</span>
+							</a><a href="undefined?x=6&y=0" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(246.31578947368428, 51.351351351351425%, 92.74509803921569%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								<span class="abs text-center t100pc radius2em">6
+									</span>
+							</a><a href="undefined?x=7&y=0" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(247.05882352941174, 51.515151515151516%, 93.52941176470588%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								<span class="abs text-center t100pc radius2em">7
+									</span>
+							</a><a href="undefined?x=8&y=0" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(247.99999999999997, 51.72413793103448%, 94.31372549019608%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								<span class="abs text-center t100pc radius2em">8
+									</span>
+							</a><a href="undefined?x=9&y=0" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(249.2307692307692, 51.99999999999988%, 95.09803921568627%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								<span class="abs text-center t100pc radius2em">9
+									</span>
+							</a>
+					</div><div class="matrixrow flex row grow rel w100pc"><span class="pr0-1 w1em text-center">1</span>
+						<a href="undefined?x=0&y=1" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(20, 12%, 4.901960784313726%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=1&y=1" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(1, 8.333333333333332%, 9.411764705882353%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=2&y=1" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(1, 5.7142857142857135%, 13.725490196078432%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=3&y=1" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(1, 5.376344086021509%, 18.23529411764706%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=4&y=1" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(1, 4.347826086956519%, 22.54901960784314%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=5&y=1" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(25.777777777777786, 93.10344827586205%, 71.56862745098039%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=6&y=1" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(26.666666666666668, 93.10344827586202%, 77.25490196078431%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=7&y=1" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(26.99999999999999, 93.02325581395351%, 83.13725490196079%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=8&y=1" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(28.88888888888888, 96.4285714285714%, 89.01960784313725%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=9&y=1" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(34.615384615384635, 99.99999999999989%, 94.90196078431372%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a>
+					</div><div class="matrixrow flex row grow rel w100pc"><span class="pr0-1 w1em text-center">2</span>
+						<a href="undefined?x=0&y=2" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(320, 12%, 4.901960784313726%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=1&y=2" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(330, 8.333333333333332%, 9.411764705882353%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=2&y=2" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(315.00000000000006, 5.7142857142857135%, 13.725490196078432%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=3&y=2" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(324, 5.376344086021509%, 18.23529411764706%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=4&y=2" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(324, 4.347826086956519%, 22.54901960784314%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=5&y=2" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(340.8888888888889, 93.10344827586205%, 71.56862745098039%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=6&y=2" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(341.1111111111111, 93.10344827586202%, 77.25490196078431%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=7&y=2" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(342, 93.02325581395351%, 83.13725490196079%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=8&y=2" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(343.3333333333333, 96.4285714285714%, 89.01960784313725%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=9&y=2" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(348.4615384615385, 99.99999999999989%, 94.90196078431372%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a>
+					</div><div class="matrixrow flex row grow rel w100pc"><span class="pr0-1 w1em text-center">3</span>
+						<a href="undefined?x=0&y=3" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(280, 12%, 4.901960784313726%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=1&y=3" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(270, 8.333333333333332%, 9.411764705882353%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=2&y=3" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(270, 5.7142857142857135%, 13.725490196078432%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=3&y=3" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(276.00000000000006, 5.376344086021509%, 18.23529411764706%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=4&y=3" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(276, 4.347826086956519%, 22.54901960784314%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=5&y=3" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(295.55555555555554, 93.10344827586205%, 71.56862745098039%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=6&y=3" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(296.1111111111111, 93.10344827586202%, 77.25490196078431%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=7&y=3" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(297.72151898734177, 90.80459770114936%, 82.94117647058823%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=8&y=3" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(298.8461538461538, 89.6551724137931%, 88.62745098039215%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=9&y=3" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(304.6153846153846, 99.99999999999989%, 94.90196078431372%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a>
+					</div><div class="matrixrow flex row grow rel w100pc"><span class="pr0-1 w1em text-center">4</span>
+						<a href="undefined?x=0&y=4" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(220, 12%, 4.901960784313726%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=1&y=4" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(225, 8.333333333333332%, 9.411764705882353%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=2&y=4" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(225.00000000000006, 5.7142857142857135%, 13.725490196078432%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=3&y=4" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(240, 5.376344086021509%, 18.23529411764706%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=4&y=4" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(240, 4.347826086956519%, 22.54901960784314%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=5&y=4" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(250.66666666666669, 93.10344827586205%, 71.56862745098039%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=6&y=4" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(251.66666666666669, 93.10344827586202%, 77.25490196078431%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=7&y=4" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(252, 93.02325581395351%, 83.13725490196079%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=8&y=4" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(254.44444444444443, 96.4285714285714%, 89.01960784313725%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=9&y=4" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(260.7692307692308, 99.99999999999989%, 94.90196078431372%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a>
+					</div><div class="matrixrow flex row grow rel w100pc"><span class="pr0-1 w1em text-center">5</span>
+						<a href="undefined?x=0&y=5" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(180, 12%, 4.901960784313726%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=1&y=5" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(195, 8.333333333333332%, 9.411764705882353%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=2&y=5" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(195.00000000000006, 5.7142857142857135%, 13.725490196078432%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=3&y=5" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(192.00000000000003, 5.376344086021509%, 18.23529411764706%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=4&y=5" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(191.99999999999994, 4.347826086956519%, 22.54901960784314%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=5&y=5" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(205.77777777777777, 93.10344827586205%, 71.56862745098039%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=6&y=5" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(206.11111111111111, 93.10344827586202%, 77.25490196078431%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=7&y=5" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(207, 93.02325581395351%, 83.13725490196079%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=8&y=5" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(208.88888888888889, 96.4285714285714%, 89.01960784313725%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=9&y=5" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(214.6153846153846, 99.99999999999989%, 94.90196078431372%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a>
+					</div><div class="matrixrow flex row grow rel w100pc"><span class="pr0-1 w1em text-center">6</span>
+						<a href="undefined?x=0&y=6" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(140, 12%, 4.901960784313726%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=1&y=6" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(135, 8.333333333333332%, 9.411764705882353%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=2&y=6" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(150, 5.7142857142857135%, 13.725490196078432%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=3&y=6" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(144, 5.376344086021509%, 18.23529411764706%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=4&y=6" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(144.00000000000003, 4.347826086956519%, 22.54901960784314%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=5&y=6" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(160.88888888888889, 93.10344827586205%, 71.56862745098039%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=6&y=6" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(161.11111111111111, 93.10344827586202%, 77.25490196078431%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=7&y=6" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(162, 93.02325581395351%, 83.13725490196079%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=8&y=6" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(163.33333333333334, 96.4285714285714%, 89.01960784313725%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=9&y=6" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(168.46153846153845, 99.99999999999989%, 94.90196078431372%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a>
+					</div><div class="matrixrow flex row grow rel w100pc"><span class="pr0-1 w1em text-center">7</span>
+						<a href="undefined?x=0&y=7" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(80.00000000000001, 12%, 4.901960784313726%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=1&y=7" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(90, 8.333333333333332%, 9.411764705882353%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=2&y=7" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(90, 5.7142857142857135%, 13.725490196078432%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=3&y=7" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(96.00000000000001, 5.376344086021509%, 18.23529411764706%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=4&y=7" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(95.99999999999997, 4.347826086956519%, 22.54901960784314%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=5&y=7" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(116, 93.10344827586205%, 71.56862745098039%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=6&y=7" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(116.07476635514018, 93.04347826086952%, 77.45098039215685%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=7&y=7" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(116.96202531645571, 92.94117647058826%, 83.33333333333334%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=8&y=7" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(118.84615384615385, 96.29629629629626%, 89.41176470588235%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=9&y=7" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(124.6153846153846, 99.99999999999989%, 94.90196078431372%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a>
+					</div><div class="matrixrow flex row grow rel w100pc"><span class="pr0-1 w1em text-center">8</span>
+						<a href="undefined?x=0&y=8" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(40, 12%, 4.901960784313726%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=1&y=8" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(45, 8.333333333333332%, 9.411764705882353%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=2&y=8" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(60, 5.7142857142857135%, 13.725490196078432%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=3&y=8" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(47.99999999999997, 5.376344086021509%, 18.23529411764706%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=4&y=8" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(60, 4.347826086956519%, 22.54901960784314%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=5&y=8" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(70.66666666666666, 93.10344827586205%, 71.56862745098039%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=6&y=8" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(71.11111111111111, 93.10344827586202%, 77.25490196078431%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=7&y=8" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(72, 93.02325581395351%, 83.13725490196079%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=8&y=8" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(73.33333333333334, 96.4285714285714%, 89.01960784313725%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=9&y=8" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(78.46153846153848, 99.99999999999989%, 94.90196078431372%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a>
+					</div><div class="matrixrow flex row grow rel w100pc"><span class="pr0-1 w1em text-center">9</span>
+						<a href="undefined?x=0&y=9" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(180, 33.33333333333333%, 0.5882352941176471%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=1&y=9" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(1, 1%, 1.5686274509803921%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=2&y=9" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(1, 1%, 2.7450980392156863%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=3&y=9" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(1, 1%, 3.5294117647058822%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=4&y=9" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(1, 1%, 4.705882352941177%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=5&y=9" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(187.05882352941177, 22.666666666666664%, 14.705882352941178%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=6&y=9" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(184, 18.518518518518515%, 15.88235294117647%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=7&y=9" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(184.6153846153846, 14.606741573033712%, 17.45098039215686%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=8&y=9" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(185.45454545454547, 11.578947368421055%, 18.627450980392158%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a><a href="undefined?x=9&y=9" class="flex block rel grow p0-1"><span class="radius4em rel flex grow"><span style="background:hsla(185.99999999999997, 9.803921568627452%, 20%, 1)" class="radius2em fill"></span>
+									<canvas width="1" height="1" class="w100pc"></canvas></span>
+								
+							</a>
+					</div></div></div>
+		<aside class="p1"><header><h3 class="italic">--cnull-null</h3>
+				<span class="horizontal"></span>
+				</header></aside></div>
+
+	<div style="white-space: pre" class="grow maxh50vh pre maxw16em white-space-pre p8"><button>Copy SASS</button>
+		</div></div>
+		<!-- HTML_TAG_START --><style>
+:root {
+}
+</style><!-- HTML_TAG_END -->
+		<div class="flex row-space-between-center w100pc mb1"><div class="grow basis30pc">border</div>
+				
+			</div><div class="flex row-space-between-center w100pc mb1"><div class="grow basis30pc">radius</div>
+				
+			</div><div class="flex row-space-between-center w100pc mb1"><div class="grow basis30pc">padding</div>
+				
+			</div><div class="flex row-space-between-center w100pc mb1"><div class="grow basis30pc">margin</div>
+				
+			</div><div class="flex row-space-between-center w100pc mb1"><div class="grow basis30pc">thickness</div>
+				
+			</div></div></div></div></main>
+
+
+		<script type="module" data-sveltekit-hydrate="s9m9km">
+			import { start } from "../_app/immutable/start-e525224a.js";
+
+			start({
+				env: {},
+				hydrate: {
+					status: 200,
+					error: null,
+					node_ids: [0, 2, 3, 6],
+					params: {type:"slider"},
+					routeId: "aui/[type]",
+					data: (function(a){return [a,a,a,a]}(null)),
+					form: null
+				},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="s9m9km"]').parentNode,
+				trailing_slash: "never"
+			});
+		</script>
+	
+	</body>
+</html>

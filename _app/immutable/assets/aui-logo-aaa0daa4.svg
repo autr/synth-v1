@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-30 -30 860 1060" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <path d="M 0 600 C 0 475.46 56.916 364.214 146.155 290.851 C 215.213 234.082 303.625 200 400 200" style="stroke: rgb(0, 0, 0); fill-rule: evenodd; fill: none; stroke-linecap: round; stroke-width: 30px;" bx:origin="0.487 0.513"/>
+  <path d="M 0 600 L 0 0 M 0 0 L 500 0" style="stroke: rgb(0, 0, 0); fill: none; stroke-linecap: round; stroke-width: 30px;"/>
+  <path d="M 100.001 200 L 400 200" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 30px;" bx:origin="-0.333333 -0.605664"/>
+  <path d="M 600 550 C 600 577.614 577.614 600 550 600 C 522.386 600 500 577.614 500 550" style="stroke: rgb(0, 0, 0); fill: none; stroke-linecap: round; stroke-width: 30px;"/>
+  <path d="M 700 550 C 700 577.614 677.614 600 650 600 C 622.386 600 600 577.614 600 550" style="stroke: rgb(0, 0, 0); fill: none; stroke-linecap: round; stroke-width: 30px;"/>
+  <path d="M 500 550 L 500 0" style="stroke: rgb(0, 0, 0); fill: none; stroke-linecap: round; stroke-width: 30px;" bx:origin="-0.65 0.5"/>
+  <path d="M 600 550 L 600 253.892" style="stroke: rgb(0, 0, 0); fill: none; stroke-linecap: round; stroke-width: 30px;" bx:origin="-0.65 0.5"/>
+  <path d="M 700 548.319 L 700 335.218" style="stroke: rgb(0, 0, 0); fill: none; stroke-linecap: round; stroke-width: 30px;" bx:origin="-0.65 0.5"/>
+  <path d="M 800 600 C 800 820.915 620.913 1000 400 1000 C 179.087 1000 0 820.915 0 600" style="stroke: rgb(0, 0, 0); fill: none; stroke-linecap: round; stroke-width: 30px;"/>
+  <path d="M 400.001 900 C 306.596 900 223.161 857.313 168.14 790.384 C 125.562 738.59 100.001 672.28 100.001 600" style="stroke: rgb(0, 0, 0); fill-rule: evenodd; fill: none; stroke-linecap: round; stroke-width: 30px;"/>
+</svg>

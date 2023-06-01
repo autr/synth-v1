@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("icons/MaterialIcons-Regular.eot");
+  src: local("icons"), local("MaterialIcons-Regular"), url("icons/MaterialIcons-Regular.ttf") format("truetype"); }
+
+.icon {
+  font-family: 'icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  line-height: var(--font-size);
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga'; }
+
+@font-face {
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("icons/MaterialIcons-Regular.eot");
+  src: local("icons"), local("MaterialIcons-Regular"), url("icons/MaterialIcons-Regular.ttf") format("truetype"); }
+
+.icon {
+  font-family: 'icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  line-height: var(--font-size);
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga'; }
+
+/* set property: { property-name, color, class-list, override-class-list } */
+/* replaces a string */
+/* converts an svg into a long data-string for use as backgrounds etc */
+/* converts text string into class list */
+/* creates filled state */
+/* create color shorthands: { color, backgroound, names, filled-when-active, apply-to-inputs } */
+/* sassis creates THEME-BASED shorthand: colors, borders, filled etc */

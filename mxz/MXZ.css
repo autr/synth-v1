@@ -1,0 +1,205 @@
+@font-face {
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("icons/MaterialIcons-Regular.eot");
+  src: local("icons"), local("MaterialIcons-Regular"), url("icons/MaterialIcons-Regular.ttf") format("truetype"); }
+
+.icon {
+  font-family: 'icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  line-height: var(--font-size);
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga'; }
+
+@font-face {
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("icons/MaterialIcons-Regular.eot");
+  src: local("icons"), local("MaterialIcons-Regular"), url("icons/MaterialIcons-Regular.ttf") format("truetype"); }
+
+.icon {
+  font-family: 'icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  line-height: var(--font-size);
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga'; }
+
+/* set property: { property-name, color, class-list, override-class-list } */
+/* replaces a string */
+/* converts an svg into a long data-string for use as backgrounds etc */
+/* converts text string into class list */
+/* creates filled state */
+/* create color shorthands: { color, backgroound, names, filled-when-active, apply-to-inputs } */
+/* sassis creates THEME-BASED shorthand: colors, borders, filled etc */
+:root {
+  --radius: 0.5em;
+  --input-padding: 0.5em 0.75em;
+  --border: 2px;
+  --margin: 0.5em;
+  --padding: 0.5em;
+  --thickness: 2em;
+  --font-size: 10px; }
+
+.mxz {
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: column;
+  height: 100vh;
+  --thickness: 1em;
+  --margin: 0em;
+  --padding: 0em;
+  --font: 'Space Mono', monospace;
+  --font-monospace: 'Space Mono', monospace; }
+  .mxz .aui-slider {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row; }
+  .mxz video, .mxz img, .mxz iframe, .mxz canvas {
+    max-width: 100%; }
+  .mxz .channel {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    min-width: 14em;
+    max-width: 14em;
+    width: 14em;
+    min-height: 100vh;
+    max-height: 100vh;
+    height: 100vh;
+    padding-top: 1em;
+    padding-bottom: 16em;
+    margin: 0; }
+    .mxz .channel .op {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 14em;
+      border-width: var(--border);
+      border-style: solid;
+      background-color: var(--bg3);
+      border-radius: 5px;
+      margin-bottom: 1em; }
+      .mxz .channel .op .inner {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: row;
+        cursor: pointer;
+        position: relative;
+        flex-wrap: wrap;
+        width: 100%; }
+        .mxz .channel .op .inner > * {
+          min-width: 100%;
+          max-width: 100%;
+          width: 100%;
+          flex-grow: 1;
+          padding: 0.5em; }
+  .mxz * {
+    outline: none !important; }
+  .mxz .draggedover {
+    background: yellow; }
+  .mxz .no-pointer-events * {
+    pointer-events: none; }
+  .mxz canvas {
+    background: black; }
+  .mxz svg path {
+    stroke: transparent; }
+  .mxz #header {
+    -webkit-app-region: drag; }
+    .mxz #header.electron {
+      padding-left: 6em; }
+  .mxz img {
+    max-width: 100%;
+    background: black; }
+    .mxz img.export {
+      background: white; }
+  .mxz .palette canvas {
+    width: 100%;
+    max-width: 100%; }
+  .mxz .file .overlay {
+    display: none; }
+  .mxz .file:hover .overlay {
+    display: flex; }
+  .mxz input, .mxz .checker, .mxz input[type=range] {
+    background-repeat: repeat; }
+    .mxz input::-webkit-slider-thumb, .mxz .checker::-webkit-slider-thumb, .mxz input[type=range]::-webkit-slider-thumb {
+      background-color: var(--bg-pop); }
+  .mxz .swatch.metal {
+    background: linear-gradient(140deg, rgba(0, 0, 0, 0) 20%, rgba(255, 255, 255, 0.1) 60%, rgba(0, 0, 0, 0.1) 75%, rgba(255, 255, 255, 0.2) 90%, rgba(0, 0, 0, 0) 120%); }
+  .mxz .checkered {
+    background-repeat: repeat; }
+  .mxz #canvases {
+    background-repeat: repeat; }
+    .mxz #canvases * {
+      image-rendering: pixelated; }
+  .mxz .palette-range {
+    background-color: var(--bg);
+    background-image: linear-gradient(45deg, var(--bg-sink) 25%, transparent 25%, transparent 75%, var(--bg-sink) 75%, var(--bg-sink) 100%), linear-gradient(45deg, var(--bg-sink) 25%, transparent 25%, transparent 75%, var(--bg-sink) 75%, var(--bg-sink) 100%);
+    background-size: 8px 8px;
+    background-position: 0 0, 4px 4px; }
+  .mxz .grabbable {
+    cursor: grab; }
+    .mxz .grabbable:active {
+      cursor: grabbing; }
+  .mxz .renderer {
+    border-left-width: var(--border);
+    border-left-style: solid;
+    align-self: baseline;
+    height: 100vh;
+    overflow: auto; }
+    .mxz .renderer .actions {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: row; }
+      .mxz .renderer .actions > * {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        min-height: 2em;
+        padding: 0em; }
+    .mxz .renderer .fps {
+      background-color: var(--c3);
+      color: var(--bg3); }
+    .mxz .renderer .canvas-wrapper {
+      border-top-width: var(--border);
+      border-top-style: solid;
+      border-bottom-width: var(--border);
+      border-bottom-style: solid;
+      position: relative; }
+      .mxz .renderer .canvas-wrapper transparent {
+        background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c3) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c3) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
+      .mxz .renderer .canvas-wrapper canvas {
+        top: 0px;
+        left: 0px;
+        position: absolute;
+        transform-origin: 0px 0px;
+        z-index: 99; }
