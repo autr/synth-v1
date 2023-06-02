@@ -30,10 +30,8 @@
 
 </script>
 <div 
-	bind:this={w[id]}
-	class="flex row-flex-start-stretch ptb6 grow overflow-hidden rel w100pc">
+	class="flex row-flex-start-stretch pb4 grow rel w100pc">
 	<div 
-		style="overflow-x:auto"
 		class="flex row-flex-start-stretch grow minw100pc">
 		{#each $_SEQUENCE as sequence, rowIdx}
 
@@ -77,6 +75,7 @@
 							type={TYPES.UNIT}
 							index={IndexFromRowAndCol(rowIdx, colIdx)} />
 					{/each}
+					<div class="minh4em w100pc" />
 			</section>
 		{/each}
 

@@ -17,6 +17,7 @@ function ISFRenderer(ctx) {
   this.gl = ctx;
   this.uniforms = [];
   this.contextState = new ISFGLState(this.ctx);
+  console.log('🚨 setting up paint')
   this.setupPaintToScreen();
   this.startTime = Date.now();
   this.lastRenderTime = Date.now();
@@ -120,6 +121,8 @@ ISFRenderer.prototype.setNormalizedValue = function setNormalizedValue(name, nor
 
 ISFRenderer.prototype.setupPaintToScreen = function setupPaintToScreen() {
   SAY(`[ISFRenderer] setting up painting to screen...`, this)
+  const { basicVertexShader, basicFragmentShader } = this
+  console.log('🚨 new program:', { basicVertexShader, basicFragmentShader })
   this.paintProgram = new ISFGLProgram(this.ctx, this.basicVertexShader, this.basicFragmentShader);
   return this.paintProgram.bindVertices();
 };

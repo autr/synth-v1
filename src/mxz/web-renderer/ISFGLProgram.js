@@ -1,5 +1,7 @@
 function ISFGLProgram(gl, vs, fs) {
+  console.log('HELLO', gl)
   this.gl = gl;
+  console.log('🚨 shaders:', this.gl.VERTEX_SHADER)
   this.vShader = this.createShader(vs, this.gl.VERTEX_SHADER);
   this.fShader = this.createShader(fs, this.gl.FRAGMENT_SHADER);
   this.program = this.createProgram(this.vShader, this.fShader);
@@ -47,6 +49,7 @@ ISFGLProgram.prototype.createShader = function createShader(src, type) {
   this.gl.compileShader(shader);
   const compiled = this.gl.getShaderParameter(shader, this.gl.COMPILE_STATUS);
   window.shaderSrc = src
+  console.log('🚨 compiled:', compiled, this.gl.getShaderInfoLog(shader))
   if (!compiled) {
     const lastError = this.gl.getShaderInfoLog(shader);
     const lookup = src.split('\n')

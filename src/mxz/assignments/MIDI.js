@@ -1,4 +1,5 @@
 
+import { browser } from '$app/environment'
 import { get } from 'svelte/store'
 import parseMidi from 'parse-midi'
 import { 
@@ -168,6 +169,7 @@ function OnMIDIMessage( e ) {
 }
 
 export async function InitMIDI() {
+	if (!browser) return console.log('skipping midi')
 	const midi = await navigator.requestMIDIAccess()
 	SAY( `requesting MIDI devices`)
 	for (const [id, device] of midi.inputs) {

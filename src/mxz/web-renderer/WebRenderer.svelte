@@ -79,6 +79,7 @@
 					const GL = canvas.getContext('webgl2', {
 						preserveDrawingBuffer: true
 					})
+					console.log('⛩️ context', GL)
 					w.RNDRS[key] = new ISFRenderer(GL)
 					w.ISF = compile()
 					w.VTX = `// hello world?`
@@ -316,7 +317,9 @@ function getTransformations( store ) {
 <div 
 	class="renderer bb {class_}"
 	style="height: auto;min-width:{width}px;max-width:{width}px;">
-	<div class="actions bb">
+	<div 
+		style="background: var(--blue5-0)"
+		class="actions bb rel z-index99 bt">
 		<button 
 			on:click={togglePopup}>
 			Popup
@@ -363,7 +366,7 @@ function getTransformations( store ) {
 		<div>{deform?.to.map(arr=>arr.map(num=>num))}</div>
 		<h4>Matrix</h4>
 		<div style="white-space:pre">{@html deform?.matrix.map(arr=>arr.map(num=>num).join(',')).join('\n')}</div> -->
-		<div class="flex wrap grow w100pc">
+		<div class="flex wrap grow w100pc none">
 			{#each ctrlPoints as value,key }
 				<div class="maxw50pc grow">
 					<!-- <label>{key}</label> -->

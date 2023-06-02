@@ -59,7 +59,7 @@
 			video: true,
 			audio: false
 		}).then( (stream, id) => {
-			console.log('camera opened', stream)
+			console.log('✅ ------------ camera opened', stream)
 			el.srcObject = stream        
 		})
 	}
@@ -160,8 +160,7 @@
 				bind:this={el}
 				autoplay
 				loop
-				controls
-				src={$_UNIFORMS[key]?.path} />
+				controls />
 
 		{/if}
 	</div>

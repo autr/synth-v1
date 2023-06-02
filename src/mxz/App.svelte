@@ -173,7 +173,7 @@
 			</button>
 		{/each}
 	</nav>
-	<article class="flex column grow overflow-auto">
+	<article class="flex column grow overflow-hidden h100vh w100vw">
 		{#each Object.entries(views) as [id, item]}
 			<section 
 				{id}
