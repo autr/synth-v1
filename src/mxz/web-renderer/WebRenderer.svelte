@@ -129,6 +129,8 @@
 		animate()
 	})
 
+	const date = () => ((new Date()).toISOString())
+
 	function captureImage() {
 
 		EXPORTING = true
@@ -137,7 +139,9 @@
 
 
 			const temp = document.createElement('a')
-			temp.setAttribute('download', '_MXZ.png')
+			const { offsetHeight, offsetWidth } = localCanvas
+			console.log( '💾 saving from canvas:', localCanvas.width, localCanvas.height, 'scaled as:', offsetWidth, offsetHeight, 'with store dimensions:', $_DIMENSIONS )
+			temp.setAttribute('download', `synth.v1.${date()}.png`)
 			const url = (await localCanvas.toDataURL('image/png',1)).replace(/^data:image\/png/,'data:application/octet-stream')
 			temp.setAttribute('href', url)
 			temp.click()

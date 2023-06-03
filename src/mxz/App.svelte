@@ -64,7 +64,7 @@
 					}
 				},
 				{
-					command: [ LOCAL_CMD_KEY, 'd' ],
+					command: [ LOCAL_CMD_KEY, 's' ],
 					action: e  => {
 						console.log('CAPTURING IMAGE')
 						window.captureImage()

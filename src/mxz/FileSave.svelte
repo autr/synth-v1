@@ -28,10 +28,12 @@
 		SetStoresFromText(w.localStorage.getItem(KEY))
 	}
 
+	const date = () => ((new Date()).toISOString())
+
 	export function saveProject() {
 		const link = document.createElement('a')
 		link.setAttribute('href', `data:application/plain;charset=utf-8,${encodeURIComponent(compile({hide:true,isf:true}))}`)
-		link.setAttribute('download', '__MXZ.fs')
+		link.setAttribute('download', `synth.v1.${date()}.fs`)
 		link.click()
 	}
 
@@ -71,7 +73,7 @@
 		const link = document.createElement('a')
 		const midiConfig = await AssignmentsToVDMX()
 		link.setAttribute('href', `data:application/plain;charset=utf-8,${encodeURIComponent( midiConfig )}`)
-		link.setAttribute('download', '__MXZ_Controls.json')
+		link.setAttribute('download', `synth.v1.${date()}.VDMX.fs`)
 		link.click()
 	}
 
