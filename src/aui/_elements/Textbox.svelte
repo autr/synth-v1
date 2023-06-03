@@ -3,7 +3,7 @@
 
 	import { onMount } from 'svelte'
 	import { browser } from '$app/environment'
-	import { _globals } from '../Store.js'
+	import { _globals } from '../store.js'
 	export let element = null
 
 	const _window = browser ? window : {}

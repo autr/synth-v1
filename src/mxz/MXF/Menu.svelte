@@ -1,6 +1,6 @@
 <script>
-	import { _dragging, _selected, _DIMENSIONS, _SOURCES } from '$mxz/Store.js'
-	import { DRAG_ACTIONS } from '$mxz/Defs.js'
+	import { _dragging, _selected, _DIMENSIONS, _SOURCES } from '$mxz/store.js'
+	import { DRAG_ACTIONS } from '$mxz/defs.js'
 	import * as Ops from '$mxz/ops'
 	import FileSave from '$mxz/FileSave.svelte'
 	import { GenerateUuidWithName } from '$mxz/API.js'

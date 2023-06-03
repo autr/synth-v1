@@ -1,6 +1,6 @@
 <script>
 
-	import { Defaults } from '$aui/Defs.js'
+	import { Defaults } from '$aui/defs.js'
 	import Prop from '$aui/_app/Prop.svelte'
 
 	export let name

@@ -1,7 +1,7 @@
-import { COMPILER_TYPES } from '$mxz/Defs.js'
+import { COMPILER_TYPES } from '$mxz/defs.js'
 import { get } from 'svelte/store'
 import { LoopThroughSequence, GetISFFunctionArgsFromSchema } from '$mxz/API.js'
-import { _UNIFORMS } from '$mxz/Store.js'
+import { _UNIFORMS } from '$mxz/store.js'
 import * as Ops from '$mxz/ops'
 
 export default e => {

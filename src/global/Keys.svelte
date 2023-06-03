@@ -1,7 +1,7 @@
 <script>
 	import { browser } from '$app/environment'
 	import * as KEYS from './Keys.js'
-	import { _keys } from './Store.js'
+	import { _keys } from './store.js'
 	import { get } from 'svelte/store'
 
 	export let debug = false

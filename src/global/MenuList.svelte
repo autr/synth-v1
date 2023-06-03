@@ -3,7 +3,7 @@
 	import MenuList from './MenuList.svelte'
 	import Menu from './Menu.svelte'
 	import { MENU_TYPES } from './MenuDef.js'
-	import { _context_menu } from '$lib/Store.js'
+	import { _context_menu } from '$lib/store.js'
 
 	export let list
 	export let idx

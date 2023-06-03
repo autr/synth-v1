@@ -11,13 +11,13 @@
 	import Textbox from '$aui/_elements/Textbox.svelte'
 	import Props from '$lib/aui/_app/Props.svelte'
 	import Colors from '$lib/aui/_app/Colors.svelte'
-	import Vars from '$aui/Vars.js'
+	import Vars from '$aui/vars.js'
 
 
 	import { page } from '$app/stores'
 	import { browser } from '$app/environment'
 	import { goto } from '$app/navigation'
-	import { SCHEMA, PROTOTYPE, Defaults } from '$lib/aui/Defs.js'
+	import { SCHEMA, PROTOTYPE, Defaults } from '$lib/aui/defs.js'
 	import { onMount } from 'svelte'
 	import { CalculatePixels } from '$lib/API.js'
 	const components = { Knob, Slider, Color, Waveform, Selector, Joystick, Numbox, Icon, Toggle, Textbox }

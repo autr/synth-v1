@@ -1,4 +1,4 @@
-import { COMPILER_TYPES } from './../Defs.js'
+import { COMPILER_TYPES } from './../defs.js'
 
 export default e => {
 

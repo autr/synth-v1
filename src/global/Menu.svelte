@@ -1,7 +1,7 @@
 <script>
 
 	import { onMount } from 'svelte'
-	import { _context_menu, _keys } from '$lib/global/Store.js'
+	import { _context_menu, _keys } from '$lib/global/store.js'
 	import MenuList from './MenuList.svelte'
 	import { MENU_TYPES } from './MenuDef.js'
 	import { SHIFT_KEY, LOCAL_CMD_KEY } from './Keys.js'

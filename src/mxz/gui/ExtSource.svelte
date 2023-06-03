@@ -4,7 +4,7 @@
 	/*HEADER*/
 	import { onMount } from 'svelte'
 	import { browser } from '$app/environment'
-	import { _UNIFORMS } from '$mxz/Store.js'
+	import { _UNIFORMS } from '$mxz/store.js'
 	
 	export let def
 	export let key
@@ -50,7 +50,7 @@
 	})
 
 
-	import { MEDIA_TYPES, MEDIA_DEFAULTS } from '$mxz/Defs.js'
+	import { MEDIA_TYPES, MEDIA_DEFAULTS } from '$mxz/defs.js'
 
 	let isCameraRequested = false
 	function openCameraStream(e) {

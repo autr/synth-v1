@@ -2,8 +2,8 @@
 	import { browser } from '$app/environment'
 	import { onMount } from 'svelte'
 	
-	import { _dragging, _selected, _DIMENSIONS, _SOURCES } from '$mxz/Store.js'
-	import { DRAG_ACTIONS } from '$mxz/Defs.js'
+	import { _dragging, _selected, _DIMENSIONS, _SOURCES } from '$mxz/store.js'
+	import { DRAG_ACTIONS } from '$mxz/defs.js'
 	import * as Ops from '$mxz/ops'
 	import FileSave from '$mxz/FileSave.svelte'
 	import { GenerateUuidWithName } from '$mxz/API.js'
@@ -29,7 +29,7 @@
 	import Menu from '$mxz/MXF/Menu.svelte'
 	import Editor from '$mxz/MXF/Editor.svelte'
 	import FFT from '$mxz/assignments/FFT.svelte'
-	import { _CURRENT_VIEW, _popup_canvas } from '$mxz/Store.js'
+	import { _CURRENT_VIEW, _popup_canvas } from '$mxz/store.js'
 
 	const w = (browser) ? window : {}
 

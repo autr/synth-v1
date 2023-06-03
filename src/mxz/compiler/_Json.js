@@ -1,5 +1,5 @@
 import { get } from 'svelte/store'
-import {  _SOURCES, _UNIFORMS, _HIDDEN } from '$mxz/Store.js'
+import {  _SOURCES, _UNIFORMS, _HIDDEN } from '$mxz/store.js'
 import { 
 	GetLabelFromOp, 
 	GetLetterFromIdx, 

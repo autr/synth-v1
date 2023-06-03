@@ -2,12 +2,12 @@
 
 	import { onMount, onDestroy, createEventDispatcher } from 'svelte'
 	import { browser } from '$app/environment'
-	import { DRAG_ACTIONS, BLEND_MODES } from './Defs.js'
+	import { DRAG_ACTIONS, BLEND_MODES } from './defs.js'
 	import { IsRowColSelected, GetLetterFromIdx } from '$mxz/API.js'
-	import { _UNIFORMS, _SEQUENCE, _selected, _dragging, _SOURCES, _source_select } from '$mxz/Store.js'
+	import { _UNIFORMS, _SEQUENCE, _selected, _dragging, _SOURCES, _source_select } from '$mxz/store.js'
 	import { GetSelectedSequenceList, GetSequenceAsList } from './API.js'
 	import Slider from '$aui/_elements/Slider.svelte'
-	import { _keys } from '$global/Store.js'
+	import { _keys } from '$global/store.js'
 	import { SHIFT_KEY } from '$global/Keys.js'
 
 	import * as Ops from './ops'

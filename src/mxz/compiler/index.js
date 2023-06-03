@@ -1,7 +1,7 @@
 
 import { browser } from '$app/environment'
 import { get } from 'svelte/store'
-import { COMPILER_TYPES, COMPILER_TAGS } from '$mxz/Defs.js'
+import { COMPILER_TYPES, COMPILER_TAGS } from '$mxz/defs.js'
 import { 
 	_SOURCES, 
 	_SEQUENCE, 
@@ -9,7 +9,7 @@ import {
 	_UNIFORMS, 
 	_CURRENT_VIEW, 
 	_HIDDEN, 
-	_DIMENSIONS } from '$mxz/Store.js'
+	_DIMENSIONS } from '$mxz/store.js'
 
 import BLEND_MODES from './_BlendModes.js'
 import BODY from './_Body.js'
@@ -18,7 +18,7 @@ import JSON_CONFIG from './_Json.js'
 import OPS from './_Ops.js'
 import UTILS from './_Utils.js'
 
-import { GetStoresAsText } from '$mxz/Store.js'
+import { GetStoresAsText } from '$mxz/store.js'
 
 
 const SAY = (m, e) => console.log(`[Compiler] ${m}`, e || '')

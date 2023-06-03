@@ -2,7 +2,7 @@
 	/*HEADER*/
 	import { onMount } from 'svelte'
 	import { browser } from '$app/environment'
-	import { _UNIFORMS } from '$mxz/Store.js'
+	import { _UNIFORMS } from '$mxz/store.js'
 	
 	export let def
 	export let key
@@ -35,7 +35,7 @@
 	/*/HEADER*/
 
 	export let component = null
-	import { _contextmenu_learning, _contextmenu_active, _ASSIGNMENTS } from '$mxz/Store.js'
+	import { _contextmenu_learning, _contextmenu_active, _ASSIGNMENTS } from '$mxz/store.js'
 
 	import Slider from '$aui/_elements/Slider.svelte'
 	import Toggle from '$aui/_elements/Toggle.svelte'
@@ -43,7 +43,7 @@
 	import Svg from '$global/Svg.svelte'
 	import Arc from '$global/Arc.svelte'
 	
-	import { _def_lookup } from '$mxz/Store.js'
+	import { _def_lookup } from '$mxz/store.js'
 
 	let contextPosition = { offsetX: 0, offsetY: 0 }
 

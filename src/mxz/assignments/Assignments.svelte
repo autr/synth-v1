@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte'
-	import { _ASSIGNMENTS } from '$mxz/Store.js'
+	import { _ASSIGNMENTS } from '$mxz/store.js'
 	import { InitMIDI } from './MIDI.js'
 
 

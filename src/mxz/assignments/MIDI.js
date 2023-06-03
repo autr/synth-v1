@@ -7,7 +7,7 @@ import {
 	_contextmenu_active, 
 	_def_lookup, 
 	_ASSIGNMENTS, 
-	_UNIFORMS } from '$mxz/Store.js'
+	_UNIFORMS } from '$mxz/store.js'
 import { ScaleValue, GetOpByUuid, GetLabelFromOp } from '$mxz/API.js'
 
 const SAY = (m, e) => console.log(`[MIDI] 🎛 ${m}`, e || '')

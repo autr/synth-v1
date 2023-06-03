@@ -25,7 +25,7 @@
 
 	import { onMount } from 'svelte'
 	import { page } from '$app/stores'
-	import { _data, _model } from '$lib/Store.js'
+	import { _data, _model } from '$lib/store.js'
 	import { sort } from 'fast-sort'
 
 	export let thead_data = [ 'id', 'name', 'value' ] 

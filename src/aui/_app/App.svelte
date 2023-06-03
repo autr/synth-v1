@@ -1,5 +1,5 @@
 <script>
-	import { AUI_TYPES } from '$aui/Defs.js'
+	import { AUI_TYPES } from '$aui/defs.js'
 	import Logo from "$assets/aui/aui-logo.svg"
 	import { SetNonScalingStroke } from '$lib/API.js'
 	import Spacer from '$global/Spacer.svelte'

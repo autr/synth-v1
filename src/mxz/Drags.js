@@ -1,7 +1,7 @@
 import { get } from 'svelte/store'
 import { browser } from '$app/environment'
-import { _SEQUENCE, _UNIFORMS, _selected, _dragging, _recompile} from './Store.js'
-import { DRAG_ACTIONS, COMPILER_MODES } from './Defs.js'
+import { _SEQUENCE, _UNIFORMS, _selected, _dragging, _recompile} from './store.js'
+import { DRAG_ACTIONS, COMPILER_MODES } from './defs.js'
 import { MakeSequenceAdjustment, ClearUpUniforms } from '$mxz/API.js'
 
 const w = (browser) ? window : {}

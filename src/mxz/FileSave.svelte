@@ -1,11 +1,11 @@
 <script>
 	import { onMount } from 'svelte'
 	import { browser } from '$app/environment'
-	import * as Stores from '$mxz/Store.js'
+	import * as Stores from '$mxz/store.js'
 	import { AssignmentsToVDMX } from '$mxz/assignments/Midi.js'
 	import { compile, ALL } from './compiler'
-	import { COMPILER_TAGS } from '$mxz/Defs.js'
-	import { SetStoresFromText, GetStoresAsText, _SEQUENCE, _ASSIGNMENTS } from '$mxz/Store.js'
+	import { COMPILER_TAGS } from '$mxz/defs.js'
+	import { SetStoresFromText, GetStoresAsText, _SEQUENCE, _ASSIGNMENTS } from '$mxz/store.js'
 
 	const w = (browser) ? window : {}
 	const SAY = (m, e) => console.log(`[FileSave] ${m}`, e || '')

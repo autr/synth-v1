@@ -1,6 +1,6 @@
 import { get } from 'svelte/store'
-import { COMPILER_TYPES, COMMON_ARGS } from '$mxz/Defs.js'
-import { _UNIFORMS } from '$mxz/Store.js'
+import { COMPILER_TYPES, COMMON_ARGS } from '$mxz/defs.js'
+import { _UNIFORMS } from '$mxz/store.js'
 import { GetLetterFromIdx, LoopThroughSequence, UuidToInt, GetUuidsForPasses, IntToUuid } from '$mxz/API.js'
 
 const GetISFFunctionCallFromSchema = (input, schema, prepend) => {

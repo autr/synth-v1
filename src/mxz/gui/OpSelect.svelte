@@ -2,7 +2,7 @@
 	/*HEADER*/
 	import { onMount } from 'svelte'
 	import { browser } from '$app/environment'
-	import { _UNIFORMS } from '$mxz/Store.js'
+	import { _UNIFORMS } from '$mxz/store.js'
 	
 	export let def
 	export let key
@@ -35,8 +35,8 @@
 	/*/HEADER*/
 
 	import { GetSequenceAsList, IntToUuid, GetLetterFromIdx } from '$mxz/API.js'
-	import { _source_select, _SEQUENCE, _recompile } from '$mxz/Store.js'
-	import { COMPILER_MODES } from '$mxz/Defs.js'
+	import { _source_select, _SEQUENCE, _recompile } from '$mxz/store.js'
+	import { COMPILER_MODES } from '$mxz/defs.js'
 
 	let title = null
 	let lastValue

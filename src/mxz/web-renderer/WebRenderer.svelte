@@ -2,11 +2,11 @@
 	import { browser } from '$app/environment'
 	import ISFRenderer from './ISFRenderer.js'
 	import { onMount, onDestroy } from 'svelte'
-	import { _popup_canvas, _recompile, _fullscreen, _SOURCES, _DIMENSIONS, _UNIFORMS, _PREVIEW, _PROJECTION } from '$mxz/Store.js'
+	import { _popup_canvas, _recompile, _fullscreen, _SOURCES, _DIMENSIONS, _UNIFORMS, _PREVIEW, _PROJECTION } from '$mxz/store.js'
 
 
 	import Slider from '$aui/_elements/Slider.svelte'
-	import { COMPILER_MODES } from '$mxz/Defs.js'
+	import { COMPILER_MODES } from '$mxz/defs.js'
 	import { compile, ALL } from '$mxz/compiler'
 	import { VTX_DEFAULT } from '$mxz/compiler/Vertex.js'
 	import { togglePopup } from '$mxz/local/Popup.js'

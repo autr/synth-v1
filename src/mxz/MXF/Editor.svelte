@@ -3,8 +3,8 @@
 	import { browser } from '$app/environment'
 	
 	import { IsRowColSelected, GetLetterFromIdx, MakeSequenceAdjustment, IndexFromRowAndCol, GetSequenceAsList, SequenceUpdatedCallback } from '$mxz/API.js'
-	import { DRAG_ACTIONS, TYPES, COMPILER_MODES } from '$mxz/Defs.js'
-	import { _SEQUENCE, _UNIFORMS, _TITLES, _selected, _dragging, _recompile, _source_select } from '$mxz/Store.js'
+	import { DRAG_ACTIONS, TYPES, COMPILER_MODES } from '$mxz/defs.js'
+	import { _SEQUENCE, _UNIFORMS, _TITLES, _selected, _dragging, _recompile, _source_select } from '$mxz/store.js'
 	import { onElDragover, onElDrop } from '$mxz/Drags.js'
 
 	import Op from '$mxz/Op.svelte'

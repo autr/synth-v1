@@ -1,5 +1,5 @@
-import { _DIMENSIONS, _popup_canvas, _recompile } from '$mxz/Store.js'
-import { COMPILER_MODES } from '$mxz/Defs.js'
+import { _DIMENSIONS, _popup_canvas, _recompile } from '$mxz/store.js'
+import { COMPILER_MODES } from '$mxz/defs.js'
 import { get } from 'svelte/store'
 import { browser } from '$app/environment'
 const w = browser ? window : {}

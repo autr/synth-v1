@@ -11,9 +11,9 @@
 	import { LOCAL_CMD_KEY, SHIFT_KEY, ESC_KEY, CTRL_KEY } from '$global/Keys.js'
 
 
-	import { APP_VIEWS, COMPILER_MODES, DRAG_ACTIONS } from './Defs.js'
-	import { _CURRENT_VIEW, _PREVIEW } from '$mxz/Store.js'
-	import { _selected, _recompile, _fullscreen } from '$mxz/Store.js'
+	import { APP_VIEWS, COMPILER_MODES, DRAG_ACTIONS } from './defs.js'
+	import { _CURRENT_VIEW, _PREVIEW } from '$mxz/store.js'
+	import { _selected, _recompile, _fullscreen } from '$mxz/store.js'
 	import { GetSelectedSequenceList } from '$mxz/API.js'
 
 	import SystemDebugger from '$mxz/debug/SystemDebugger.svelte'

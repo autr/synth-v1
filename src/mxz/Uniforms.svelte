@@ -1,7 +1,7 @@
 <script>
 	import * as Guis from '$mxz/gui/index.js'
 	import Auto from '$mxz/gui/Auto.svelte'
-	import { _UNIFORMS, _HIDDEN } from '$mxz/Store.js'
+	import { _UNIFORMS, _HIDDEN } from '$mxz/store.js'
 	export let schema
 	export let uuid
 	export let name

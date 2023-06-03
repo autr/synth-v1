@@ -1,5 +1,5 @@
 <script>
-	import { _PREVIEW, _selected, _UNIFORMS, _HIDDEN, GetStoresAsText, _CURRENT_VIEW } from '$mxz/Store.js'
+	import { _PREVIEW, _selected, _UNIFORMS, _HIDDEN, GetStoresAsText, _CURRENT_VIEW } from '$mxz/store.js'
 
 	let project = ''
 	$: (_cv => {

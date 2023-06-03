@@ -3,9 +3,9 @@ import { arrayMoveImmutable } from 'array-move'
 import { browser } from '$app/environment'
 import * as Ops from './ops/index.js'
 
-import { DRAG_ACTIONS, COMPILER_MODES, DIMENSIONS, APP_VIEWS, TYPE_UNI_MAP, GUI_UNI_MAP, COMMON_ARGS } from './Defs.js'
+import { DRAG_ACTIONS, COMPILER_MODES, DIMENSIONS, APP_VIEWS, TYPE_UNI_MAP, GUI_UNI_MAP, COMMON_ARGS } from './defs.js'
 import BLEND_MODES from '$mxz/compiler/_BlendModes.js'
-import { _SEQUENCE, _HIDDEN, _UNIFORMS, _recompile, _selected } from './Store.js'
+import { _SEQUENCE, _HIDDEN, _UNIFORMS, _recompile, _selected } from './store.js'
 
 const SAY = (m, e) => console.log(`[API] ${m}`, e || '')
 

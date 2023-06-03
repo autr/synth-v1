@@ -1,6 +1,6 @@
-import { COMPILER_TYPES, BLEND_MODES } from '$mxz/Defs.js'
+import { COMPILER_TYPES, BLEND_MODES } from '$mxz/defs.js'
 import { TotalSequenceLength, GetSequenceAsList, UuidToInt, ConvertVariableToString, LoopThroughSequence, GetLetterFromIdx, GetUuidsForPasses, GetExpandedHiddenUniforms } from '$mxz/API.js'
-import { _UNIFORMS, _HIDDEN, _SEQUENCE } from '$mxz/Store.js'
+import { _UNIFORMS, _HIDDEN, _SEQUENCE } from '$mxz/store.js'
 import { get } from 'svelte/store'
 
 const MAKE_ARG = (type, name) => ({name, type})
