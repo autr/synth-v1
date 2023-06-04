@@ -72,6 +72,8 @@ export function SequenceUpdatedCallback() {
 		if (ch.length == 1 && ch[0].indexOf(CHANNEL) != -1)  {
 			console.log('EMPTY CHANNEL')
 			changed = true
+		} else if (ch.length == 0) {
+			changed = true
 		} else {
 			cp.push(ch)
 		}

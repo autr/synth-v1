@@ -6,7 +6,7 @@
   },
   "scripts": {
     "dev": "vite --port 8000 --host 0.0.0.0 dev",
-    "build": "rm build.synth.v1.zip && vite build && zip build.synth.v1.zip build.synth.v1",
+    "build": "rm build.synth.v1.zip & vite build && zip build.synth.v1.zip build.synth.v1",
     "preview": "vite preview"
   },
   "devDependencies": {
