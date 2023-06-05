@@ -23,9 +23,18 @@
 		}
 	}
 
-	export function loadLocally() {
+	export async function loadLocally() {
 		SAY('loading from local storage')
-		SetStoresFromText(w.localStorage.getItem(KEY))
+		let data = w.localStorage.getItem(KEY)
+		if (!data) {
+			data = await (await fetch('/V1.DEFAULT.fs')).text()
+			const a = data.indexOf(COMPILER_TAGS.START)
+			const b = data.indexOf(COMPILER_TAGS.END)
+			const json = data.substring(a+COMPILER_TAGS.START.length,b)
+			SetStoresFromText(json)
+		} else {
+			SetStoresFromText(data)
+		}
 	}
 
 	const date = () => ((new Date()).toISOString())
