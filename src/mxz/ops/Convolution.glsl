@@ -2,8 +2,8 @@
 /* GROKKED FROM learn/WebGLImageFiler */
 
 vec2 pos = POS_NORM;
-float amt = Amt;
-float Amount = Amt;
+float amt = Amt * 0.5;
+float Amount = Amt * 0.5;
 
 if (TYPE == 0) { //int(TYPE) == 0) {
 
@@ -23,7 +23,7 @@ if (TYPE == 0) { //int(TYPE) == 0) {
 
 	float sharp_strength = Amount;
 	float sharp_clamp = sharp_strength;
-	float offset_bias = Radius * 10.0;
+	float offset_bias = Radius;
 	// #define COEFLUMA vec3(0.2126, 0.7152, 0.0722)      // BT.709 & sRBG luma coefficient (Monitors and HD Television)
 	#define COEFLUMA vec3(0.299, 0.587, 0.114)       // BT.601 luma coefficient (SD Television)
 	// #define COEFLUMA vec3(1.0/3.0, 1.0/3.0, 1.0/3.0) // Equal weight coefficient

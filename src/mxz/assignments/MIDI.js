@@ -21,7 +21,7 @@ const MIDI_TYPES = {
 
 let SMOOTHED = {}
 let DESTS = {}
-const SMOOTH_AMOUNT = 0.92
+const SMOOTH_AMOUNT = 0.75
 
 const ECHO = true // TODO: make configurable
 

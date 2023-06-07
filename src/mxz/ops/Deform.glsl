@@ -6,7 +6,7 @@ if (Invert) all = 1.0 - all;
 float bb = (all*2.0)-1.0;
 bb += off;
 
-float mini = Mini ? 0.02 : 1.;
+float mini = Mini ? 0.1 : 1.;
 
 vec2 xy = XY * vec2(mini,mini);
 vec2 zoom = Zoom * vec2(mini,mini);
