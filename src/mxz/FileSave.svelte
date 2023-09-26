@@ -23,18 +23,18 @@
 		}
 	}
 
-	export async function loadLocally() {
+	export async function loadDefaultProject() {
+		let data = await (await fetch('/V1.DEFAULT.fs')).text()
+		const a = data.indexOf(COMPILER_TAGS.START)
+		const b = data.indexOf(COMPILER_TAGS.END)
+		const json = data.substring(a+COMPILER_TAGS.START.length,b)
+		await loadLocally( json )
+	}
+
+	export async function loadLocally( data ) {
 		SAY('loading from local storage')
-		let data = w.localStorage.getItem(KEY)
-		if (!data) {
-			data = await (await fetch('/V1.DEFAULT.fs')).text()
-			const a = data.indexOf(COMPILER_TAGS.START)
-			const b = data.indexOf(COMPILER_TAGS.END)
-			const json = data.substring(a+COMPILER_TAGS.START.length,b)
-			SetStoresFromText(json)
-		} else {
-			SetStoresFromText(data)
-		}
+		data = data || w.localStorage.getItem(KEY)
+		SetStoresFromText(data)
 	}
 
 	const date = () => ((new Date()).toISOString())
@@ -90,6 +90,7 @@
 
 	const actions = {
 		'L: Load': loadLocally,
+		'D: Default': loadDefaultProject,
 		'L: Save': saveLocally,
 		'L: Clear': clearLocally,
 		'P: Open': openProject,

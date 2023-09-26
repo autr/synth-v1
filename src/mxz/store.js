@@ -4,6 +4,13 @@ import { writable } from 'svelte/store'
 import { get } from 'svelte/store'/* _PREVIEW:  */
 export const _PREVIEW = writable( null )
 
+export const _AUTOWB = writable( {
+	exp: 0,
+	speed: 0.5,
+	ideal: 255/2,
+	luma: 0
+} )
+
 /* _TITLES:  */
 export const _TITLES = writable( {} )
 

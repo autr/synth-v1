@@ -1,0 +1,35 @@
+{
+    "PASS": true,
+    "INPUTS": {
+        "Exp": {
+            "type": "float",
+            "default": 0,
+            "min": -100 ,
+            "max": 100
+        },
+        "Luma": {
+            "type": "float",
+            "default": 0,
+            "min": 0 ,
+            "max": 255
+        },
+        "Amp": {
+            "type": "float",
+            "default": 0.1,
+            "min": 0,
+            "max": 1
+        },
+        "Low": {
+            "type": "float",
+            "default": 0,
+            "min": 0,
+            "max": 1
+        },
+        "High": {
+            "type": "float",
+            "default": 1,
+            "min": 0,
+            "max": 1
+        }
+    }
+}

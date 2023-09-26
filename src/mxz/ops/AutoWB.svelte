@@ -1,0 +1,26 @@
+<script>
+	import { onMount } from 'svelte'
+	import { TYPES } from '$mxz/defs.js'
+	import { _UNIFORMS, _HIDDEN, _AUTOWB } from '$mxz/store.js'
+	import { SetOpCallback } from '$mxz/API.js'
+	import Auto from '$mxz/gui/Auto.svelte'
+	import schema from '$mxz/ops/AutoWB.json'
+	import shader from '$mxz/ops/AutoWB.glsl'
+	import Uniforms from '$mxz/Uniforms.svelte'
+	export let name
+	export let uuid
+	export let colIdx
+	export let rowIdx
+
+	const SAY = (m, e) => console.log(`[AutoWB] ${m}`, e || '')
+
+	let TMO
+	$: (UNIS => (SetOpCallback({name,uuid,schema})))($_UNIFORMS)
+
+	$: ((exp, luma) => {
+		$_UNIFORMS[uuid + 'Exp'] = exp
+		$_UNIFORMS[uuid + 'Luma'] = luma
+	})($_AUTOWB.exp, $_AUTOWB.luma)
+
+</script>
+<Uniforms {name} {uuid} {schema} {shader} {colIdx} {rowIdx} />

@@ -72,6 +72,8 @@ export const compile = args => {
 	OUT += COMPILER_TAGS.END
 
 
+	console.log({OUT, UNIFORMS}, 'SHADER')
+	window.HELLO = { OUT, UNIFORMS }
 // tokenizer()
 // parser()
 // minify()

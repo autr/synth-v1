@@ -2,7 +2,7 @@
 	import { browser } from '$app/environment'
 	import ISFRenderer from './ISFRenderer.js'
 	import { onMount, onDestroy } from 'svelte'
-	import { _popup_canvas, _recompile, _fullscreen, _SOURCES, _DIMENSIONS, _UNIFORMS, _PREVIEW, _PROJECTION } from '$mxz/store.js'
+	import { _popup_canvas, _recompile, _fullscreen, _SOURCES, _DIMENSIONS, _UNIFORMS, _PREVIEW, _PROJECTION, _AUTOWB } from '$mxz/store.js'
 
 
 	import Slider from '$aui/_elements/Slider.svelte'
@@ -104,6 +104,7 @@
 
 	let lastTime
 	let fps = 30
+	let lastAvrLum = 0
 	const animate = e => {
 
 		const t = (new Date())
@@ -114,7 +115,34 @@
 		fps = (fps * sm) + ( neu  * (1-sm) )
 		try {
 
-			if (w.RNDRS?.[key]) w.RNDRS[key].draw(getCurrentCanvas())
+			if (w.RNDRS?.[key]) {
+				const c = getCurrentCanvas()
+				const gl = c.getContext('webgl2')
+				w.RNDRS[key].draw(c)
+
+				// ====== LUMINANCE ======
+
+				let width = gl.drawingBufferWidth;
+				let height = gl.drawingBufferHeight;
+				let pixels = new Uint8Array(width * height * 4);
+				gl.readPixels(0, 0, width, height, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
+
+				let totalLuminance = 0;
+					for (let i = 0; i < pixels.length; i += 4) {
+					let r = pixels[i];
+					let g = pixels[i + 1];
+					let b = pixels[i + 2];
+					let luminance = 0.299 * r + 0.587 * g + 0.114 * b;
+					totalLuminance += luminance;
+				}
+
+				const avrLum = totalLuminance / (width * height);
+				const ideal = $_AUTOWB.ideal
+				$_AUTOWB.exp += ( ideal - avrLum );
+				$_AUTOWB.luma = avrLum;
+				lastAvrLum = avrLum;
+
+			}
 		} catch(err) {
 			console.log('❌ renderer error:', err.message)
 			throw err
@@ -177,10 +205,10 @@
 
 
 export let ctrlPoints = [
-  [0, 0],
-  [0, 0],
-  [0, 0],
-  [0, 0]
+	[0, 0],
+	[0, 0],
+	[0, 0],
+	[0, 0]
 ]
 
 const defaultMatrix = [
@@ -386,6 +414,22 @@ function getTransformations( store ) {
 						step={0.001} />
 				</div>
 			{/each}
+		</div>
+		<div>
+			<div>exp: {$_AUTOWB.exp}</div>
+			<div>luma: {$_AUTOWB.luma}</div>
+			<div>speed</div>
+			<Slider
+				bind:value={$_AUTOWB.speed}
+				min={0}
+				max={1}
+				step={0.01} />
+			<div>ideal</div>
+			<Slider
+				bind:value={$_AUTOWB.ideal}
+				min={0}
+				max={255}
+				step={1} />
 		</div>
 		<div class="flex wrap grow w100pc">
 			{#each Object.entries($_PROJECTION) as [key, arr]}

@@ -47,6 +47,7 @@ import { default as ShapeGlsl } from './Shape.glsl'
 import { default as SourceGlsl } from './Source.glsl'
 import { default as SynthGlsl } from './Synth.glsl'
 import { default as WobbulateGlsl } from './Wobbulate.glsl'
+import { default as AutoWBGlsl } from './AutoWB.glsl'
 
 import { default as CapacitorSchema } from './Capacitor.json'
 import { default as ChannelSchema } from './Channel.json'
@@ -59,6 +60,7 @@ import { default as ShapeSchema } from './Shape.json'
 import { default as SourceSchema } from './Source.json'
 import { default as SynthSchema } from './Synth.json'
 import { default as WobbulateSchema } from './Wobbulate.json'
+import { default as AutoWBSchema } from './AutoWB.json'
 
 import { default as CapacitorComponent } from './Capacitor.svelte'
 import { default as ChannelComponent } from './Channel.svelte'
@@ -71,6 +73,7 @@ import { default as ShapeComponent } from './Shape.svelte'
 import { default as SourceComponent } from './Source.svelte'
 import { default as SynthComponent } from './Synth.svelte'
 import { default as WobbulateComponent } from './Wobbulate.svelte'
+import { default as AutoWBComponent } from './AutoWB.svelte'
 
 
 export const Capacitor = { 
@@ -137,4 +140,10 @@ export const Wobbulate = {
 	COMPONENT: WobbulateComponent,
 	GLSL: WobbulateGlsl,
 	SCHEMA: ProcessJsonSchema( 'Wobbulate', WobbulateSchema)
+}
+
+export const AutoWB = { 
+	COMPONENT: AutoWBComponent,
+	GLSL: AutoWBGlsl,
+	SCHEMA: ProcessJsonSchema( 'AutoWB', AutoWBSchema)
 }
