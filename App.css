@@ -633,13 +633,13 @@ body {
   --c2: hsl( 200, 20%, 90% );
   --c1: hsl( 200, 20%, 95% );
   --c0: hsl( 200, 20%, 100% );
-  --bg0: hsl( 200, 12%, 2% );
-  --bg1: hsl( 200, 12%, 4% );
-  --bg2: hsl( 200, 12%, 6% );
-  --bg3: hsl( 200, 12%, 8% );
-  --bg4: hsl( 200, 12%, 10% );
-  --bg5: hsl( 200, 12%, 12% );
-  --bg6: hsl( 200, 12%, 14% );
+  --bg0: hsl( 200, 32%, 8% );
+  --bg1: hsl( 200, 32%, 10% );
+  --bg2: hsl( 200, 32%, 12% );
+  --bg3: hsl( 200, 32%, 14% );
+  --bg4: hsl( 200, 32%, 18% );
+  --bg5: hsl( 200, 32%, 22% );
+  --bg6: hsl( 200, 32%, 25% );
   --red: hsl( 345, 68%, 60% );
   --pink: hsl( 300, 65%, 65% );
   --purple: hsl( 250, 55%, 65% );
@@ -1199,11 +1199,11 @@ span.horizontal:before {
   --blue5-2: hsla(225.00000000000006, 5.7142857142857135%, 13.725490196078432%, 1);
   --blue5-3: hsla(240, 5.376344086021509%, 18.23529411764706%, 1);
   --blue5-4: hsla(240, 4.347826086956519%, 22.54901960784314%, 1);
-  --blue5-5: hsla(250.66666666666669, 93.10344827586205%, 71.56862745098039%, 1);
-  --blue5-6: hsla(251.66666666666669, 93.10344827586202%, 77.25490196078431%, 1);
-  --blue5-7: hsla(252, 93.02325581395351%, 83.13725490196079%, 1);
-  --blue5-8: hsla(254.44444444444443, 96.4285714285714%, 89.01960784313725%, 1);
-  --blue5-9: hsla(260.7692307692308, 99.99999999999989%, 94.90196078431372%, 1);
+  --blue5-5: hsla(220.66666666666669, 93.10344827586205%, 71.56862745098039%, 1);
+  --blue5-6: hsla(221.66666666666669, 93.10344827586202%, 77.25490196078431%, 1);
+  --blue5-7: hsla(222, 93.02325581395351%, 83.13725490196079%, 1);
+  --blue5-8: hsla(224.44444444444443, 96.4285714285714%, 89.01960784313725%, 1);
+  --blue5-9: hsla(220.7692307692308, 99.99999999999989%, 94.90196078431372%, 1);
   --teal6-0: hsla(280, 12%, 4.901960784313726%, 1);
   --teal6-1: hsla(270, 8.333333333333332%, 9.411764705882353%, 1);
   --teal6-2: hsla(270, 5.7142857142857135%, 13.725490196078432%, 1);
@@ -4492,6 +4492,80 @@ select, button, input, textarea, * {
 
 .pointer {
   cursor: pointer; }
+
+
+.bc0, .bc0 * {
+  border-color: var(--c0); }
+
+.bc7, .bc7 * {
+  border-color: var(--bg7); }
+
+.bc1, .bc1 * {
+  border-color: var(--c1); }
+
+.bc8, .bc8 * {
+  border-color: var(--bg8); }
+
+.bc2, .bc2 * {
+  border-color: var(--c2); }
+
+.bc9, .bc9 * {
+  border-color: var(--bg9); }
+
+.bc3, .bc3 * {
+  border-color: var(--c3); }
+
+.bc10, .bc10 * {
+  border-color: var(--bg10); }
+
+.bc4, .bc4 * {
+  border-color: var(--c4); }
+
+.bc11, .bc11 * {
+  border-color: var(--bg11); }
+
+.bc5, .bc5 * {
+  border-color: var(--c5); }
+
+.bc12, .bc12 * {
+  border-color: var(--bg12); }
+
+.bc6, .bc6 * {
+  border-color: var(--c6); }
+
+.bc13, .bc13 * {
+  border-color: var(--bg13); }
+
+/* colors w. bright and fade */
+.bg0, .sinkest {
+  background-color: var(--bg0); }
+
+.bg1, .sinker {
+  background-color: var(--bg1); }
+
+.bg2, .sink {
+  background-color: var(--bg2); }
+
+.bg3, .bg, .sassis {
+  background-color: var(--bg3); }
+
+.bg4, .pop {
+  background-color: var(--bg4); }
+
+.bg5, .popper {
+  background-color: var(--bg5); }
+
+.bg6, .poppest {
+  background-color: var(--bg6); }
+
+.c0, .fadiest {
+  color: var(--c6); }
+
+.c0, .fadiest {
+  border-color: var(--c6); }
+
+* .c0, * .fadiest {
+  border-color: var(--c6); }
 
 .grab {
   cursor: grab; }
