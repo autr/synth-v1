@@ -88,14 +88,14 @@
 	<header 
 		draggable={$_dragging}
 		on:dragstart={onDragstart}
-		class="flex column w100pc ">
+		class="flex column w100pc">
 		<div class="flex row-space-between-center w100pc ">
 			<div 
 				on:mousedown={ e => ($_dragging = true)}
-				class="grabbable flex grow row-space-between-center rel p0-5">
-				<div class="bold">
-					{GetLetterFromIdx(rowIdx)}{colIdx+1}
-					{name}
+				class="grabbable flex grow row-space-between-center rel p0-5 bg5">
+				<div class="f2">
+					<span class="bold f1">{GetLetterFromIdx(rowIdx)}{colIdx+1}</span>
+					<span class="italic">{name}</span>
 				</div>
 				<div class="f0">{uuid || ''}</div>
 			</div>

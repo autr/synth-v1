@@ -51,19 +51,23 @@
 			const op = GetSequenceAsList().find( op => {
 				return op.uuid == text
 			})
-			title = `${op?.name || '⇩'} ${op?.uuid || ''}`
+			title = `${op?.name || 'None'} ${op?.uuid || ''}`
 		}
 		_recompile.set( COMPILER_MODES.COMPILE )
 
 	})($_UNIFORMS[key])
 
+	let isSelecting = false
+
 	function onEnableDisable(e) {
 		if ($_source_select?.key == key) {
+			SAY('INITI')
 			$_source_select = null
 			return 
 		}
 		SAY(`initiating selection for ${key}`)
 		$_source_select = { key, uuid } 
+		isSelecting = true
 		e.stopPropagation()
 	}
 
@@ -77,6 +81,7 @@
 				SAY('no source was selected')
 				$_source_select = null
 			}
+			isSelecting = false
 		})
 	}
 
@@ -89,10 +94,18 @@
 	on:mousedown={onEnableDisable}
 	class:fade={$_UNIFORMS[key]==-1}
 	class:error={$_UNIFORMS[key]!=-1}
-	class="italic">
-	{title}
+	class:alert={$_source_select}
+	class:selecting={isSelecting}
+	class="italic selector">
+	{isSelecting ? 'Selecting...' : title}
 </button>
 <button
 	on:click={onClear}
 	class="italic" />
 </div>
+
+<style >
+	.selector.selecting {
+		color: var(--red)
+	}
+</style>

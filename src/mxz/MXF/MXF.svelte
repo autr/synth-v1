@@ -66,19 +66,25 @@
 		style="background: var(--blue5-0)"
 		class="flex row-center-stretch rel t0 l0 w100pc bb z-index99">
 		<FileSave />
-		<input 
-			type="number" 
-			class="br ptb0-5 plr1 minw0px"
-			bind:value={$_DIMENSIONS.width} />
-		<input 
-			type="number" 
-			class="br ptb0-5 plr1 minw0px"
-			bind:value={$_DIMENSIONS.height} />
-		<!-- <input 
-			type="number" 
-			class="br ptb0-5 plr1 minw0px"
-			bind:value={$_DIMENSIONS.fps} /> -->
 
+		<div class="flex row-stretch-center pop">
+			<span class="ml1 pt0-1" style="padding-left:1px">
+				Width:
+			</span>
+			<input 
+				type="number" 
+				class="br ptb0-5 plr1 minw0px pop italic maxw100px"
+				bind:value={$_DIMENSIONS.width} />
+		</div>
+		<div class="flex row-stretch-center pop">
+			<span class="ml1 pt0-1">
+				Height:
+			</span>
+			<input 
+				type="number" 
+				class="br ptb0-5 plr1 minw0px pop italic maxw100px"
+				bind:value={$_DIMENSIONS.height} />
+		</div>
 		<WebRenderer 
 			width={width} 
 			id="main" 
@@ -110,18 +116,9 @@
 
 					draggable={true}
 					class="plr0-5 grabbable br bt f3 flex row-center-center pop ptb0-5 grow">
-					<span class="f0"> {name}</span>
+					<span class="f1"> {name}</span>
 				</div>
 			{/each}
 		{/each}
-		<a 
-			href="https://liberatedinterfaces.tv"
-			class="bt"
-			style="padding:0;line-height:0em;">
-			<img 
-				style="background:none;height:2.4em;"
-				class="pt0-4 pb0-3 plr0-5"
-				src="/liberatedinterfaces.png" />
-		</a>
 	</div>
 </div>

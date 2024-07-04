@@ -125,7 +125,7 @@
 			id={key}
 			{...def}
 			step={def.type == 'float' ? 0 : 1}
-			class="mb0 pop"
+			class="mb0"
 			bind:value={ $_UNIFORMS[key] } />
 	{:else if def.type == 'long'}
 
@@ -159,13 +159,13 @@
 		{#if $_UNIFORMS[key]}
 			<Slider
 				on:contextmenu={e => onContextMenu(e, 0)}
-				class="mb0-5 pop"
+				class="mb0-5 "
 				min={def.min[0]}
 				max={def.max[0]}
 				bind:value={ $_UNIFORMS[key][0] } />
 			<Slider
 				on:contextmenu={e => onContextMenu(e, 1)}
-				class="mb0 pop"
+				class="mb0 "
 				min={def.min[1]}
 				max={def.max[1]}
 				bind:value={ $_UNIFORMS[key][1] } />
@@ -174,19 +174,19 @@
 		{#if $_UNIFORMS[key]}
 			<Slider
 				on:contextmenu={e => onContextMenu(e, 0)}
-				class="mb0-5 pop"
+				class="mb0-5 "
 				min={def.min[0]}
 				max={def.max[0]}
 				bind:value={ $_UNIFORMS[key][0] } />
 			<Slider
 				on:contextmenu={e => onContextMenu(e, 1)}
-				class="mb0-5 pop"
+				class="mb0-5 "
 				min={def.min[1]}
 				max={def.max[1]}
 				bind:value={ $_UNIFORMS[key][1] } />
 			<Slider
 				on:contextmenu={e => onContextMenu(e, 2)}
-				class="mb0 pop"
+				class="mb0 "
 				min={def.min[2]}
 				max={def.max[2]}
 				bind:value={ $_UNIFORMS[key][2] } />

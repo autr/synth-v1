@@ -10,11 +10,11 @@
 	export let colIdx
 </script>
 
-{#each Object.entries(schema.INPUTS) as [paramName, def]}
+{#each Object.entries(schema.INPUTS) as [paramName, def], index}
 	<div 
 		class:none={$_HIDDEN[uuid+paramName]}
-		class="flex row-stretch-center wrap">
-		<div class="grow monospace f0 bold uppercase">{def.label || paramName}</div>
+		class="flex row-stretch-center wrap bt">
+		<div class="grow monospace f1 italic mb0-4">{def.label || paramName}</div>
 		<svelte:component
 			this={Guis[def.gui] || Auto} 
 			{def}

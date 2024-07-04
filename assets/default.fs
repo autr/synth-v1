@@ -1,6 +1,6 @@
 /*
 {
-  "DESCRIPTION": "COMPILED: 05_06_2023_ 08_55_53",
+  "DESCRIPTION": "COMPILED: 04_07_2024_ 14_40_18",
   "CREDIT": "MX",
   "PERSISTENT_BUFFERS": [
     "u852",
@@ -937,7 +937,7 @@
     {
       "MAX": 1,
       "MIN": -1,
-      "DEFAULT": 0,
+      "DEFAULT": -0.05078125,
       "TYPE": "float",
       "NAME": "u852Light",
       "LABEL": "D2 Light Light"
@@ -992,7 +992,7 @@
       "LINK": "ColorMode:1",
       "MAX": 1,
       "MIN": 0,
-      "DEFAULT": 0.607421875,
+      "DEFAULT": 0.6396484375,
       "TYPE": "float",
       "NAME": "u852TintAmount",
       "LABEL": "D2 Light TintAmount"
@@ -1002,7 +1002,7 @@
       "DEGREES": 359,
       "MAX": 180,
       "MIN": -180,
-      "DEFAULT": 94.21875,
+      "DEFAULT": 13.0078125,
       "TYPE": "float",
       "NAME": "u852TintHue",
       "LABEL": "D2 Light TintHue"
@@ -1130,7 +1130,7 @@
         -1
       ],
       "DEFAULT": [
-        -0.404296875,
+        0.03125,
         0
       ],
       "TYPE": "point2D",
@@ -1147,15 +1147,15 @@
         -1
       ],
       "DEFAULT": [
-        0,
-        0
+        0.072265625,
+        0.05078125
       ],
       "TYPE": "point2D",
       "NAME": "u458Zoom",
       "LABEL": "D3 Deform Zoom"
     },
     {
-      "DEFAULT": false,
+      "DEFAULT": true,
       "TYPE": "bool",
       "NAME": "u458Rotate",
       "LABEL": "D3 Deform Rotate"
@@ -1163,7 +1163,7 @@
     {
       "MAX": 1,
       "MIN": -1,
-      "DEFAULT": 0,
+      "DEFAULT": -0.009765625,
       "TYPE": "float",
       "NAME": "u458Degree",
       "LABEL": "D3 Deform Degree"
@@ -1392,7 +1392,7 @@
     {
       "MAX": 1,
       "MIN": -1,
-      "DEFAULT": 0.05078125,
+      "DEFAULT": 0.009765625,
       "TYPE": "float",
       "NAME": "u853Light",
       "LABEL": "E2 Light Light"
@@ -1447,7 +1447,7 @@
       "LINK": "ColorMode:1",
       "MAX": 1,
       "MIN": 0,
-      "DEFAULT": 0.494140625,
+      "DEFAULT": 0.5673828125,
       "TYPE": "float",
       "NAME": "u853TintAmount",
       "LABEL": "E2 Light TintAmount"
@@ -1457,7 +1457,7 @@
       "DEGREES": 359,
       "MAX": 180,
       "MIN": -180,
-      "DEFAULT": 0,
+      "DEFAULT": -179.6484375,
       "TYPE": "float",
       "NAME": "u853TintHue",
       "LABEL": "E2 Light TintHue"
@@ -1586,7 +1586,7 @@
       ],
       "DEFAULT": [
         0,
-        0.3203125
+        0.009765625
       ],
       "TYPE": "point2D",
       "NAME": "u749XY",
@@ -1602,15 +1602,15 @@
         -1
       ],
       "DEFAULT": [
-        0,
-        0
+        0.216796875,
+        0.072265625
       ],
       "TYPE": "point2D",
       "NAME": "u749Zoom",
       "LABEL": "E3 Deform Zoom"
     },
     {
-      "DEFAULT": false,
+      "DEFAULT": true,
       "TYPE": "bool",
       "NAME": "u749Rotate",
       "LABEL": "E3 Deform Rotate"
@@ -1618,7 +1618,7 @@
     {
       "MAX": 1,
       "MIN": -1,
-      "DEFAULT": 0,
+      "DEFAULT": 0.05078125,
       "TYPE": "float",
       "NAME": "u749Degree",
       "LABEL": "E3 Deform Degree"
@@ -2433,7 +2433,7 @@
       ]
     },
     {
-      "DEFAULT": 0.296875,
+      "DEFAULT": 0.390625,
       "MAX": 1,
       "MIN": 0,
       "TYPE": "float",
@@ -2449,7 +2449,7 @@
       "LABEL": "J1 Convolution Threshold"
     },
     {
-      "DEFAULT": 0.1611328125,
+      "DEFAULT": 0.046875,
       "MAX": 1,
       "MIN": 0,
       "TYPE": "float",
@@ -3368,7 +3368,7 @@ vec4 Deformu458( vec4 INPUT, int IN_PASS, vec2 POS_NORM, vec2 POS_FRAG, bool Min
 	float bb = (all*2.0)-1.0;
 	bb += off;
 	
-	float mini = Mini ? 0.02 : 1.;
+	float mini = Mini ? 0.1 : 1.;
 	
 	vec2 xy = XY * vec2(mini,mini);
 	vec2 zoom = Zoom * vec2(mini,mini);
@@ -3393,7 +3393,7 @@ vec4 Deformu749( vec4 INPUT, int IN_PASS, vec2 POS_NORM, vec2 POS_FRAG, bool Min
 	float bb = (all*2.0)-1.0;
 	bb += off;
 	
-	float mini = Mini ? 0.02 : 1.;
+	float mini = Mini ? 0.1 : 1.;
 	
 	vec2 xy = XY * vec2(mini,mini);
 	vec2 zoom = Zoom * vec2(mini,mini);
@@ -3450,8 +3450,8 @@ vec4 Mask( vec4 INPUT, int IN_PASS, vec2 POS_NORM, vec2 POS_FRAG, int Mode, vec4
 
 vec4 Convolutionu824( vec4 INPUT, int IN_PASS, vec2 POS_NORM, vec2 POS_FRAG, int TYPE, float Amt, float Threshold, float Radius, bool Jitter) {
 	vec2 pos = POS_NORM;
-	float amt = Amt;
-	float Amount = Amt;
+	float amt = Amt * 0.5;
+	float Amount = Amt * 0.5;
 	
 	if (TYPE == 0) {
 	
@@ -3469,7 +3469,7 @@ vec4 Convolutionu824( vec4 INPUT, int IN_PASS, vec2 POS_NORM, vec2 POS_FRAG, int
 	
 	float sharp_strength = Amount;
 	float sharp_clamp = sharp_strength;
-	float offset_bias = Radius * 10.0;
+	float offset_bias = Radius;
 	
 	#define COEFLUMA vec3(0.299, 0.587, 0.114)
 	
@@ -3645,4 +3645,4 @@ void main( ) {
 	gl_FragColor = MAKE_PASS( u824BlendMode, IMG_NORM_PIXEL(u191, POS_NORM), temp, u824BlendAmt);
 	if ( PASSINDEX == 3 ) { return; }
 }
-/*--BEGIN_PROJECT--{"_PREVIEW":"Convolution:u824","_PROJECTION":{"rotate":[0,0,0],"skew":[0,0],"scale":[1,1],"translate":[0,0]},"_TITLES":{},"_SOURCES":[],"_SEQUENCE":[["Source:u763","Light:u833"],["Shape:u924"],["Shape:u865"],["Source:u651","Light:u852","Deform:u458"],["Source:u832","Light:u853","Deform:u749"],["Light:u895"],["Mask:u958"],["Mask:u147"],["Mask:u191"],["Convolution:u824"]],"_UNIFORMS":{"u763BlendMode":0,"u763BlendAmt":1,"u763Src":{"type":"camera","path":"FaceTime HD Camera (3A71:F4B5)"},"u763Rows":1,"u763Columns":1,"u763Index":0,"u833BlendMode":0,"u833BlendAmt":1,"u833Mini":false,"u833Invert":false,"u833LightMode":0,"u833Low":0,"u833Light":0,"u833High":1,"u833Saturation":0,"u833Shift":0,"u833ColorMode":0,"u833TintAmount":0,"u833TintHue":0,"u833Levels":0,"u833Spacing":0.5,"u833Smooth":0,"u833Flip":false,"u833Vibrance":0,"u924BlendMode":0,"u924BlendAmt":1,"u924Mode":0,"u924ShapeMode":0,"u924Mask":-1,"u924Shape":3,"u924Circular":0,"u924Smooth":0,"u924Size":0.5,"u924Center":[0.5,0.5],"u924Rotate":0.5,"u924Invert":false,"u924Fit":false,"u924Recursion":0.5,"u924Scroll":0,"u924Alternate":0,"u924Color":[1,1,1],"u924Alpha":false,"u865BlendMode":0,"u865BlendAmt":1,"u865Mode":0,"u865ShapeMode":0,"u865Mask":-1,"u865Shape":3,"u865Circular":0,"u865Smooth":0,"u865Size":0.5,"u865Center":[0.5,0.5],"u865Rotate":0.5,"u865Invert":false,"u865Fit":false,"u865Recursion":0.5,"u865Scroll":0,"u865Alternate":0,"u865Color":[1,1,1],"u865Alpha":false,"u651BlendMode":0,"u651BlendAmt":1,"u651Src":{"type":"feedback"},"u651Rows":1,"u651Columns":1,"u651Index":0,"u852BlendMode":0,"u852BlendAmt":1,"u852Mini":true,"u852Invert":false,"u852LightMode":0,"u852Low":0,"u852Light":0,"u852High":1,"u852Saturation":0,"u852Shift":0,"u852ColorMode":1,"u852TintAmount":0.607421875,"u852TintHue":94.21875,"u852Levels":0,"u852Spacing":0.5,"u852Smooth":0,"u852Flip":false,"u852Vibrance":0,"u458BlendMode":0,"u458BlendAmt":1,"u458Mini":true,"u458Src":924,"u458SrcAmount":1,"u458Invert":false,"u458Offset":0,"u458XY":[-0.404296875,0],"u458Zoom":[0,0],"u458Rotate":false,"u458Degree":0,"u458Origin":[0.5,0.5],"u832BlendMode":0,"u832BlendAmt":1,"u832Src":{"type":"feedback"},"u832Rows":1,"u832Columns":1,"u832Index":0,"u853BlendMode":0,"u853BlendAmt":1,"u853Mini":true,"u853Invert":false,"u853LightMode":0,"u853Low":0,"u853Light":0.05078125,"u853High":1,"u853Saturation":0,"u853Shift":0,"u853ColorMode":1,"u853TintAmount":0.494140625,"u853TintHue":0,"u853Levels":0,"u853Spacing":0.5,"u853Smooth":0,"u853Flip":false,"u853Vibrance":0,"u749BlendMode":0,"u749BlendAmt":1,"u749Mini":true,"u749Src":865,"u749SrcAmount":1,"u749Invert":false,"u749Offset":0,"u749XY":[0,0.3203125],"u749Zoom":[0,0],"u749Rotate":false,"u749Degree":0,"u749Origin":[0.5,0.5],"u895BlendMode":0,"u895BlendAmt":1,"u895Mini":false,"u895Invert":false,"u895LightMode":0,"u895Low":0,"u895Light":0,"u895High":1,"u895Saturation":0,"u895Shift":0,"u895ColorMode":0,"u895TintAmount":0,"u895TintHue":0,"u895Levels":0,"u895Spacing":0.5,"u895Smooth":0,"u895Flip":false,"u895Vibrance":0,"u958BlendMode":0,"u958BlendAmt":1,"u958Mode":1,"u958Background":458,"u958Foreground":749,"u958Mask":865,"u958LightMode":0,"u958Invert":false,"u958Threshold":[0.4521484375,1],"u958Smooth":[0,0],"u958SatInfluence":0,"u147BlendMode":0,"u147BlendAmt":1,"u147Mode":1,"u147Background":833,"u147Foreground":958,"u147Mask":924,"u147LightMode":0,"u147Invert":true,"u147Threshold":[0,1],"u147Smooth":[0,0],"u147SatInfluence":0,"u191BlendMode":0,"u191BlendAmt":1,"u191Mode":1,"u191Background":833,"u191Foreground":147,"u191Mask":833,"u191LightMode":0,"u191Invert":false,"u191Threshold":[0.3798828125,1],"u191Smooth":[0,0],"u191SatInfluence":0,"u824BlendMode":0,"u824BlendAmt":1,"u824TYPE":0,"u824Amt":0.296875,"u824Threshold":0.2,"u824Radius":0.1611328125,"u824Jitter":false},"_CURRENT_VIEW":"application","_DIMENSIONS":{"width":1280,"height":720},"_ASSIGNMENTS":{},"_HIDDEN":{"u924Mask":true,"u924Recursion":true,"u924Scroll":true,"u924Alternate":true,"u865Mask":true,"u865Recursion":true,"u865Scroll":true,"u865Alternate":true,"u852TintAmount":false,"u852TintHue":false,"u852Levels":true,"u852Spacing":true,"u852Smooth":true,"u852Vibrance":true,"u853TintAmount":false,"u853TintHue":false,"u853Levels":true,"u853Spacing":true,"u853Smooth":true,"u853Vibrance":true,"u895TintAmount":true,"u895TintHue":true,"u895Levels":true,"u895Spacing":true,"u895Smooth":true,"u895Vibrance":true,"u958Foreground":false,"u958Mask":false,"u958LightMode":false,"u147Foreground":false,"u147Mask":false,"u147LightMode":false,"u191Foreground":false,"u191Mask":false,"u191LightMode":false,"u833TintAmount":true,"u833TintHue":true,"u833Levels":true,"u833Spacing":true,"u833Smooth":true,"u833Vibrance":true,"u924undefined":true,"u865undefined":true,"u458undefined":true,"u749undefined":true,"u958undefined":true,"u147undefined":true,"u191undefined":true}}--END_PROJECT--*/
+/*--BEGIN_PROJECT--{"_PREVIEW":"Convolution:u824","_PROJECTION":{"rotate":[0,0,0],"skew":[0,0],"scale":[1,1],"translate":[0,0]},"_TITLES":{},"_SOURCES":[],"_SEQUENCE":[["Source:u763","Light:u833"],["Shape:u924"],["Shape:u865"],["Source:u651","Light:u852","Deform:u458"],["Source:u832","Light:u853","Deform:u749"],["Light:u895"],["Mask:u958"],["Mask:u147"],["Mask:u191"],["Convolution:u824"]],"_UNIFORMS":{"u763BlendMode":0,"u763BlendAmt":1,"u763Src":{"type":"camera","path":"FaceTime HD Camera (3A71:F4B5)"},"u763Rows":1,"u763Columns":1,"u763Index":0,"u833BlendMode":0,"u833BlendAmt":1,"u833Mini":false,"u833Invert":false,"u833LightMode":0,"u833Low":0,"u833Light":0,"u833High":1,"u833Saturation":0,"u833Shift":0,"u833ColorMode":0,"u833TintAmount":0,"u833TintHue":0,"u833Levels":0,"u833Spacing":0.5,"u833Smooth":0,"u833Flip":false,"u833Vibrance":0,"u924BlendMode":0,"u924BlendAmt":1,"u924Mode":0,"u924ShapeMode":0,"u924Mask":-1,"u924Shape":3,"u924Circular":0,"u924Smooth":0,"u924Size":0.5,"u924Center":[0.5,0.5],"u924Rotate":0.5,"u924Invert":false,"u924Fit":false,"u924Recursion":0.5,"u924Scroll":0,"u924Alternate":0,"u924Color":[1,1,1],"u924Alpha":false,"u865BlendMode":0,"u865BlendAmt":1,"u865Mode":0,"u865ShapeMode":0,"u865Mask":-1,"u865Shape":3,"u865Circular":0,"u865Smooth":0,"u865Size":0.5,"u865Center":[0.5,0.5],"u865Rotate":0.5,"u865Invert":false,"u865Fit":false,"u865Recursion":0.5,"u865Scroll":0,"u865Alternate":0,"u865Color":[1,1,1],"u865Alpha":false,"u651BlendMode":0,"u651BlendAmt":1,"u651Src":{"type":"feedback"},"u651Rows":1,"u651Columns":1,"u651Index":0,"u852BlendMode":0,"u852BlendAmt":1,"u852Mini":true,"u852Invert":false,"u852LightMode":0,"u852Low":0,"u852Light":-0.05078125,"u852High":1,"u852Saturation":0,"u852Shift":0,"u852ColorMode":1,"u852TintAmount":0.6396484375,"u852TintHue":13.0078125,"u852Levels":0,"u852Spacing":0.5,"u852Smooth":0,"u852Flip":false,"u852Vibrance":0,"u458BlendMode":0,"u458BlendAmt":1,"u458Mini":true,"u458Src":924,"u458SrcAmount":1,"u458Invert":false,"u458Offset":0,"u458XY":[0.03125,0],"u458Zoom":[0.072265625,0.05078125],"u458Rotate":true,"u458Degree":-0.009765625,"u458Origin":[0.5,0.5],"u832BlendMode":0,"u832BlendAmt":1,"u832Src":{"type":"feedback"},"u832Rows":1,"u832Columns":1,"u832Index":0,"u853BlendMode":0,"u853BlendAmt":1,"u853Mini":true,"u853Invert":false,"u853LightMode":0,"u853Low":0,"u853Light":0.009765625,"u853High":1,"u853Saturation":0,"u853Shift":0,"u853ColorMode":1,"u853TintAmount":0.5673828125,"u853TintHue":-179.6484375,"u853Levels":0,"u853Spacing":0.5,"u853Smooth":0,"u853Flip":false,"u853Vibrance":0,"u749BlendMode":0,"u749BlendAmt":1,"u749Mini":true,"u749Src":865,"u749SrcAmount":1,"u749Invert":false,"u749Offset":0,"u749XY":[0,0.009765625],"u749Zoom":[0.216796875,0.072265625],"u749Rotate":true,"u749Degree":0.05078125,"u749Origin":[0.5,0.5],"u895BlendMode":0,"u895BlendAmt":1,"u895Mini":false,"u895Invert":false,"u895LightMode":0,"u895Low":0,"u895Light":0,"u895High":1,"u895Saturation":0,"u895Shift":0,"u895ColorMode":0,"u895TintAmount":0,"u895TintHue":0,"u895Levels":0,"u895Spacing":0.5,"u895Smooth":0,"u895Flip":false,"u895Vibrance":0,"u958BlendMode":0,"u958BlendAmt":1,"u958Mode":1,"u958Background":458,"u958Foreground":749,"u958Mask":865,"u958LightMode":0,"u958Invert":false,"u958Threshold":[0.4521484375,1],"u958Smooth":[0,0],"u958SatInfluence":0,"u147BlendMode":0,"u147BlendAmt":1,"u147Mode":1,"u147Background":833,"u147Foreground":958,"u147Mask":924,"u147LightMode":0,"u147Invert":true,"u147Threshold":[0,1],"u147Smooth":[0,0],"u147SatInfluence":0,"u191BlendMode":0,"u191BlendAmt":1,"u191Mode":1,"u191Background":833,"u191Foreground":147,"u191Mask":833,"u191LightMode":0,"u191Invert":false,"u191Threshold":[0.3798828125,1],"u191Smooth":[0,0],"u191SatInfluence":0,"u824BlendMode":0,"u824BlendAmt":1,"u824TYPE":0,"u824Amt":0.390625,"u824Threshold":0.2,"u824Radius":0.046875,"u824Jitter":false,"u749Rows":1,"u749Columns":1,"u749Index":0,"u914BlendMode":0,"u914BlendAmt":1,"u914Mode":0,"u914ShapeMode":0,"u914Mask":-1,"u914Shape":3,"u914Circular":0,"u914Smooth":0,"u914Size":0.5,"u914Center":[0.5,0.5],"u914Rotate":0.5,"u914Invert":false,"u914Fit":false,"u914Recursion":0.5,"u914Scroll":0,"u914Alternate":0,"u914Color":[1,1,1],"u914Alpha":false},"_CURRENT_VIEW":"application","_DIMENSIONS":{"width":1280,"height":720},"_ASSIGNMENTS":{},"_HIDDEN":{"u924Mask":true,"u924Recursion":true,"u924Scroll":true,"u924Alternate":true,"u865Mask":true,"u865Recursion":true,"u865Scroll":true,"u865Alternate":true,"u852TintAmount":false,"u852TintHue":false,"u852Levels":true,"u852Spacing":true,"u852Smooth":true,"u852Vibrance":true,"u853TintAmount":false,"u853TintHue":false,"u853Levels":true,"u853Spacing":true,"u853Smooth":true,"u853Vibrance":true,"u895TintAmount":true,"u895TintHue":true,"u895Levels":true,"u895Spacing":true,"u895Smooth":true,"u895Vibrance":true,"u958Foreground":false,"u958Mask":false,"u958LightMode":false,"u147Foreground":false,"u147Mask":false,"u147LightMode":false,"u191Foreground":false,"u191Mask":false,"u191LightMode":false,"u833TintAmount":true,"u833TintHue":true,"u833Levels":true,"u833Spacing":true,"u833Smooth":true,"u833Vibrance":true,"u924undefined":true,"u865undefined":true,"u458undefined":true,"u749undefined":true,"u958undefined":true,"u147undefined":true,"u191undefined":true}}--END_PROJECT--*/

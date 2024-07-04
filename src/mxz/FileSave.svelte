@@ -24,7 +24,7 @@
 	}
 
 	export async function loadDefaultProject() {
-		let data = await (await fetch('/V1.DEFAULT.fs')).text()
+		let data = await (await fetch('/default.fs')).text()
 		const a = data.indexOf(COMPILER_TAGS.START)
 		const b = data.indexOf(COMPILER_TAGS.END)
 		const json = data.substring(a+COMPILER_TAGS.START.length,b)
@@ -104,7 +104,7 @@
 {#each Object.entries( actions ) as [name, action]}
 
 	<button
-		class="br plr1  grow f0 ptb0-5"
+		class="br plr1  grow ptb0-5 pop pointer"
 		on:mousedown={action}>
 		{ name }
 	</button>

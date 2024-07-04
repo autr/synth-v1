@@ -349,34 +349,12 @@ function getTransformations( store ) {
 <div 
 	class="renderer bb {class_}"
 	style="height: auto;min-width:{width}px;max-width:{width}px;">
-	<div 
-		style="background: var(--blue5-0)"
-		class="actions bb rel z-index99 bt">
-		<button 
-			on:click={togglePopup}>
-			Popup
-		</button>
-		<button 
-			on:click={captureImage}>
-			Grab
-		</button>
-		<button 
-			on:click={e => $_fullscreen = !$_fullscreen}>
-			{$_fullscreen ? '●' : '○'} Fullscreen 
-		</button>
-		<button 
-			class:active={RECORDING}
-			on:click={toggleVideoRecord}>
-			{ RECORDING ? 'Recording...' : 'Record' }
-		</button>
-		<span class="fps">{(1000/fps).toFixed(0)}</span>
-	</div>
 
 	<div 
 		bind:this={containerEl}
 		class:fixed={$_fullscreen}
 		style="top:0px;left:0px;background:black;z-index: 999999999"
-		class="rel t0pc l0pc w100pc h100pc overflow-hidden">
+		class="rel t0pc l0pc w100pc h100pc overflow-hidden bt">
 		<canvas
 			class="w100pc h100pc"
 			width={$_DIMENSIONS.width} 
@@ -390,63 +368,101 @@ function getTransformations( store ) {
 			width={$_DIMENSIONS.width} 
 			height={$_DIMENSIONS.height} />
 	</div>
-	<div class="flex column-stretch-flex-start bg bt p1" 
-	style="background: var(--blue5-0);z-index:99999;">
-		<!-- <h4>From</h4>
-		<div>{deform?.from.map(arr=>arr.map(num=>num))}</div>
-		<h4>To</h4>
-		<div>{deform?.to.map(arr=>arr.map(num=>num))}</div>
-		<h4>Matrix</h4>
-		<div style="white-space:pre">{@html deform?.matrix.map(arr=>arr.map(num=>num).join(',')).join('\n')}</div> -->
-		<div class="flex wrap grow w100pc none">
-			{#each ctrlPoints as value,key }
-				<div class="maxw50pc grow">
-					<!-- <label>{key}</label> -->
-					<Slider
-						bind:value={ctrlPoints[key][0]}
-						min={-1}
-						max={1}
-						step={0.001} />
-					<Slider
-						bind:value={ctrlPoints[key][1]}
-						min={-1}
-						max={1}
-						step={0.001} />
-				</div>
-			{/each}
-		</div>
-		<div>
-			<div>exp: {$_AUTOWB.exp}</div>
-			<div>luma: {$_AUTOWB.luma}</div>
-			<div>speed</div>
-			<Slider
-				bind:value={$_AUTOWB.speed}
-				min={0}
-				max={1}
-				step={0.01} />
-			<div>ideal</div>
-			<Slider
-				bind:value={$_AUTOWB.ideal}
-				min={0}
-				max={255}
-				step={1} />
-		</div>
-		<div class="flex wrap grow w100pc">
-			{#each Object.entries($_PROJECTION) as [key, arr]}
+	<div 
+		style="background: var(--blue5-0)"
+		class="actions rel z-index99 bt pop">
+		<button 
+			class="pop pointer f0 br"
+			on:click={togglePopup}>
+			Popup
+		</button>
+		<button 
+			class="pop pointer f0 br"
+			on:click={captureImage}>
+			Grab
+		</button>
+		<button 
+			class="pop pointer f0 br"
+			on:click={e => $_fullscreen = !$_fullscreen}>
+			Fullscreen 
+		</button>
+		<button 
+			class="pop pointer f0 br"
+			class:active={RECORDING}
+			on:click={toggleVideoRecord}>
+			{ RECORDING ? 'Recording...' : 'Record' }
+		</button>
+		<span class="fps f0" style="width:32px">{(1000/fps).toFixed(0)}</span>
+	</div>
+	<div 
+		class="flex column-stretch-flex-start bt pop" 
+		style="background: var(--blue5-0);z-index:99999">
 
-				<div class="maxw50pc grow">
-					<div class="mb0-5">{key}</div>
-					{#each arr || [] as val, i}
+		<div class="pop bg4 p0-8">
+			<div class="flex wrap grow w100pc none">
+				{#each ctrlPoints as value,key }
+					<div class="maxw50pc grow">
+						<!-- <label>{key}</label> -->
 						<Slider
-							bind:value={$_PROJECTION[key][i]}
-							min={ref?.[key]?.min}
-							max={ref?.[key]?.max}
+							bind:value={ctrlPoints[key][0]}
+							min={-1}
+							max={1}
 							step={0.001} />
-
-					{/each}
+						<Slider
+							bind:value={ctrlPoints[key][1]}
+							min={-1}
+							max={1}
+							step={0.001} />
+					</div>
+				{/each}
+			</div>
+			<div>
+				<div class="mb1">
+					<span class="bb">AutoWB Tool</span>
 				</div>
-			{/each}
+				<!-- <div>exp: {$_AUTOWB.exp}</div>
+				<div>luma: {$_AUTOWB.luma}</div> -->
+				<div class="row">
+					<div class="pb0-2">Speed</div>
+					<Slider
+						bind:value={$_AUTOWB.speed}
+						min={0}
+						max={1}
+						step={0.01} />
+				</div>
+				<div class="row">
+					<div class="pb0-2">Destination</div>
+					<Slider
+						bind:value={$_AUTOWB.ideal}
+						min={0}
+						max={255}
+						step={1} />
+				</div>
+			</div>
 
+		</div>
+
+		<div class="pop bg4 p0-8 bt">
+			<div class="mb1">
+				<span class="bb">Output Mapping</span>
+			</div>
+			<div class="flex wrap grow w100pc">
+				{#each Object.entries($_PROJECTION) as [key, arr]}
+
+					<div class="maxw50pc grow">
+						<div class="mb0-5">{key}</div>
+						{#each arr || [] as val, i}
+							<Slider
+								bind:value={$_PROJECTION[key][i]}
+								min={ref?.[key]?.min}
+								max={ref?.[key]?.max}
+								step={0.001} />
+
+						{/each}
+					</div>
+				{/each}
+
+			</div>
 		</div>
 	</div>
 	<slot />
