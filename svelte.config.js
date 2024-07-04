@@ -38,6 +38,7 @@ export default (await ( async e => {
 		kit: {
 			alias,
 			adapter: adapters[CURRENT_ADAPTER],
+			appDir: 'app',
 			files: {
 			  assets: 'assets',
 		      routes: 'src',
