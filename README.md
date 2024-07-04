@@ -1,5 +1,7 @@
 # Synth V1
 
+[https://v1.autr.studio](https://v1.autr.studio)
+
 web-based video synth prototype circa 2022:
 
 * uses simple WebGL context and ISF renderer code
